@@ -1,0 +1,4 @@
+package service.imp;
+public interface AdministratorServiceImp {
+
+}

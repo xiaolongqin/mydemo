@@ -1,0 +1,12 @@
+package service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import service.imp.SingerServiceImp;
+import dao.SingerDao;
+@Service
+public class SingerService implements SingerServiceImp {
+   @Autowired
+	private SingerDao singerDao;
+}

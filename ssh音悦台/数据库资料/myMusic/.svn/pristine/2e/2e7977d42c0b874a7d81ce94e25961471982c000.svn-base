@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 解决post中文乱码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- 开发模式，修改类无需重启服务器 -->
+	<constant name="struts.devMode" value="true" />
+
+
+	<include file="struts_xl.xml"></include>
+	<include file="struts_wf.xml"></include>
+	<include file="struts_zjc.xml"></include>
+	<include file="struts_tys.xml"></include>
+
+</struts>

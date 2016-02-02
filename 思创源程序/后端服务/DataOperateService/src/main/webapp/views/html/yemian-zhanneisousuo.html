@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/yemian-zhanneisousuo.css"/>
+    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="time-box">
+    <div class="row">
+        <div class="col-md-5">
+            <h5>快速选择时间</h5>
+            <ul class="time-list">
+                <li onclick="zhanNeiSearch(this);" class="chosen-active">昨天</li>
+                <li onclick="zhanNeiSearch(this);">最近7天</li>
+                <li onclick="zhanNeiSearch(this);">最近14天</li>
+                <li onclick="zhanNeiSearch(this);">最近30天</li>
+                <li style="border: none;" onclick="zhanNeiSearch(this);">最近90天</li>
+            </ul>
+        </div>
+        <div class="col-md-7">
+            <h5>自定义时间</h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group date form_date" data-link-format="yyyy-mm-dd">
+                        <input id="start-time" class="form-control input-sm" type="text" readonly/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+                <span style="float: left;margin-top: 3px;">至</span>
+                <div class="col-md-4">
+                    <div class="input-group date form_date" data-link-format="yyyy-mm-dd">
+                        <input id="end-time" class="form-control input-sm" type="text" readonly/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+                <div class="time-btn" onclick="seeCharts();">确定</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="charts-box">
+    <div id="canvas-container">
+        <div id="screen" class="screen"></div>
+    </div>
+    <div id="topWord"></div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/echarts-all.js"></script>
+<script src="../js/bootstrap-datetimepicker.min.js"></script>
+<script src="../js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/yemian-zhanneisousuo.js"></script>
+<script src="../js/href.js"></script>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/kehu-xiaoxiang.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="header">
+    <form class="form-inline">
+        <div class="form-group">
+            <input type="text" class="form-control input-sm" size="35" id="search-content" placeholder="请输入手机号或用户名查询"/>
+        </div>
+        <div class="form-group">
+            <span>用户性别：</span>
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" checked onclick="testGender();">男
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="0" onclick="testGender();">女
+        </div>
+        <div class="form-group">
+            <div id="pic-btn" onclick="searchClinet();">搜索用户</div>
+        </div>
+    </form>
+</div>
+<div class="client-box">
+    <table class="table table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th>用户名</th>
+            <th>用户手机号</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr><td colspan="3">暂无数据</td></tr>
+        </tbody>
+    </table>
+</div>
+<div class="main">
+    <img class="client-pic" src="../images/male.jpg"/>
+    <div class="client-table table1">
+        <h4>基本信息</h4>
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <td>电话号码</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>姓名</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>年龄</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>出生日期</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>地址</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>几0后</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>注册时间</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>邮箱</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>会员等级</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>会员积分</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>是否智能机用户</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>终端型号</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>终端类型</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="client-table table2">
+        <h4>消费行为</h4>
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <td>买家等级</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>近1个月消费</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>近2个月消费</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>消费等级</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>支付偏好</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="client-table table3">
+        <h4>活跃度</h4>
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <td>活跃度</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>沉默度</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="client-table table4">
+        <h4>用户关注</h4>
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <td>喜好商铺</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>喜好商品</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>喜好品牌</td>
+                <td>未知</td>
+            </tr>
+            <tr>
+                <td>品牌忠诚度</td>
+                <td>未知</td>
+            </tr>
+        </table>
+    </div>
+    <div class="client-table table5">
+        <h4>用户群</h4>
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <td>用户等级</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>用户群</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>职业等级</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="client-table table6">
+        <h4>用户浏览爱好</h4>
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <td rowspan="4">用户浏览喜好</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td>用户搜索喜好</td>
+                <td class="hobby"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!--存下拉框中选中那条的uid,存之前选择的性别-->
+<!--<input id="uid" type="hidden"/>-->
+<input id="gender" type="hidden"/>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/jquery-ui-widget-combobox.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/kehu-xiaoxiang.js"></script>
+<script src="../js/href.js"></script>
+</html>

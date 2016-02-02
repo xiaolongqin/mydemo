@@ -1,0 +1,31 @@
+package service.imp;
+
+import java.util.List;
+
+import utils.Support;
+import entity.Singer;
+import entity.User;
+
+public interface UserServiceImp {
+   //查询
+	public List<User> queryUser(int page, String name);
+	 
+	//添加用户
+	 public void addUser(User user);
+	 
+	 //分页查询
+	 public List<User> PageUser(String periods, int page);
+	 
+	 //删除
+	 public void deleteuser(int id);
+	 
+	//编辑
+	 public void edituser(User user);
+	
+	 public List<User> queryUserByID(int id );
+	 //登录
+	 public User login(String username, String password);
+	 
+	
+	
+}

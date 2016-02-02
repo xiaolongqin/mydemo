@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>找回密码-数之云</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/szy_common.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="/..js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="user-main-body">
+<!--顶部 S-->
+<header class="navbar user-nav user-nav-hei" id="top" role="banner">
+</header>
+<!--顶部 E-->
+<!--主体 S-->
+<div class="container user-main" id="J_userMain">
+    <div class="pull-right user-form">
+        <div class="user-tr"><input id="email" type="text" class="form-control user-email" placeholder="请输入登录邮箱"/></div>
+        <div class="user-tr"><input id="identitycard" type="text" class="form-control user-email" placeholder="请输入邮箱的注册身份证号码"/></div>
+        <div id="J_userError" class="user-error yahei"></div>
+        <button id="J_userSubmit" type="button" class="btn btn-default btn-lg user-submit yahei" data-loading-text="提交中..." >提 交</button>
+    </div>
+</div>
+<!--主体 E-->
+<!--FOOT S-->
+<footer class="user-footer user-footer-three">
+    <div class="container">
+        <p class="text">Copyright ©2012 成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+    </div>
+</footer>
+<!--FOOT E-->
+
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/szy_common.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#J_userSubmit').click(function(){
+            alert("提交");
+            $.ajax({
+                type: "GET",
+                url: "/szy/user/sendResetPassMail",
+                data: {'email':$.trim($("#email").val()), 'identitycard':$.trim($("#identitycard").val())},
+                dataType: "json",
+                success: function(data){
+                    if(data.state==true){
+                        alert("邮件发送成功，请登陆邮箱查看");
+                    }else{
+                        alert("信息核对错误！！");
+                    }
+
+                }
+            });
+        });
+    });
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+package dao;
+
+import dao.imp.UserDaoImp;
+
+public class UserDao implements UserDaoImp {
+
+}

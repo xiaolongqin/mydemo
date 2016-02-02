@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<title>OSS订单详情-数之云</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="css/szy_common.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+	        <script src="js/bootstrap/html5shiv.min.js"></script>
+	        <script src="js/bootstrap/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+	    <!--顶部 S-->
+		<header class="navbar user-nav" id="top" role="banner">
+		 	<div class="container">
+			    <div class="navbar-header">
+			      <a href="index" class="navbar-brand"><img height="30" src="images/szy_logo.png"/></a>
+			    </div>
+			    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+			      	<ul class="nav navbar-nav navbar-right">
+			      		<li id="J_navUserLogin"></li>
+			      		<li id="J_navUserline" class="line none">|</li>
+			        	<li id="J_navUserRegist">
+			        		<a id="J_navUserName" class="dropdown-toggle" href="javascript:;" data-toggle="dropdown" aria-expanded="true">...</a>
+			        		<ul class="dropdown-menu" role="menu">
+							    <li><a class="first" href="rdsorder" title="订单管理">订单管理</a></li>
+							    <li><a href="info" title="个人资料">个人资料</a></li>
+							    <li class="divider"></li>
+							    <li><a href="javascript:;" onclick="exitLogin();return false;">退出</a></li>
+							</ul>
+			        	</li>
+			        	<li class="line">|</li>
+			        	<li><a href="#" title="管理控制台">管理控制台</a></li>
+			      	</ul>
+			    </nav>
+		  	</div>
+		</header>
+	    <!--顶部 E-->
+		<!--主体 S-->
+		<div class="container">
+			<div class="order-wrap row clearfix">
+				<div class="order-main pull-right">
+					<div class="order-main-two">
+						<h2 class="order-head"><a class="daohang" href="ossorder">OSS订单</a> > <span class="curr">订单详情</span></h2>
+						<div class="order-dt-mian">
+							<div class="order-dt-box">
+						    	<h2 class="title">订单信息</h2>
+						    	<div class="cont clearfix">
+						    		<div class="col col-sm-4">订单编号：<strong id="J_ossOrderId">- -</strong></div>
+						    		<div class="col col-sm-4">产品名称：<span id="J_ossName">开放式存储服务 OSS</span></div>
+						    		<div class="col col-sm-4">下单时间：<span id="J_ossOrderDtime">- -</span></div>
+						    		<div class="col col-sm-4">订单状态：<span id="J_ossOrderState">- -</span></div>
+						    		<div class="col col-sm-4">空间大小：<span id="J_ossOrderSize">--</span>GB&ensp;&ensp;<em class="add-tag">+<span id="J_ossOrderSizeAdd">--</span>GB</em></div>
+						    		<div class="col col-sm-4">价&ensp;&ensp;&ensp;&ensp;格：<strong id="J_ossOrderPrice" class="price">- -</strong></div>
+						    	</div>
+						    </div>
+
+						    <div class="order-dt-tips">付款请拨打电话 XXXXXXXXXXXX 或者发送邮件到 service@unionbigdata.com</div>
+						</div>	
+					</div>
+				</div>
+				<div class="order-menu pull-left">
+					<ul class="nav nav-pills nav-stacked" role="tablist">
+						<li><a href="rdsorder">RDS订单</a></li>
+						<li class="active"><a href="ossorder">OSS订单</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	    <!--主体 E-->
+	    <!--FOOT S-->
+		<footer class="user-footer">
+		    <div class="container">
+	    		<p class="text">Copyright ©2012 成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+	    	</div>
+		</footer>
+	    <!--FOOT E-->
+
+    	<script src="js/jquery-1.9.1.min.js"></script>
+	    <script src="js/bootstrap/bootstrap.min.js"></script>
+	    <script src="js/szy_common.min.js"></script>
+	    <script src="js/szy_ossorderdetail.min.js"></script>
+	</body>
+</html>

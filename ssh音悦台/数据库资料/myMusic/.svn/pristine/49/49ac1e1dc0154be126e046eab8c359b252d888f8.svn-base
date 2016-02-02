@@ -1,0 +1,5 @@
+$(function(){
+	$("#addSinger").click(function(){
+		window.location.href="/myMusic/sys/singer/addSinger.jsp";
+	});
+});

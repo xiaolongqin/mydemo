@@ -1,0 +1,20 @@
+package dao;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import dao.imp.MvDaoImp;
+import entity.Mv;
+@Repository
+public class MvDao implements MvDaoImp {
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	public void save(Mv mv) {
+		System.out.println("---------dao--------");
+		Session session=sessionFactory.getCurrentSession();
+		session.save(mv);
+	}
+}

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="DataOperateService:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="dataoperate.war">
+      <element id="artifact" artifact-name="DataOperateService:war exploded" />
+    </root>
+  </artifact>
+</component>

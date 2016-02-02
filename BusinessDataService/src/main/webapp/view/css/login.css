@@ -1,0 +1,905 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: "microsoft yahei";
+}
+body{
+	background:url(../images/login-background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#loginbg {
+	margin:6% auto;
+	margin-bottom: 0px;
+	width: 500px;
+	height: 600px;
+	position: relative;
+	min-width: 350px;
+	overflow: hidden;
+	box-shadow: 0px 50px 150px black;
+}
+#background{
+	display: block;
+	width: 100%;
+}
+#logo{
+	display: block;
+	position: absolute;
+	top:7.86%;
+	left: 50%;
+	
+	margin-left: -42px;
+	width: 84px;
+	min-width: 90px;
+	
+	/*width: 16.42%;*/
+}
+#softname{
+	display: block;
+	position: absolute;
+	height:4.16%;
+	font-size: 28px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	top: 25%;
+	left: 50%;
+	width:320px;
+	margin-left: -160px;
+	color: white;
+}
+#lblusername{
+	display: block;
+	position: absolute;
+	top:44%;
+	left: 50%;
+	font-size: 17px;
+	margin-left: -185px;
+	margin-top: 0px;
+	font-family: "微软雅黑";
+	color: #ccc;
+	text-indent: 20px;
+}
+#username{
+	display: block;
+	position: absolute;
+	top:49%;
+	left: 50%;
+	width: 370px;
+	height: 30px;
+	margin-left: -185px;
+	border: none;
+	outline: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	letter-spacing: 0.1em;
+	background:url(../images/inputbkg.png);
+	/*filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+	opacity: .4;*/
+	/*background-color: rgba(255,255,255,.4);*/
+	color: white;
+	letter-spacing: 3px;
+	line-height: 30px;
+}
+#lblpassword{
+	display: block;
+	position: absolute;
+	top: 57%;
+	left: 50%;
+	margin-left: -185px;
+	margin-top: 0px;
+	font-size: 17px;
+	height: 30px;
+	font-family:"微软雅黑";
+	color: #ccc;
+	text-indent: 20px;
+}
+#password{
+	display: block;
+	position: absolute;
+	top:62%;
+	left: 50%;
+	margin-left: -185px;
+	width: 370px;
+	height: 30px;
+	border: none;
+	outline: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-repeat: no-repeat;
+	letter-spacing: 0.5em;
+	background:url(../images/inputbkg.png);
+	/*filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+	opacity: .4;*/
+	color: white;
+	line-height: 30px;
+}
+#checkbox{/*checkbox未选中状态*/
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	margin-top: 4px;
+	margin-left: -170px;
+	width: 12px;
+	height: 12px;
+	background: url(../images/checkbg.png);
+}
+#checkedbox{/*checkbox选中状态*/
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	margin-top: 4px;
+	margin-left: -170px;
+	width: 12px;
+	height: 12px;
+	background: url(../images/clickcheckbg.png);
+}
+#lblcheckbox{
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	margin-left: -140px;
+	color: white;
+	font:14px "微软雅黑";
+	letter-spacing: 5px;
+}
+#btnRegister{
+	position: absolute;
+	top: 77%;
+	left: 50%;
+	width: 165px;
+	height: 40px;
+	margin-left: -185px;
+	background:#5ca1e6;
+	color: white;
+	font-size: 20px;
+	font-family: "微软雅黑";
+	text-align: center;
+	cursor: pointer;
+	line-height: 40px;
+}
+#btnRegister:hover{
+	background:#1ca1e6;
+}
+#btnLogin{
+	position: absolute;
+	top: 77%;
+	left: 50%;
+	width: 165px;
+	height: 40px;
+	margin-left: 20px;
+	background:#f2ae25;
+	color: white;
+	font-size: 20px;
+	font-family: "微软雅黑";
+	text-align: center;
+	cursor: pointer;
+	line-height: 40px;
+}
+#btnLogin:hover{
+	background:#e69b03;
+}
+#myhr{
+	position: absolute;
+	top: 87%;
+	width: 370px;
+	left: 50%;
+	margin-left: -185px;
+	border-color: #ccc;
+}
+#forgetKey{
+	text-align: center;
+	position: absolute;
+	top: 92%;
+	left: 50%;
+	width: 100px;
+	margin-left: -50px;
+	font-family: "微软雅黑";
+	color: #ccc;
+	text-decoration: none;
+	outline: none;
+}
+.forgetkey{
+	background: none;
+	outline: none;
+	border: none;
+}
+.copyright{
+	text-align: center;
+	color: #bbb;
+}
+#footer{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	top: 60px;
+}
+.verification{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 650px;
+	height: 200px;
+	margin-left: -325px;
+	margin-top:-150px;
+	background:white;
+	transition: all 2s ease;
+	box-shadow: 1px 1px 10px rgba(0,0,0,1);
+	border-radius: 20px;
+}
+.verifiground{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 1080px;
+	width: 100%;
+	background: #111;
+	opacity: .4;
+}
+#email{
+	outline: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -225px;
+	margin-top: -50px;
+	width: 450px;
+	height: 40px;
+	font-size: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-family: "微软雅黑","宋体";
+	border:solid 2px #cecdce;
+	border-radius: 10px;
+	color:#999;
+}
+#email:focus{
+	border: solid 2px #65b0ea;
+	box-shadow: 0px 0px 10px rgba(101,176,234,1);
+}
+#closePane{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 30px;
+	height: 20px;
+	background: none;
+	outline: none;
+	border-style: none;
+	font-size: 20px;
+	color: grey;
+}
+#closePane:hover{
+	color: black;
+}
+#sendtxt{
+	position: absolute;
+	left: 50%;
+	margin-left: -100px;
+	top: 50%;
+	margin-top: 20px;
+	outline: none;
+	border-style: none;
+	background: #f2ad22;
+	width: 200px;
+	height: 30px;
+	border-radius: 10px;
+	font-size:20px;
+	color: white;
+	font-family: "微软雅黑";
+}
+.sendtxt{
+	box-shadow: 0px 0px 10px rgba(0,0,0,1);
+}
+.sendborder{
+	box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+}
+.popKey{
+	margin-top: 200px;
+}
+.submitwidth{
+	margin: 0 auto;
+	margin-top: 15%;
+	height: 300px;
+	width: 600px;
+}
+.getbackkey{
+	font-family: "微软雅黑";
+}
+#exampleInputEmail1{
+	color: grey;
+}
+#tips{
+	position: absolute;
+	top: 15px;
+	left: 200px;
+}
+#errorTips{
+	color: red;
+}
+#rightTips{
+	color: green;
+}
+#imghelp{
+	position: absolute;
+	left: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+.contactus{
+	position: absolute;
+	left: 50px;
+}
+/*注册页面*/
+#registerbg{
+	margin:6% auto;
+	margin-bottom: 0px;
+	width: 500px;
+	height: 600px;
+	position: relative;
+	min-width: 350px;
+	overflow: hidden;
+	box-shadow: 0px 50px 150px black;
+}
+#goback{
+	position: absolute;
+	left: 30px;
+	top: 30px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+#whitelogo{
+	position: absolute;
+	width: 32px;
+	height: 30px;
+	left: 50%;
+	margin-left: -16px;
+	top: 30px;
+}
+.rg-name{
+	display: block;
+	position: absolute;
+	left: 50%;
+	font-size: 17px;
+	margin-left: -185px;
+	margin-top: 0px;
+	font-family: "微软雅黑";
+	color: #ccc;
+	text-indent: 20px;
+}
+.rg-input{
+	display: block;
+	position: absolute;
+	left: 50%;
+	width: 370px;
+	height: 30px;
+	margin-left: -185px;
+	border: none;
+	outline: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	letter-spacing: 0.1em;
+	background:url(../images/inputbkg.png);
+	/*filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+	opacity: .4;*/
+	/*background-color: rgba(255,255,255,.4);*/
+	color: white;
+	letter-spacing: 3px;
+	line-height: 30px;
+}
+#rg-lblusername{
+	top: 70px;
+}
+#rg-username{
+	top: 100px;
+}
+#rg-lblkey{
+	top:140px;
+}
+#rg-inputkey{
+	top: 170px;
+}
+#rg-lblcheckkey{
+	top: 210px;
+}
+#rg-inputcheckkey{
+	top:240px;
+}
+#rg-lblemail{
+	top:280px;
+}
+#rg-inputemail{
+	top:310px;
+}
+#rg-lblunit{
+	top:420px;
+}
+#rg-inputunit{
+	top:450px;
+}
+#rg-lblphone{
+	top: 350px;
+}
+#rg-inputphone{
+	top: 380px;
+}
+#rg-myhr{
+	position: absolute;
+	top: 490px;
+	width: 370px;
+	left: 50%;
+	margin-left: -185px;
+	border-color: #ccc;
+}
+#rg-nextstep{
+	position: absolute;
+	top: 530px;
+	width: 370px;
+	height: 35px;
+	left: 50%;
+	margin-left: -185px;
+	color: white;
+	background:#efa818;
+	font-size: 25px;
+	line-height: 35px;
+	text-align: center;
+	font-family: "微软雅黑";
+	cursor: pointer;
+}
+#rg-nextstep:hover{
+	background:#e29803;
+}
+/*付款页面*/
+#paybg{
+	margin:6% auto;
+	margin-bottom: 0px;
+	width: 500px;
+	height: 600px;
+	position: relative;
+	min-width: 350px;
+	overflow: hidden;
+	box-shadow: 0px 50px 150px black;
+}
+#closeCurrent{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: 30px;
+	top: 30px;
+	cursor: pointer;
+}
+#goback01{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 30px;
+	top: 30px;
+	cursor: pointer;
+}
+#whitelogo02{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 50%;
+	margin-left: -15px;
+	top: 30px;
+}
+#whitelogo03{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 50%;
+	margin-left: -15px;
+	top: 30px;
+}
+#softname02,#softname03{
+	position: absolute;
+	top: 60px;
+	text-align: center;
+	color: white;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	left: 50%;
+	margin-left: -5.5em;
+	-webkit-user-select: none;
+}
+#lblselect01{
+	top:120px;
+}
+#select01{
+	position: absolute;
+	width: 370px;
+	height: 30px;
+	top: 150px;
+	left: 50%;
+	margin-left: -185px;
+	color: white;
+	font-family: "微软雅黑";
+}
+#select01 option{
+	color:black;
+	font-family: "微软雅黑";
+}
+#curlypoint{
+	position: absolute;
+	width: 13px;
+	height: 16px;
+	top: 180px;
+	left: 65px;
+}
+#select02{
+	position: absolute;
+	width: 360px;
+	height: 30px;
+	top: 170px;
+	left: 85px;
+	color: white;
+}
+#select03{
+	position: absolute;
+	width: 180px;
+	height: 30px;
+	top: 200px;
+	left: 50%;
+	margin-left: 25px;
+	color: white;
+}
+#servicetime01{
+	position: absolute;
+	top: 250px;
+}
+#timechoose01{
+	position: absolute;
+	width: 160px;
+	height: 30px;
+	top: 280px;
+	left: 50%;
+	margin-left: -180px;
+	background:url(../images/inputbkg.png);
+	border:none;
+	color: white;
+	font-size: 20px;
+	line-height: 30px;
+	text-align: center;
+}
+#timechoose02{
+	position: absolute;
+	width: 160px;
+	height: 30px;
+	top: 280px;
+	left: 50%;
+	margin-left: 20px;
+	background:url(../images/inputbkg.png);
+	border:none;
+	color: white;
+	font-size: 20px;
+	line-height: 30px;
+	text-align: center;
+}
+.damnred{
+	background: red;
+}
+#to{
+	position: absolute;
+	top: 280px;
+	left: 50%;
+	margin-left: -0.5em;
+	font-size:20px;
+	color: white;
+	font-family: "微软雅黑";
+}
+#bookmonth,#bookseason,#bookyear{
+	position: absolute;
+	width: 90px;
+	height: 30px;
+	top: 340px;
+	left: 50%;
+	background:url(../images/inputbkg.png);
+	font-size: 20px;
+	line-height: 30px;
+	text-align: center;
+	color: white;
+	font-family: "微软雅黑";
+	cursor:pointer;
+}
+#bookmonth{
+	margin-left: -165px;
+}
+#bookseason{
+	margin-left: -45px;
+}
+#bookyear{
+	margin-left:75px;
+}
+.bookcolor{
+	background:#efa818;
+}
+#servicemoney{
+	position: absolute;
+	left: 50%;
+	top: 380px;
+	font-size: 17px;
+	margin-left: -34px;
+	margin-top: 0px;
+	font-family: "微软雅黑";
+	color: #ccc;
+}
+#moneyToPay{
+	position: absolute;
+	width: 100%;
+	top: 400px;
+	font-family: "微软雅黑";
+	font-size: 30px;
+	line-height: 30px;
+	color:#f2ae25;
+	text-align: center;	
+}
+#payhr{
+	position: absolute;
+	top: 490px;
+	left: 50%;
+	width: 370px;
+	margin-left: -185px;
+	color: white;
+}
+#payButton{
+	position: absolute;
+	top: 530px;
+	width: 370px;
+	height: 35px;
+	left: 50%;
+	margin-left: -185px;
+	color: white;
+	background:#efa818;
+	font-size: 25px;
+	line-height: 35px;
+	text-align: center;
+	font-family: "微软雅黑";
+	cursor: pointer;
+}
+.yellowstar{
+	color: #f2ae25;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	left: 50%;
+	margin-left: -200px;
+}
+.yellowstar1{
+	position: absolute;
+	color: #f2ae25;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	left: 50%;
+	margin-left: 190px;
+}
+#litterstar01{
+	position: absolute;
+	top: 105px;
+}
+#litterstar02{
+	position: absolute;
+	top: 175px;
+}
+#litterstar03{
+	position: absolute;
+	top: 245px;
+}
+#litterstar04{
+	position: absolute;
+	top: 315px;
+}
+#litterstar05{
+	top: 160px;
+}
+#litterstar06{
+	top: 180px;
+}
+#showpaymessage{
+	margin:10% auto;
+	margin-bottom: 0px;
+	width: 500px;
+	height: 600px;
+	position: relative;
+	min-width: 350px;
+	overflow: hidden;
+	box-shadow: 0px 50px 150px black;
+}
+#verifycode{
+	position: absolute;
+	top: 450px;
+	left: 50%;
+	margin-left: -165px;
+	font-family: "微软雅黑";
+	font-size: 17px;
+	color: #ccc;
+	cursor: pointer;
+	text-align: center;
+	line-height: 30px;
+}
+#inputverifycode{
+	position: absolute;
+	top: 462px;
+	left: 50%;
+	margin-left: -100px;
+	width: 90px;
+	height: 30px;
+	background:url(../images/inputbkg.png);
+	border: none;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	color: white;
+	text-align: center;
+}
+#verifyimg{
+	position: absolute;
+	top: 462px;
+	width: 90px;
+	height:30px;
+	left: 50%;
+	margin-left: 0px;
+	border: none;
+	outline: none;
+}
+#getVerifyAgain{
+	position: absolute;
+	top: 462px;
+	left: 50%;
+	margin-left: 0px;
+	width: 85px;
+	height: 30px;
+	margin-left: 100px;
+	line-height: 30px;
+	cursor: pointer;
+	background: #f2ae25;
+	color: white;
+	text-align: center;
+	font-family: "微软雅黑";
+	
+}
+.cxcalendar_hd{
+	height: 30px;
+}
+#successbg{
+	margin:6% auto;
+	margin-bottom: 0px;
+	width: 500px;
+	height: 600px;
+	position: relative;
+	min-width: 350px;
+	overflow: hidden;
+	box-shadow: 0px 50px 150px black;
+}
+#congratulation{
+	position: absolute;
+	top: 35%;
+	text-align: center;
+	color:#C0C0C0;
+	font-size: 30px;
+	left: 50%;
+	font-weight: bolder;
+	letter-spacing: 10px;
+	margin-left: -55px;	
+}
+#registerSuccess{
+	position: absolute;
+	top: 42%;
+	text-align: center;
+	color:#efa818;
+	font-size: 20px;
+	font-weight: bolder;
+	left: 50%;
+	margin-left: -2em;
+}
+#successMsg{
+	position: absolute;
+	top: 60%;
+	text-align: center;
+	color: white;
+	font-size: 18px;
+	font-weight: normal;
+	width: 300px;
+	left: 50%;
+	margin-left: -150px;
+		
+}
+#successhr{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 370px;
+	margin-left: -185px;
+	color: white;
+}
+#backtoLogin{
+	position: absolute;
+	top: 57%;
+	left: 50%;
+	width: 170px;
+	height: 36px;
+	margin-left: -180px;
+	background: #007CD9;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	line-height: 36px;
+	cursor: pointer;
+}
+#backtoLogin:hover{
+	background: #047fDf;
+}
+#gotoPay{
+	position: absolute;
+	top: 57%;
+	left: 50%;
+	width: 170px;
+	height: 36px;
+	margin-left: 10px;
+	background: #f2ae25;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	line-height: 36px;
+	cursor: pointer;
+}
+#gotoPay:hover{
+	background: #ffb735;
+}
+#loginTips{
+	position: absolute;
+	color:#f9d905;
+	font-size: 20px;
+	top:220px;
+	width: 200px;
+	height: 35px;
+	text-align: center;
+	margin-left: 150px;
+}
+/*状态条位置*/
+#loginTips img{
+	width: 50px;
+	height: 50px;
+}
+.tipClass{
+	position: absolute;
+	color: #f9d905;
+	font-size: 15px;
+	height: 35px;
+	left: 170px;
+}
+#usernameTips{
+	top: 61px;
+	width: 150px;
+}
+#usernameTips img{
+	width: 100px;
+	height: 10px;
+	margin-top: -5px;
+	margin-left: 30px;
+}
+#inputkeyTips{
+	top: 131px;
+	width: 150px;
+}
+#inputCheckKeyTips{
+	top: 201px;
+	width: 150px;
+}
+#inputEmailTips{
+	top: 271px;
+	width: 280px;
+	font-size: 13px;
+}
+#testPhoneTips{/*电话号码验证提示*/
+	top: 341px;
+	width: 150px;
+}
+#pleaseChooseRight{
+	position: absolute;
+	color: #f9d905;
+	font-size: 15px;
+	height: 35px;
+	left: 170px;
+	top: 90px;
+	width: 150px;
+	text-align: center;
+}

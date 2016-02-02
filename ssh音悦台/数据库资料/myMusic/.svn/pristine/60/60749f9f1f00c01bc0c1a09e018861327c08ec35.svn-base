@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+ <%@include file="common.jsp"%>
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="${ctx}/sys/Css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="${ctx}/sys/Css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="${ctx}/sys/Css/style.css">
+    <script type="text/javascript" src="${ctx}/sys/Js/jquery.js"></script>
+    <script type="text/javascript" src="${ctx}/sys/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="${ctx}/sys/Js/ckform.js"></script>
+    <script type="text/javascript" src="${ctx}/sys/Js/common.js"></script>
+     <script type="text/javascript" src="${ctx}/sys/Js/newphoto.js"></script>
+
+    <style type="text/css">
+        body {
+            padding-bottom: 40px;
+        }
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+    </style>
+    
+   
+    
+</head>
+<body>
+<form class="form-inline definewidth m20" id="photoform"  method="post">
+    图片名称：
+    <input type="text" name="title" id="phototitle" class="abc input-default" placeholder="" value="">&nbsp;&nbsp;  
+   <input id="cx" type="button" class="btn btn-primary" value="查询">&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增MV</button>&nbsp;&nbsp;
+   <input id="del" type="button" class="btn btn-primary" value="删除">
+</form>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+    <tr>
+    	
+        <th>选择</th>
+        <th>名称</th>
+        <th>图片url</th>
+		<th>类型</th>
+        <th>地区</th>
+        <th>点击</th>
+        <th>视频url</th>
+        <th>歌手</th>
+        <th>描述</th>
+        <th>上传时间</th>
+        <th>价格</th>
+    </tr>
+    </thead>
+    
+	     <tbody>
+	     
+        </tbody>
+</table>
+<div class="inline pull-right page">
+         &nbsp;&nbsp;<span id="pageing" style="display: none;">1</span>
+         
+          &nbsp;&nbsp;<a id="nextpage">更多</a>     
+         </div>
+</body></html>

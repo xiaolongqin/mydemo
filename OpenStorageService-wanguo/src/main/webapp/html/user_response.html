@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta content="text/html" charset="utf-8">
+    <title>用户反馈</title>
+    <link rel="stylesheet" href="/oss/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/oss/css/ossCommon.css">
+    <link rel="stylesheet" href="/oss/css/user_response.css">
+</head>
+<body>
+<!--导航-->
+<div class="mynav">
+    <div>
+        <img class="logo_pic" style="cursor:pointer;padding:5px 10px;" src="/oss/img/szy_logo_hei.png" alt="" onclick="oss_back_all();"/>
+    </div>
+    <ul class="rds_list">
+        <li>
+            <span style="font-size:14px;">所有产品</span>
+        </li>
+    </ul>
+    <div class="rds_do">
+        <div class="rds_introduce">
+            <h4>管理控制台</h4>
+            <p class="p_header" style="margin-top:-10px;">存储</p>
+        </div>
+        <div class="data_list">
+            <p onclick="">关系型数据库服务(RDS)</p>
+            <p>开放存储服务(OSS)</p>
+        </div>
+        <div class="rds_introduce">
+            <p class="p_header">传输</p>
+        </div>
+        <div class="data_list">
+            <p>数据传输服务(DTS)</p>
+        </div>
+        <div class="rds_introduce">
+            <p class="p_header">计算</p>
+        </div>
+        <div class="data_list">
+            <p>开放计算服务(OCS)</p>
+        </div>
+        <div class="rds_introduce">
+            <p class="p_header">应用</p>
+        </div>
+        <div class="data_list">
+            <p>开放应用服务(OAS)</p>
+        </div>
+    </div>
+    <ul class="do_list">
+        <li>
+            <!--存用户名-->
+            <span id="username"></span><span id="userId" style="display:none;"></span>
+            <ul class="user_do">
+                <li onclick="">订单管理</li>
+                <li onclick="">个人资料</li>
+                <li onclick="go_login();">登出</li>
+            </ul>
+        </li>
+        <li onmousemove="see_mynews(this)" btn=0>
+            <!--存消息-->
+            <span>消息中心&nbsp;</span>
+            <ul class="info_do">
+                <li onclick="go_all_msg()">
+                    <span style="float:right;padding-right:20px;color:#0099ff;">查看更多&gt;&gt;</span>
+                </li>
+            </ul>
+        </li>
+        <li onclick="go_userRes();">用户反馈</li>
+        <li>文档下载</li>
+        <li onclick="go_cont();">联系客服</li>
+    </ul>
+</div>
+<!--内容区域-->
+<div class="user_response">
+    <div class="res_header_left">用户反馈</div>
+    <div class="res_header_right" onclick="back_all();">返回</div>
+    <div style="clear:both;border-top:1px solid #bababa;margin-top:125px;padding-left:20px;">
+        <table>
+            <tr>
+                <td>选择服务:</td>
+                <td>
+                    <select id="response_name" class="form-control input-sm">
+                        <!--<option value="0">请选择</option>-->
+                        <option value="关系型数据库服务RDS">关系型数据库服务RDS</option>
+                        <option value="开放式存储OSS">开放式存储OSS</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>反馈内容:</td>
+                <td>
+                    <textarea id="response_content" cols="70" rows="15" class="form-control" style="resize:none;"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="padding-top:10px;">
+                    感谢您对我们的产品提出批评和改进意见，我们会认真处理您的意见！<br/>
+                    您也可以拨打电话XXXX跟我们说出您对我们产品的想法。
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div id="myresponse" onclick="myRes();">提交</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!--页脚-->
+<div class="myfooter">
+    <p class="footWords">Copyright &copy; 2012-2015成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+    <p><span style="padding-right:40px;">联系电话:028-82140078</span><span>邮箱:shuzhilian@unionbigdata.com</span></p>
+</div>
+<!--用户名隐藏域-->
+<input id="uEmail" type="hidden"/>
+</body>
+<script type="text/javascript" src="/oss/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="/oss/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/oss/js/ossCommon.js"></script>
+<script type="text/javascript">
+//    var resHttp='http://192.168.2.32:8080';
+    var resHttp='';
+    $(function(){
+        $.ajax({
+            url:resHttp+'/oss/account/getUser',
+            type:'post',
+            data:{},
+            dataType:'json',
+            success:function(data){
+                if(data.state==true){
+                    $('#username').text(data.data.name);//存用户名
+                    $('#uEmail').val(data.data.email);
+//                    $('#userId').text(data.data[0].userid);//存用户id
+                }else{
+                    alert(data.msg);
+                }
+            }
+        });
+    });
+    function myRes(){
+        var str=/^\S+$/;
+        var username=$('#uEmail').val();
+        var myres=$('#response_content').val();
+        var resName=$('#response_name').val();
+        if(str.test(myres)){
+            $.ajax({
+                url:resHttp+'/oss/back/addBack',
+                type:'post',
+                data:{'email':username,'serv_name':resName,'content':myres},
+                dataType:'json',
+                success:function(data){
+                    if(data.state==true){
+                        alert('操作成功');
+                        window.location.reload();
+                    }else{
+                        alert(data.msg);
+                    }
+                }
+            });
+        }else{
+            alert('请输入反馈内容');
+        }
+    }
+    <!--返回-->
+    function back_all(){
+        window.location.href="http://product.unionbigdata.com/szy/view/index";
+    }
+//返回rds与oss选择
+function oss_back_all(){
+    window.location.href="http://product.unionbigdata.com/szy/view/";
+}
+</script>
+</html>

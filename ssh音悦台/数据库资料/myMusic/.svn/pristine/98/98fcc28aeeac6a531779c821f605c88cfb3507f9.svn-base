@@ -1,0 +1,15 @@
+package xltest;
+
+import org.junit.Test;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import dao.UserDao;
+
+public class test01 {
+	@Test
+    public void t1(){
+    	ClassPathXmlApplicationContext ac=new ClassPathXmlApplicationContext("beans.xml");
+    	UserDao us=(UserDao)ac.getBean("userDao");
+    
+    }
+}

@@ -1,0 +1,36 @@
+package service;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import dao.imp.AdministratorDaoImp;
+import dao.imp.SingerDaoImp;
+import entity.Singer;
+import service.imp.SingerServiceImp;
+import utils.Common;
+import utils.Support;
+@Service
+@Transactional
+public class SingerService implements SingerServiceImp {
+	@Resource
+    private SingerDaoImp singerDaoImp;
+	//新增 歌手
+		public void addSinger(Singer singer) {
+			singerDaoImp.saveSinger(singer);
+		}
+		//分页查询歌手
+		public Support querySingerByPage(int nowpage) {
+			long totalRecord = singerDaoImp.count();
+			List<Singer> singers =  singerDaoImp.querySingerByPage((nowpage-1)*Common.PageSize, Common.PageSize);
+			Support spt = new Support(); 
+			spt.setTotalRecord(totalRecord);
+			spt.setDada(singers);
+			return spt;
+		}
+		
+}

@@ -1,0 +1,139 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+   <%@include file="common.jsp"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="${ctx}/sys/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="${ctx}/sys/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="${ctx}/sys/Css/style.css" />
+    <script type="text/javascript" src="${ctx}/sys/Js/jquery.js"></script>
+    <script type="text/javascript" src="${ctx}/sys/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="${ctx}/sys/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="${ctx}/sys/Js/ckform.js"></script>
+    <script type="text/javascript" src="${ctx}/sys/Js/common.js"></script>
+    <style type="text/css">
+        body {
+            padding-bottom: 40px;
+        }
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+
+    </style>
+    
+    <script type="text/javascript">
+    $(function () {       
+		$('#backid').click(function(){
+				window.location.href="index.jsp";
+		 });
+		
+// 		$("#picid").keyup(function(){
+// 			photoid = $("#picid").val();
+			
+// 			$.get("sysphoto.do",{v:"querryPhotoByID","id":photoid},function(data){
+				  
+// 				$("#phototest").css("color","red");
+// 				if(data.length==0&&photoid.length>0){
+// 					$("#phototest").css("color","green");
+// 					$("#phototest").html(photoid+"该图片ID可以使用!");
+// 				}else if(photoid.length==0){
+// 					$("#phototest").html("该图片ID不能为空!");
+// 				}else{
+// 					$("#phototest").html(photoid+"该图片ID存在不可以使用!");
+// 				}
+				
+// 			},"json");
+	    	
+// 		});
+
+    });
+    
+</script>
+    
+</head>
+<form action="${ctx}/mv/mv_saveMv" method="post" enctype="multipart/form-data">
+<table class="table table-bordered table-hover definewidth m10">
+    
+    <tr>
+        <td class="tableleft">名称${ctx}</td>
+        <td><input type="text" name="name"/></td>
+    </tr>   
+     <tr>
+        <td width="10%" class="tableleft">图片url</td>
+        <td><input type="file" name="pic_url"/></td>
+    </tr>  
+	    <tr>
+        <td class="tableleft">类型</td>
+        <td>
+            <input type="radio" name="type" value="古典" checked/> 古典
+            <input type="radio" name="type" value="儿歌"/> 儿歌
+			<input type="radio" name="type" value="流行"/> 流行
+			<input type="radio" name="type" value="民谣"/>民谣
+			<input type="radio" name="type" value="网络"/>网络
+			<input type="radio" name="type" value="摇滚"/> 摇滚
+			<input type="radio" name="type" value="其它"/> 其它
+        </td>
+    </tr>
+	    <tr>
+        <td class="tableleft">地区</td>
+        <td>
+            <input type="radio" name="area" value="内地" checked/> 内地
+            <input type="radio" name="area" value="港台"/> 港台
+			<input type="radio" name="area" value="欧美"/> 欧美
+			<input type="radio" name="area" value="日韩"/>日韩
+			<input type="radio" name="area" value="其它"/> 其它
+        </td>
+    </tr>
+    
+       <tr>
+        <td class="tableleft">点击</td>
+        <td><input type="text" name="click"/></td>
+    </tr>
+    
+     <tr>
+        <td width="10%" class="tableleft">视屏url</td>
+        <td><input type="file" name="video_ur"/></td>
+    </tr>
+    
+    
+	<tr>
+        <td class="tableleft">歌手</td>
+        <td><input type="text" value="2015-7-1"   name="singer"/></td>
+    </tr>
+	<tr>
+        <td class="tableleft">描述</td>
+        <td><input type="text" value="2015-7-1"   name="describe"/></td>
+    </tr>
+    
+	<tr>
+        <td class="tableleft">上传时间</td>
+        <td><input type="text" value="2015-7-1"   name="upload_date"/></td>
+    </tr>
+	
+	<tr>
+        <td class="tableleft">价格</td>
+        <td><input type="text" name="price"/></td>
+    </tr>
+	
+    <tr>
+        <td class="tableleft"></td>
+        <td>
+            <button type="submit" class="btn btn-primary" type="button">保存</button>&nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+        </td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

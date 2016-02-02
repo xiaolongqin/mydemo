@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/passages
+END
+index.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/passages/index.jsp
+END
+editPassage.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/passages/editPassage.jsp
+END
+addpassage.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/passages/addpassage.jsp
+END

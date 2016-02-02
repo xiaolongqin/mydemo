@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/usual.css"/>
+    <link rel="stylesheet" href="../css/dialog.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .find{
+            margin-top:50px;
+            margin-bottom: 40px;
+        }
+        .table-responsive{
+            height:260px;overflow: auto;
+        }
+        body{
+            min-height: 650px;
+        }
+    </style>
+</head>
+<body>
+<!--content-->
+<div class="main-box">
+    <div class="row find">
+        <div class="find-bar edit-page-find pull-left" style="padding:0 15px;">
+            <div class="input-group">
+                <input id="characterName" type="text" class="pull-left form-control" style="display: inline" placeholder="请输入: 需要查询的用户名…"/>
+                <div class="input-group-addon find-btn" onclick="searchAccount();">
+                    <img src="../images/find.png" alt="find"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="pull-right" style="width: 230px;padding: 0 15px;">
+            <a href="add_user.html">
+                <div class="add-btn text-center" style="width: 200px;">
+                    <img src="../images/add.png" alt="add"/>
+                    <span>添加用户</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="common-table table none" id="characterTable">
+            <thead>
+            <tr>
+                <th class="col-md-3">用户名</th>
+                <th class="col-md-6">角色名</th>
+                <th class="col-md-3">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="page">
+        <nav class="text-center">
+            <ul class="page-change">
+                <li><a>上一页</a></li>
+                <li>&nbsp; 当前页码：<span>1</span>&nbsp; </li>
+                <li><a>下一页</a></li>
+                <li id="totalPage" style="margin-left: 20px;"></li>
+                <li style="margin-left: 20px;"><a>跳转</a>到第 <input type="text" class="form-control"/> 页</li>
+            </ul>
+        </nav>
+    </div>
+
+</div>
+<!--dialog-->
+<div class="modal" id="myModal-del" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-del" data-backdrop="static">
+    <div class="modal-dialog dialog-content" role="document">
+        <div class="modal-content dialog-content">
+            <div class="modal-header dialog-head text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeShade();"><span aria-hidden="true">&times;</span></button>
+                <p class="modal-title dialog-title" id="myModalLabel-del">角色赋权管理</p>
+            </div>
+            <div class="modal-body">
+                <div class="dialog-del-confirm">
+                    确认删除吗？
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div style="margin-left: 200px;">
+                    <div class="btn-small dialog-yes"><a href="javascript:;">确认</a></div>
+                    <div class="btn-small" onclick="modalNo();"><a href="javascript:;">取消</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/user_manage.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/href.js"></script>
+</html>

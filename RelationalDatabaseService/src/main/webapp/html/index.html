@@ -1,0 +1,795 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta content="text/html" charset="UTF-8">
+    <title>数之联存储服务系统展示</title>
+    <link rel="stylesheet" href="/rds/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/rds/css/index.css">
+</head>
+<body>
+<div style="width:100%;height:auto;float:left;position:relative;">
+    <div id="nav">
+        <img src="/rds/img/cplb.png" alt=""/>
+        <div>
+            <ul class="list-unstyled">
+                <li>个人信息</li>
+                <li onclick="userExit()">登出</li>
+            </ul>
+        </div>
+        <div style="margin-right:20px;">
+            <span id="myName"></span>
+            <span class="glyphicon glyphicon-chevron-left"></span>
+         </div>
+    </div>
+    <div id="container" class="clearfix">
+        <div class="left-box">
+            <div>
+                <ul>
+                    <li>
+                        <span>| 项目空间 </span>
+                    </li>
+                    <li class="hidetips">
+                        <span>| 数据库用户管理 </span>
+                    </li>
+                    <li class="hidetips">
+                        <span>| 数据库管理 </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH-->
+        <div class="right-box">
+
+        </div>
+    </div>
+    <!--隐藏input用来存放要操作的空间的编号和名字-->
+    <input id="spaceId" type="hidden"/>
+    <input id="spaceName" type="hidden"/>
+    <!--隐藏input用来存放要操作的用户的编号,名字,密码和描述-->
+    <input id="userId" type="hidden"/>
+    <input id="userName" type="hidden"/>
+    <input id="userPwd" type="hidden"/>
+    <input id="userDesc" type="hidden"/>
+    <!--隐藏input用来存放要操作的数据库的名字,编号和数据类型-->
+    <input id="dbName" type="hidden"/>
+    <input id="dbId" type="hidden"/>
+    <input id="dbCharset" type="hidden"/>
+    <!--隐藏input用来存放用户详情里面要绑定的数据库的名字,编号和数据类型-->
+    <input id="bindDBName" type="hidden"/>
+    <input id="bindDBid" type="hidden"/>
+    <input id="bindDBcharset" type="hidden"/>
+    <!-----------------------------------------验证码时间戳--------------------------------------->
+    <!--创建空间验证码-->
+    <input id="ca_cre_space" type="hidden"/>
+    <!--删除空间验证码-->
+    <input id="ca_del_space" type="hidden"/>
+    <!--修改空间验证码-->
+    <input id="ca_upd_space" type="hidden"/>
+    <!--创建用户验证码-->
+    <input id="ca_cre_user" type="hidden"/>
+    <!--重置密码验证码-->
+    <input id="ca_rep_user" type="hidden"/>
+    <!--删除用户验证码-->
+    <input id="ca_del_user" type="hidden"/>
+    <!--删除数据库验证码-->
+    <input id="ca_del_db" type="hidden"/>
+    <!--解绑验证码-->
+    <input id="ca_del_con" type="hidden"/>
+    <!--尾部-->
+    <div id="footer">
+        <p style="margin-top:20px;">Copyright © 2014 数之联科技有限公司 www.bigdatasolutions.cn ，All rights reserved.</p>
+        <p>联系电话：028-87951915 邮箱：service@unionbigdata.com</p>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="/rds/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="/rds/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/rds/js/handlebars-v2.0.0.js"></script>
+<script type="text/javascript" src="/rds/js/index.js"></script>
+<!--------------------------------------------------------空间界面---------------------------------------------------->
+<script type="text/x-handlebars-template" id="spaceHtml">
+    <div>
+        <div id="addSpace" data-toggle="modal" data-target="#newSpace">
+            <span class="glyphicon glyphicon-plus"></span>
+            创建项目空间
+        </div>
+        <div class="table-response">
+            <table class="table table-hover">
+                <thead>
+                <th style="padding-left:100px;">序号</th>
+                <th>项目名称</th>
+                <th>操作</th>
+                </thead>
+                <tbody>
+                {{#each list}}
+                <tr>
+                    <td  style="padding-left:100px;">{{addOne @index}}</td>
+                    <td>
+                        <span class="mySpace" onclick="goDBuser(this)">{{name}}</span>
+                    </td>
+                    <td>
+                        <span style="display:none;">{{id}}</span>
+                        <span class="doList" onclick="delSpace(this)" data-toggle="modal" data-target="#delSpace">删除</span>
+                        <span> | </span>
+                        <span class="doList" onclick="updSpace(this)" data-toggle="modal" data-target="#updSpace">修改</span>
+                    </td>
+                </tr>
+                {{/each}}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5" style="line-height:40px;text-align:center;">共
+                        <span id="sDataNumb">{{totalRow}}</span>
+                        条数据
+                        <span class="myPages" onclick="spaceFirst()">首页</span>
+                        <span class="myPages" onclick="spacePrev()">上一页</span>
+                        第<span id="sPageNumber">
+                            {{#compare totalRow 1 pageNumber}}
+                            {{pageNumber}}
+                            {{/compare}}
+                        </span>页/总<span id="sTotalPage">{{totalPage}}</span>页
+                        <span class="myPages" onclick="spaceNext()">下一页</span>
+                        <span class="myPages" onclick="spaceLast()">尾页</span>
+                        <span class="NewPage" id="sNewPage" onclick="spaceGo()">跳转</span>
+                        到第<input class="form-control" id="sPageNum" type="text"/>页
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <!--新建项目弹出框-->
+    <div class="modal fade" id="newSpace" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title">新建空间</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="newSpaceName" class="col-sm-3 control-label">新空间名称:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="newSpaceName" maxlength="8" placeholder="最多8个字"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="spaceWord" class="col-sm-3 control-label">请输入验证码:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="spaceWord"/>
+                            </div>
+                            <div class="col-sm-5 formVerify">
+                                <img onclick="yanzheng('ca_cre_space',this.id)" class="verifyPic" id="spacePic" src="" alt=""/>
+                                <span>点图片换一张</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="creSpace()" type="button" class="btn btn-primary">确定</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--删除弹出框-->
+    <div class="modal fade" id="delSpace" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title">删除空间</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="delSpaceWord" class="col-sm-3 control-label">请输入验证码:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="delSpaceWord"/>
+                            </div>
+                            <div class="col-sm-5 formVerify">
+                                <img onclick="yanzheng('ca_del_space',this.id)" class="verifyPic" id="delSpacePic" src="" alt=""/>
+                                <span>点图片换一张</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="delSpaceGo()" type="button" class="btn btn-primary">确定</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--修改项目弹出框-->
+    <div class="modal fade" id="updSpace" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title">修改</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="updSpaceName" class="col-sm-3 control-label">新空间名称:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="updSpaceName" maxlength="8" placeholder="最多8个字"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="updSpaceWord" class="col-sm-3 control-label">请输入验证码:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="updSpaceWord"/>
+                            </div>
+                            <div class="col-sm-5 formVerify">
+                                <img onclick="yanzheng('ca_upd_space',this.id)" class="verifyPic" id="updSpacePic" src="" alt=""/>
+                                <span>点图片换一张</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="updSpaceGo()" type="button" class="btn btn-primary">修改</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<!------------------------------------------------------数据库用户界面------------------------------------------------>
+<script type="text/x-handlebars-template" id="dbuserHtml">
+    <div>
+        <div id="addUser" data-toggle="modal" data-target="#newUser">
+            <span class="glyphicon glyphicon-plus"></span>
+            创建用户
+        </div>
+        <div class="table-response">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th style="padding-left:100px;">数据库用户名</th>
+                    <th>描述</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each list}}
+                <tr>
+                    <td style="padding-left:100px;">{{name}}</td>
+                    <td>{{desc}}</td>
+                    <td data-index='{{role}}'>
+                        <span style="display:none;">{{pass}}</span>
+                        <span style="display:none;">{{id}}</span>
+                        {{#if role}}
+                        <span class="doList" onclick="rePwd(this)" data-toggle="modal" data-target="#rePass">重置密码</span>
+                        <span> | </span>
+                        <span class="doList" onclick="userDetailsGo(this)">详情</span>
+                        <span> | </span>
+                        <span class="doList" onclick="delUser(this)" data-toggle="modal" data-target="#delUser">删除</span>
+                        {{else}}
+                        <span class="doList" onclick="rePwd(this)" data-toggle="modal" data-target="#rePass">重置密码</span>
+                        <span> | </span>
+                        <span class="doList" onclick="seePass(this)">显示密码</span>
+                        <span id="rootPass" style="display:none;"></span>
+                        <span class="doList" onclick="closePass(this)" style="display:none;"> 关闭</span>
+                        {{/if}}
+                    </td>
+                </tr>
+                {{/each}}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5" style="line-height:40px;text-align:center;">共
+                        <span id="uDataNumb">{{totalRow}}</span>
+                        条数据
+                        <span class="myPages" onclick="userFirst()">首页</span>
+                        <span class="myPages" onclick="userPrev()">上一页</span>
+                        第<span id="uPageNumber">
+                            {{#compare totalRow 1 pageNumber}}
+                            {{pageNumber}}
+                            {{/compare}}
+                        </span>页/总<span id="uTotalPage">{{totalPage}}</span>页
+                        <span class="myPages" onclick="userNext()">下一页</span>
+                        <span class="myPages" onclick="userLast()">尾页</span>
+                        <span class="NewPage" id="uNewPage" onclick="userGo()">跳转</span>
+                        到第<input class="form-control" id="uPageNum" type="text"/>页
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <!--新建用户弹出框-->
+    <div class="modal fade" id="newUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title">创建用户</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="newUserName" class="col-sm-3 control-label">用户名:&nbsp;<span id="upreName"></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="newUserName" maxlength="8" placeholder="最多8个字"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="myPwd" class="col-sm-3 control-label">密码:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="myPwd"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="userDes" class="col-sm-3 control-label">描述:</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="userDes" cols="30" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="newUserWord" class="col-sm-3 control-label">请输入验证码:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="newUserWord"/>
+                            </div>
+                            <div class="col-sm-5 formVerify">
+                                <img onclick="yanzheng('ca_cre_user',this.id)" class="verifyPic" id="newUserPic" src="" alt=""/>
+                                <span>点图片换一张</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="creUser()" type="button" class="btn btn-primary">注册</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--重置密码弹出框-->
+    <div class="modal fade" id="rePass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title">重置密码</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="newUserPwd" class="col-sm-3 control-label">新密码:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="newUserPwd" maxlength="8"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="rePwdWord" class="col-sm-3 control-label">请输入验证码:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="rePwdWord"/>
+                            </div>
+                            <div class="col-sm-5 formVerify">
+                                <img onclick="yanzheng('ca_rep_user',this.id)" class="verifyPic" id="rePwdPic" src="" alt=""/>
+                                <span>点图片换一张</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="rePwdGo()" type="button" class="btn btn-primary">确定</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--删除用户弹出框-->
+    <div class="modal fade" id="delUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title">删除用户</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="delUserWord" class="col-sm-3 control-label">请输入验证码:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="delUserWord"/>
+                            </div>
+                            <div class="col-sm-5 formVerify">
+                                <img onclick="yanzheng('ca_del_user',this.id)" class="verifyPic" id="delUserPic" src="" alt=""/>
+                                <span>点图片换一张</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="delUserGo()" type="button" class="btn btn-primary">确定</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<!--------------------------------------------------------数据库管理界面---------------------------------------------->
+<script type="text/x-handlebars-template" id="dbmanHtml">
+    <div>
+        <div id="addDb" data-toggle="modal" data-target="#newDB">
+            <span class="glyphicon glyphicon-plus"></span>
+            新建数据库
+        </div>
+        <div class="table-response">
+            <table class="table table-hover">
+                <thead>
+                        <th style="padding-left:100px;">数据库名</th>
+                        <th>数据类型</th>
+                        <th>操作</th>
+                </thead>
+                <tbody>
+                {{#each list}}
+                    <tr>
+                        <td style="padding-left:100px;">{{db_name}}</td>
+                        <td>{{charset}}</td>
+                        <td>
+                            <span style="display:none;">{{id}}</span>
+                            <span class="doList" onclick="dbDetails(this)">详情</span>
+                            <span> | </span>
+                            <span class="doList" onclick="delDB(this)" data-toggle="modal" data-target="#delDb">删除</span>
+                        </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5" style="line-height:40px;text-align:center;">共
+                        <span id="dDataNumb">{{totalRow}}</span>
+                        条数据
+                        <span class="myPages" onclick="dbFirst()">首页</span>
+                        <span class="myPages" onclick="dbPrev()">上一页</span>
+                        第<span id="dPageNumber">
+                            {{#compare totalRow 1 pageNumber}}
+                            {{pageNumber}}
+                            {{/compare}}
+                        </span>页/总<span id="dTotalPage">{{totalPage}}</span>页
+                        <span class="myPages" onclick="dbNext()">下一页</span>
+                        <span class="myPages" onclick="dbLast()">尾页</span>
+                        <span class="NewPage" id="dNewPage" onclick="dbGo()">跳转</span>
+                        到第<input class="form-control" id="dPageNum" type="text"/>页
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <!--新建数据库弹出框-->
+    <div class="modal fade" id="newDB" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title">创建数据库</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="newDbName" class="col-sm-3 control-label">数据库名:<span id="dpreName"></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="newDbName" maxlength="8" placeholder="最多8个字"/><br/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="myCharset" class="col-sm-3 control-label">支持字符集合:</label>
+                            <div class="col-sm-8">
+                                <select id="myCharset" class="form-control">
+                                    <option value="big5">big5</option>
+                                    <option value="dec8">dec8</option>
+                                    <option value="cp850">cp850</option>
+                                    <option value="hp8">hp8</option>
+                                    <option value="koi8r">koi8r</option>
+                                    <option value="latin1">latin1</option>
+                                    <option value="latin2">latin2</option>
+                                    <option value="swe7">swe7</option>
+                                    <option value="ascii">ascii</option>
+                                    <option value="ujis">ujis </option>
+                                    <option value="sjis">sjis</option>
+                                    <option value="hebrew">hebrew</option>
+                                    <option value="tis620">tis620 </option>
+                                    <option value="euckr">euckr</option>
+                                    <option value="koi8u">koi8u</option>
+                                    <option value="gb2312">gb2312</option>
+                                    <option value="greek">greek</option>
+                                    <option value="cp1250">cp1250</option>
+                                    <option value="gbk">gbk</option>
+                                    <option value="latin5">latin5</option>
+                                    <option value="armscii8">armscii8</option>
+                                    <option value="utf8">utf8</option>
+                                    <option value="ucs2">ucs2</option>
+                                    <option value="cp866">cp866</option>
+                                    <option value="keybcs2">keybcs2</option>
+                                    <option value="macce">macce</option>
+                                    <option value="macroman">macroman</option>
+                                    <option value="cp852">cp852</option>
+                                    <option value="latin7">latin7</option>
+                                    <option value="utf8mb4">utf8mb4</option>
+                                    <option value="cp1251">cp1251</option>
+                                    <option value="utf16">utf16</option>
+                                    <option value="utf16le">utf16le</option>
+                                    <option value="cp1256">cp1256</option>
+                                    <option value="cp1257">cp1257</option>
+                                    <option value="utf32">utf32</option>
+                                    <option value="binary">binary</option>
+                                    <option value="geostd8">geostd8</option>
+                                    <option value="cp932">cp932</option>
+                                    <option value="eucjpms">eucjpms</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="creDb()" type="button" class="btn btn-primary">注册</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--删除数据库弹出框-->
+    <div class="modal fade" id="delDb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title">删除数据库</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="delDbWord" class="col-sm-3 control-label">请输入验证码:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="delDbWord"/>
+                            </div>
+                            <div class="col-sm-5 formVerify">
+                                <img onclick="yanzheng('ca_del_db',this.id)" class="verifyPic" id="delDbPic" src="" alt=""/>
+                                <span>点图片换一张</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="delDbGo()" type="button" class="btn btn-primary">确定</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<!---------------------------------------------------------用户详情界面----------------------------------------------->
+<script type="text/x-handlebars-template" id="userDetailsHtml">
+    <div>
+        <div>
+            <span style="font-size:20px;">| 详情 </span>
+            <a style="cursor:pointer;" onclick="backDBuser()">返回数据库用户管理</a>
+        </div>
+        <div id="userInfo">
+            <div class="userDo" style="margin-left:0;">
+                数据库用户名:
+                <span id="dataUser"></span>
+            </div>
+            <div class="userDo" data-toggle="modal" data-target="#reUserName">
+                <span class="glyphicon glyphicon-plus"></span>
+                <span class="yellow">更改描述</span>
+            </div>
+            <div class="userDo">
+                <span onclick="seePwd()" class="yellow">显示密码</span>
+            </div>
+            <div class="userDo">
+                <span id="dataPwd"></span>
+                <div onclick="closePwd()" id="closePwd">关闭</div>
+            </div>
+            <div id="addConDb" onclick="addConDb()" data-toggle="modal" data-target="#conDB">
+                <span class="glyphicon glyphicon-plus"></span>
+                新建绑定数据库
+            </div>
+        </div>
+        <div class="table-response">
+            <table class="table table-hover">
+                <thead>
+                <th style="padding-left:100px;">数据库名</th>
+                <th>权限</th>
+                <th>操作</th>
+                </thead>
+                <tbody>
+                {{#each db.list}}
+                <tr>
+                    <td style="padding-left:100px;">{{db_name}}</td>
+                    <td data-index='{{pri}}'>
+                        {{#quanxian pri}}
+                        {{pri}}
+                        {{/quanxian}}
+                    </td>
+
+                    <td>
+                        <span style="display:none;">{{id}}</span>
+                        <span class="doList" onclick="updCharset(this)" data-toggle="modal" data-target="#reCanDo">修改权限</span>
+                        <span> | </span>
+                        <span class="doList" onclick="delbind(this)" data-toggle="modal" data-target="#delCon">解绑</span>
+                    </td>
+                </tr>
+                {{/each}}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5" style="line-height:40px;text-align:center;">共
+                        <span id="conDbNumb">{{db.totalRow}}</span>
+                        条数据
+                        <span class="myPages" onclick="uDetailsFirst()">首页</span>
+                        <span class="myPages" onclick="uDetailsPrev()">上一页</span>
+                        第<span id="uDetailsPageNumber">
+                            {{#compare db.totalRow 1 db.pageNumber}}
+                            {{db.pageNumber}}
+                            {{/compare}}
+                        </span>页/总<span id="uDetailsTotalPage">{{db.totalPage}}</span>页
+                        <span class="myPages" onclick="uDetailsNext()">下一页</span>
+                        <span class="myPages" onclick="uDetailsLast()">尾页</span>
+                        <span class="NewPage" id="uDetailsPageNum" onclick="uDetailsGo()">跳转</span>
+                        到第<input class="form-control" id="uDetailsNewPage" type="text"/>页
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <!--用户修改描述弹出框-->
+    <div class="modal fade" id="reUserName" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title">更改用户</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="newuDesc" class="col-sm-3 control-label">描述:</label>
+                            <div class="col-sm-8">
+                                <textarea id="newuDesc" class="form-control" cols="30" rows="5" value="{{user.desc}}"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="reUserGo()" type="button" class="btn btn-primary">确定</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--新加绑定数据库弹出框-->
+    <div class="modal fade" id="conDB" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title">新加绑定数据库</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="newdconName" class="col-sm-3 control-label">数据库名:</label>
+                            <div class="col-sm-8">
+                                <select id="newdconName" class="form-control" type="text">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">权限:</label>
+                            <div class="col-sm-8">
+                                <label class="radio-inline" style="margin-left:70px;">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="0"> 只读
+                                </label>
+                                <label class="radio-inline" style="margin-left:50px;">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="1"> 读写
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="newConDB()" type="button" class="btn btn-primary">确定</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--修改权限弹出框-->
+    <div class="modal fade" id="reCanDo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title">修改权限</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">权限:</label>
+                            <div class="col-sm-8">
+                                <label class="radio-inline" style="margin-left:70px;">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="0"> 只读
+                                </label>
+                                <label class="radio-inline" style="margin-left:50px;">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio6" value="1"> 读写
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="reCharset()" type="button" class="btn btn-primary">确定</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--解绑弹出框-->
+    <div class="modal fade" id="delCon" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title">解绑</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="delConWord" class="col-sm-3 control-label">请输入验证码:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="delConWord"/>
+                            </div>
+                            <div class="col-sm-5 formVerify">
+                                <img onclick="yanzheng('ca_del_con',this.id)" class="verifyPic" id="delConPic" src="" alt=""/>
+                                <span>点图片换一张</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="delBindGo()" type="button" class="btn btn-primary">确定</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<!-------------------------------------------------------数据库详情界面----------------------------------------------->
+<script type="text/x-handlebars-template" id="dbDetailsHtml">
+    <div>
+        <div>
+            <span style="font-size:20px;">| 详情 </span>
+            <a style="cursor:pointer;" onclick="backDB()">返回数据库管理</a>
+        </div>
+        <div id="dbInfo">
+            <ul>
+                <li>
+                    数据库名:<span id="dataBaseName">{{name}}</span>
+                </li>
+                <li>
+                    URL:<span id="dbURL">&nbsp;jdbc:mysql://121.48.175.144:23306/{{name}}</span>
+                </li>
+                <li>
+                    可用连接数: <span id="canuseURL">500</span>
+                </li>
+                <li>
+                    已用连接数: <span id="usedURL">500</span>
+                </li>
+            </ul>
+        </div>
+        <div class="myBtn">数据导入</div>
+        <div class="myBtn" style="margin-left:50px;">数据导出</div>
+    </div>
+</script>
+</html>

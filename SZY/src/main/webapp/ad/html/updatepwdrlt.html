@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<title>成功-修改登录密码-数之云</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="css/ad_common.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+	        <script src="js/bootstrap/html5shiv.min.js"></script>
+	        <script src="js/bootstrap/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body> 
+	    <!--顶部 S-->
+		<header class="navbar ad-nav" id="top" role="banner">
+		 	<div class="container">
+			    <div class="navbar-header">
+			      <a class="navbar-brand"><img height="30" src="images/szy_logo.png"/></a>
+			    </div>
+			    <nav class="collapse navbar-collapse" role="navigation">
+			      	<ul class="nav navbar-nav navbar-right">
+			        	<li id="J_navUserRegist">
+			        		<a class="dropdown-toggle" href="javascript:;" data-toggle="dropdown" aria-expanded="true">
+			        			<span class="glyphicon glyphicon-user"></span>
+			        			&ensp;<span id="J_navUserName">...</span>
+			        		</a>
+			        		<ul class="dropdown-menu" role="menu">
+							    <li><a class="first" href="info" title="个人资料">个人资料</a></li>
+							    <li class="divider"></li>
+							    <li><a href="javascript:;" onclick="exitLogin();return false;">退出</a></li>
+							</ul>
+			        	</li>
+			      	</ul>
+			    </nav>	    
+		  	</div>
+		</header>
+	    <!--顶部 E-->
+		<!--主体 S-->
+		<div class="container">
+			<h2 class="ad-head">修改登录密码</h2>
+			<div class="com-step num2 clearfix">
+				<dl class="doing">
+					<dt class="st-num">
+						<div class="st-bg">1</div>
+					</dt>
+					<dd class="st-text">修改登录密码</dd>
+				</dl>
+				<dl class="doing">
+					<dt class="st-num">
+						<div class="st-bg succ"></div>
+					</dt>
+					<dd class="st-text">修改成功</dd>
+				</dl>
+			</div>
+			<div class="up-pwd-wrap" style="min-height: 548px;">
+				<div class="up-pwd-rlt">
+					<h2 class="one">登录密码修改成功！</h2>
+					<p class="two mt15"><span id="J_upPwdTime"></span>秒后自动跳转到个人资料，如果无法跳转，请<a href="info" title="点击这里">点击这里</a></p>
+				</div>
+			</div>
+		</div>
+	    <!--主体 E-->
+	    <!--FOOT S-->
+		<footer class="ad-footer">
+		    <div class="container">
+	    		<p class="text">Copyright ©2012 成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+	    	</div>
+		</footer>
+	    <!--FOOT E-->
+
+    	<script src="js/jquery-1.9.1.min.js"></script>
+	    <script src="js/bootstrap/bootstrap.min.js"></script>
+	    <script src="js/ad_common.min.js"></script>
+	    <script>
+	    	$(function(){
+	    		var space=3,
+	    			upPwdTime=$("#J_upPwdTime");
+	    		upPwdTime.html(space);
+	    		setInterval(function(){
+	    			space=space-1;
+	    			if(space==0){
+	    				location.href="info";
+	    				return false;
+	    			}
+	    			upPwdTime.html(space);
+		    	},1000);
+	    	});
+	    	
+		</script>
+	</body>
+</html>

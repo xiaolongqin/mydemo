@@ -1,0 +1,15 @@
+package service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import dao.imp.SingerDaoImp;
+import service.imp.SingerServiceImp;
+@Service
+@Transactional
+public class SingerService implements SingerServiceImp {
+	@Autowired
+	 private SingerDaoImp singerDao;
+}

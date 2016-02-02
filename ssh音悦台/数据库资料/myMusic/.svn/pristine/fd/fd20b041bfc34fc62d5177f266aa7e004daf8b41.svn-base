@@ -1,0 +1,17 @@
+package entity;
+
+import java.util.Date;
+
+public class Mv {
+   private int id;
+   private String name;
+   private String pic_url;
+   private String type;
+   private String area;
+   private int click;
+   private String video_ur;
+   private Singer singer;
+   private String describe;
+   private Date upload_date;
+   private double price;
+}

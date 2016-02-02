@@ -1,0 +1,7 @@
+package dao;
+
+import dao.imp.HeatDaoImp;
+
+public class HeatDao implements HeatDaoImp {
+
+}

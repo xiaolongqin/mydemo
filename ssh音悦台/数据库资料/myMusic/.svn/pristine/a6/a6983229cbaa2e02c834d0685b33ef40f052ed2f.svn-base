@@ -1,0 +1,12 @@
+package dao.imp;
+
+import entity.Mv;
+
+public interface MvDaoImp {
+	/**
+	 * Ìí¼ÓMV
+	 * @param mv
+	 */
+	public void save(Mv mv);
+
+}

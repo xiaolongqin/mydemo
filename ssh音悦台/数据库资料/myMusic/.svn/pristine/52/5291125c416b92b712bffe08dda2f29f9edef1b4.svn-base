@@ -1,0 +1,7 @@
+package service;
+
+import service.imp.MvServiceImp;
+
+public class MvService implements MvServiceImp{
+
+}

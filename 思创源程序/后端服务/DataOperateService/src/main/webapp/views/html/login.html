@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- HEAD S -->
+<nav class="header-box">
+    <div class="nav-list">
+        <div class="header-list"><img src="../images/logo-head.png" width="60" height="54" alt=""/></div>
+        <div class="header-list">猛犸大数据运营分析平台</div>
+    </div>
+</nav>
+<!-- HEAD E -->
+<!-- BODY S -->
+<!-- 登录页面 S -->
+<div class="login-body" id="LoginBody">
+    <div class="login-page row clearfix">
+        <div class="login-image col-md-5 col-md-offset-1">
+            <img src="../images/login_image.png"/>
+        </div>
+        <div class="login-div col-md-5 col-md-offset-0">
+            <div class="login-box row">
+                <div class="login-top text-center">
+                    <p>猛犸大数据运营分析平台</p>
+                </div>
+                <div class="login-logo col-md-4 col-md-offset-1">
+                    <img src="../images/login.png"/>
+                </div>
+                <div class="login-right col-md-7 col-md-offset-0">
+                    <div class="login-user" style="margin-bottom:17px;">
+                        <img src="../images/login_user_blue.png"/>
+                        <p>用户</p>
+                        <input id="J_userName" type="text" class="" />
+                    </div>
+                    <div class="login-user">
+                        <img src="../images/login_pwd.png"/>
+                        <p>密码</p>
+                        <input id="J_userPwd" type="password" class=""/>
+                    </div>
+                    <div class="login-forget-wrap row">
+                        <div class="login-forget">
+                            <a style="cursor: pointer;" data-toggle="modal" data-target="#myModal">忘记密码</a>
+                        </div>
+                    </div>
+                    <div class="login-btn row clearfix">
+                        <!--id="J_userSubmit"-->
+                        <button type="button" class="login-login col-md-4 col-md-offset-1" data-loading-text="登录中..." onclick="userSubmit();">登录</button>
+                        <button type="button" class="login-reset col-md-4 col-md-offset-1" onclick="userReset();">重置</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<footer class="login-footer">-->
+        <!--<p class="text" style="text-align: center;">All copyright@2014~2015成都数之联科技有限公司</p>-->
+    <!--</footer>-->
+</div>
+<!--弹窗-->
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: #fff;">&times;</span></button>
+                <h4 class="modal-title">密码找回温馨提示</h4>
+            </div>
+            <div class="modal-body" style="padding: 0;">
+                <table id="table-list" class="table table-condensed">
+                    <tr>
+                        <td>(1).用户在使用过程中如果忘记密码，请联系管理员找回密码。</td>
+                    </tr>
+                    <tr>
+                        <td>(2).系统管理员：&nbsp;&nbsp;&nbsp;&nbsp;覃小龙 &nbsp;&nbsp;张珂</td>
+                    </tr>
+                    <tr>
+                        <td class="td-left">QQ：676095579&nbsp;&nbsp;274263348</td>
+                    </tr>
+                    <tr>
+                        <td class="td-left">电话：13608013698&nbsp;&nbsp;18181407680</td>
+                    </tr>
+                    <tr>
+                        <td>(3).技术支撑团队：总体架构：王林、张珂、高智胜</td>
+                    </tr>
+                    <tr>
+                        <td class="td-left">思创银联PM：邓德凯</td>
+                    </tr>
+                    <tr>
+                        <td class="td-left">思创银联app架构师：高智胜 15724735158</td>
+                    </tr>
+                    <tr>
+                        <td class="td-left">思创银联andriod开发：李云龙 yunlong.li@jksoft.cn</td>
+                    </tr>
+                    <tr>
+                        <td class="td-left">思创银联ios开发：安少 guangyao.xiu@jksoft.cn</td>
+                    </tr>
+                    <tr>
+                        <td class="td-left">数之联PM、兼产品经理、兼BI数据开发：张珂</td>
+                    </tr>
+                    <tr>
+                        <td class="td-left">数之联前端：阳曦 15982859324 &nbsp;&nbsp;宫睿 18200250629</td>
+                    </tr>
+                    <tr>
+                        <td class="td-left">数之联JAVA后端：覃小龙 13608013698</td>
+                    </tr>
+                    <tr>
+                        <td class="td-left">数之联UI、UE： 李黎 宫睿</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 登录页面 E -->
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/slsc_login.js"></script>
+<script src="../js/ajaxurl.js"></script>
+</html>

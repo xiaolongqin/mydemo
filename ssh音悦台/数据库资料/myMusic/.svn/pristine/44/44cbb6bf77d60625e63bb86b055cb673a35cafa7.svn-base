@@ -1,0 +1,22 @@
+package service;
+
+import javax.annotation.Resource;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import dao.imp.MvDaoImp;
+import entity.Mv;
+import service.imp.MvServiceImp;
+
+@Service
+@Transactional
+public class MvService implements MvServiceImp {
+
+	@Resource
+	private MvDaoImp mvDao;
+	// ±£¥ÊMV
+	public void save(Mv mv) {
+		mvDao.save(mv);
+	}
+}

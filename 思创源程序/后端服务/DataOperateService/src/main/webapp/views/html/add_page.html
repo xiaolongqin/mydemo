@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/usual.css"/>
+    <link rel="stylesheet" href="../css/add-page.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="main">
+    <div class="title">
+        <ul><li>流程说明</li></ul>
+    </div>
+    <div class="user-reg-step num4 clearfix">
+        <dl class="doing">
+            <dt class="st-num">
+                <div class="st-bg">1</div>
+            </dt>
+            <dd class="st-text">添加页面</dd>
+        </dl>
+        <dl>
+            <dt class="st-num">
+                <div class="st-bg succ">2</div>
+            </dt>
+            <dd class="st-text">添加按钮</dd>
+        </dl>
+        <dl>
+            <dt class="st-num">
+                <div class="st-bg succ">3</div>
+            </dt>
+            <dd class="st-text">完成</dd>
+        </dl>
+    </div>
+    <div class="content-of-add-or-edit">
+
+
+        <!--&lt;!&ndash;添加页面&ndash;&gt;-->
+        <div class="content clearfix add-page-info">
+            <div style="margin:50px 0 0 30%;text-align: center;">
+            <div class="row clearfix">
+                <label class="col-md-2 control-label">页面ID</label>
+                <div class="col-md-4" style="padding: 0">
+                    <input type="text" class="form-control input-sm" placeholder="示例：100100">
+                </div>
+                <span class="red-text-small col-md-4 text-left hidden">*请输入页面ID</span>
+            </div>
+            <div class="row clearfix">
+                <label class="col-md-2 control-label">页面URL</label>
+                <div class="col-md-4" style="padding: 0">
+                    <input type="text" class="form-control input-sm" placeholder="示例：login_success_page">
+                </div>
+                <span class="red-text-small col-md-4 text-left hidden">*请输入页面URL</span>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-2 text-right"><p style="line-height: 30px;">页面归属</p></div>
+                <select class="input-sm col-md-4" id="selectList" style="height: 30px;">
+                    <option value="1">用户端</option>
+                    <option value="2">商户端</option>
+                    <option value="3">管家端</option>
+                </select>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-2 text-right"><p>页面状态</p></div>
+                <div class="col-md-4">
+                    <label class="radio-inline">
+                        <input class="input-sm" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" checked="checked"/>生效
+                    </label>
+                    <label class="radio-inline">
+                        <input class="input-sm" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="0"/>作废
+                    </label>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <label class="col-md-2 control-label">页面描述</label>
+                <div class="col-md-4" style="padding: 0">
+                    <input type="text" class="form-control input-sm" placeholder="示例：登录成功页面">
+                </div>
+                <span class="red-text-small col-md-4 text-left hidden">*请输入页面描述</span>
+            </div>
+            <div class="row clearfix">
+                <label class="col-md-2 control-label">版本号</label>
+                <div class="col-md-4" style="padding: 0">
+                    <input type="text" class="form-control input-sm" placeholder="示例：3.1.0">
+                </div>
+                <span class="red-text-small col-md-4 text-left hidden">*请输入版本号</span>
+            </div>
+            </div>
+            <div class="btn-small"><a onclick="Next();" style="float:none;margin:0 auto;">下一步</a></div>
+        </div>
+
+
+        <!--添加按钮-->
+        <!--<div class="add-btn-page">-->
+            <!--<div class="clearfix">-->
+
+                    <!--<label class="col-md-1 control-label">页面ID</label>-->
+                    <!--<div class="col-md-3" style="padding: 0">-->
+                        <!--<input type="text" class="form-control input-sm" placeholder="示例：100031">-->
+                    <!--</div>-->
+
+                <!--<a href="javascript:;">-->
+                    <!--<div class="pull-left add-btn text-center add-btn-btn">-->
+                        <!--<img src="../images/add.png" alt="add"/>-->
+                        <!--<span>添加</span>-->
+                    <!--</div>-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="add-btn-content">-->
+
+            <!--<div class="clearfix">-->
+               <!---->
+                <!--<label class="col-md-1 control-label">按钮ID</label>-->
+                <!--<div class="col-md-3" style="padding: 0">-->
+                    <!--<input type="text" class="form-control input-sm" placeholder="示例：100031">-->
+                <!--</div>-->
+                <!--<label class="col-md-2 control-label">按钮描述</label>-->
+                <!--<div class="col-md-3" style="padding: 0">-->
+                    <!--<input type="text" class="form-control input-sm" placeholder="示例：100031">-->
+                <!--</div>-->
+                <!--<a>-->
+                    <!--<div class="pull-left add-btn text-center add-btn-btn">-->
+                        <!--<img src="../images/del.png" alt="add"/>-->
+                        <!--<span>删除</span>-->
+                    <!--</div>-->
+                <!--</a>-->
+            <!--</div>-->
+
+            <!--<div class="btn-save">-->
+                <!--<div class="btn-small"><a href="javascript:;" onclick="lastStep();">上一步</a></div>-->
+                <!--<div class="btn-small"><a href="javascript:;">保存</a></div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+    </div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/add_page.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/href.js"></script>
+</html>

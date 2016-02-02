@@ -1,0 +1,7 @@
+package service;
+
+import service.imp.UserServiceImp;
+
+public class UserService implements UserServiceImp {
+
+}

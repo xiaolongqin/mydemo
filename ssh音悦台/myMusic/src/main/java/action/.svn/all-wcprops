@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mymusic/!svn/ver/98/src/main/java/action
+END
+MvAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/mymusic/!svn/ver/96/src/main/java/action/MvAction.java
+END
+SingerAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/mymusic/!svn/ver/98/src/main/java/action/SingerAction.java
+END
+FrontAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/mymusic/!svn/ver/98/src/main/java/action/FrontAction.java
+END
+AdminAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/mymusic/!svn/ver/94/src/main/java/action/AdminAction.java
+END
+RecommendAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/mymusic/!svn/ver/84/src/main/java/action/RecommendAction.java
+END
+UserAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/mymusic/!svn/ver/95/src/main/java/action/UserAction.java
+END

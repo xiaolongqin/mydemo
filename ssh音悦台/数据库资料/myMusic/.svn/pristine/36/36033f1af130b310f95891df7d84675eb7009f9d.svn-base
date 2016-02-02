@@ -1,0 +1,21 @@
+package action;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+
+import service.imp.AdministratorServiceImp;
+import entity.Mv;
+@Controller
+public class AdministratorAction {
+    @Resource
+	private AdministratorServiceImp administratorService;
+    
+    /*-----mvbegin----------------------------*/
+      
+      public void saveMv(Mv mv){
+    	  
+      }
+    /*-----mvend----- ------------------------*/
+    
+}

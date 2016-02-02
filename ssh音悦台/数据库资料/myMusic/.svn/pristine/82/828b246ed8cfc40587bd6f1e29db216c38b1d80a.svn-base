@@ -1,0 +1,19 @@
+package dao;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import dao.imp.SingerDaoImp;
+import entity.Singer;
+@Repository
+public class SingerDao implements SingerDaoImp {
+	@Autowired
+	private SessionFactory sessionFactory;
+//‘ˆº”∏Ë ÷
+	public void saveSinger(Singer singer) {
+		Session session = sessionFactory.getCurrentSession();
+		session.save(singer);
+	}
+}

@@ -1,0 +1,97 @@
+package dao;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.catalina.ant.FindLeaksTask;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import dao.imp.UserDaoImp;
+import entity.Mv;
+import entity.User;
+
+@Repository
+public class UserDao implements UserDaoImp {
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	// 查询
+	public List<User> queryUser(int page, String name) {
+		int pagesize =5;
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from User where nickname like ?";
+		Query query=session.createQuery(hql);
+		query.setParameter(0, "%"+name+"%");
+		query.setFirstResult((page-1)*pagesize);
+		query.setMaxResults(pagesize);
+		List<User> list = query.list();
+		return list;
+
+	}
+	
+	
+	//添加
+	public void addUser(User user){
+		Session session = sessionFactory.getCurrentSession();
+		session.save(user);
+	}
+	
+	//分页
+	public List<User> PageUser(int begin,int pageSize) {
+		int pagesize =5;
+		Session session = sessionFactory.getCurrentSession();
+		Query q = session.createQuery("fromuser");
+		q.setFirstResult(begin);
+		q.setMaxResults(pageSize);
+        List<User> list = q.list();
+		return list;
+	}
+	public List<User> PageUser(String periods, int pageSize) {
+		return null;
+	}
+	
+	//删除
+	public void deleteuser(int id) {
+		Session session = sessionFactory.getCurrentSession();
+        session.delete(session.get(User.class, id));	
+      
+	}
+	
+	
+	//获取编辑的数据
+	public void edituser(User user) {
+		Session session=sessionFactory.getCurrentSession();
+		session.update(user);
+	}
+	
+	public List<User> queryUserByID(int id ) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from User where id= ?";
+		Query query=session.createQuery(hql);
+		query.setParameter(0, id);
+		List<User> list =query.list();
+		return list;
+
+	}
+	
+	
+	//登录
+	public User login(String username, String password) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from User where username = ? and userpass = ?";
+		Query query=session.createQuery(hql); 
+		query.setParameter(0,username);
+		query.setParameter(1,password);		
+		User user = (User) query.uniqueResult();
+		return user;
+	}
+	
+
+
+}

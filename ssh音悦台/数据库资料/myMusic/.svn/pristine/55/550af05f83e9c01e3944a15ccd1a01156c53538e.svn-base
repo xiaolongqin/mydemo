@@ -1,0 +1,13 @@
+package dao;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import dao.imp.AdministratorDaoImp;
+@Repository
+public class AdministratorDao implements AdministratorDaoImp {
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+}

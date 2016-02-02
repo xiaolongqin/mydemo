@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>电商大数据服务分析平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/jquery.selectlist.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/jquery.cxcalendar.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css"/>
+	</head>
+	<body>
+		<div id = "loginbg">
+			<img id = "background" src="../images/smallbkg.png">
+			<img id = "logo" src="../images/logo.png"/>
+			<h1 id = "softname">数据服务平台</h1>
+			<h4 id="loginTips"></h4>
+			<h4 id = "lblusername">用户名</h4>
+			<input id = "username" type="text"/>
+			<h4 id = "lblpassword">登录密码</h4>
+			<input id = "password" type="password"/>
+			<div id = "checkbox" onclick="checkbox()"></div>
+			<label id = "lblcheckbox" onclick="checkbox();">保持登录状态</label>
+			<div id = "btnRegister">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</div>
+			<div id = "btnLogin" onclick="userSubmit();">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</div>
+			<hr id = "myhr"/>
+			<button id="forgetKey" type="button" class="forgetkey" data-toggle="modal" data-target="#myModal">
+  忘记密码?
+</button>
+			<!-- 忘记密码弹出框 -->
+		<div  class="modal fade popKey submitwidth" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title getbackkey" id="myModalLabel">密码找回</h4>
+		        <div id="tips"></div>
+		      </div>
+		      <div class="modal-body">
+		        <input type="email" class="form-control" id="exampleInputEmail1"  value="请输入注册邮箱" onfocus="clearTips();">
+		      </div>
+		      <div class="modal-footer ">
+		        <button type="button" class="btn btn-primary " onclick="sendMessage();">提交</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		</div>
+		<!--注册页面-->
+		
+		<div id = "registerbg">
+			
+			<img id = "background01" src="../images/smallbkg.png">
+			<img id = "goback" src="../images/back.png"/>
+			<img id = "whitelogo" src="../images/whitelogo.png" />
+			<h4 id = "rg-lblusername" class="rg-name">用&nbsp;户&nbsp;名</h4>
+			<input id = "rg-username"  class="rg-input" type="text" />
+			<h4 id="usernameTips" class="tipClass"></h4>
+			<h4 id = "rg-lblkey" class="rg-name">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</h4>
+			<input id = "rg-inputkey" type="password" class="rg-input" type="text"/>
+			<h4 id="inputkeyTips" class="tipClass"></h4>
+			<h4 id = "rg-lblcheckkey" class="rg-name">确认密码</h4>
+			<input id = "rg-inputcheckkey" type="password" class="rg-input" type="text"/>
+			<h4 id="inputCheckKeyTips" class="tipClass"></h4>
+			<h4 id = "rg-lblemail" class="rg-name">注册邮箱</h4>
+			<input id = "rg-inputemail"  class="rg-input" type="text"/>
+			<h4 id="inputEmailTips" class="tipClass"></h4>
+			<h4 id = "rg-lblphone" class="rg-name">电话号码</h4>
+			<input id = "rg-inputphone"  class="rg-input" type="text"/>
+			<h4 id = "rg-lblunit" class="rg-name">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位</h4>
+			<input id = "rg-inputunit"  class="rg-input" type="text"/>
+			<h4 id ="testPhoneTips" class = "tipClass"></h4>
+			<hr id = "rg-myhr"/>
+			<div id="rg-nextstep" onclick="giveMeNext();">下一步</div>
+			<div id="litterstar01" class="yellowstar">*</div>
+			<div id="litterstar02" class="yellowstar">*</div>
+			<div id="litterstar03" class="yellowstar">*</div>
+			<div id="litterstar04" class="yellowstar">*</div>
+			
+		</div>
+		
+		<!--付款页面-->
+		<div id = "paybg">
+			<img id = "background02" src="../images/smallbkg.png">
+			<img id = "closeCurrent" src="../images/close.png"/>
+			<img id = "goback01" src="../images/back.png"/>
+			<img id="whitelogo02" src="../images/whitelogo.png"/>
+			<img id="curlypoint" src="../images/curlypointer.png"/>
+			<h4 id="softname02">电商大数据服务分析平台</h4>
+			<h4 id="pleaseChooseRight"></h4>
+			<h4 id = "lblselect01" class="rg-name">全部分类</h4>
+			<h4 id = "servicetime01" class="rg-name">服务时间</h4>
+			<h4 id = "servicemoney" >所需价格</h4>
+			<h4 id = "totalmoney">2000</h4>
+			<h4 id = "verifycode">验证码</h4>
+			<input type="" name="" id="inputverifycode" value="" />
+			<img id="verifyimg" src=""/>
+			<div id="getVerifyAgain">换一张</div>
+			<!--<div id="litterstar05" class="yellowstar1">*</div>-->
+			<div id="litterstar06" class="yellowstar1">*</div>
+			
+			<!--<select id="select01">-->
+				<!--<option value ="volvo">食品、酒类、生鲜、特产</option>-->
+			<!--</select>-->
+			<select id="select02">
+			  <option value ="volvo">白酒</option>
+			  <option value ="volvo">啤酒</option>
+			  <option value ="volvo">葡萄酒</option>
+			 
+			</select>
+			<input name="timechoose01" id="timechoose01" type="text" data-position="bottom" data-wday="0" class="datepane input" readonly/>
+			<span id="to">至</span>
+			<input name="timechoose02" id="timechoose02" type="text" data-position="bottom" data-wday="0" class="datepane input" readonly/>
+ 			<div id="bookmonth">包月</div>
+ 			<div id="bookseason">包季</div>
+ 			<div id="bookyear">包年</div>
+ 			<h4 id="moneyToPay"></h4>
+ 			<hr id="payhr" />
+ 			<div id="payButton" onclick="sendRegister();">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</div>
+		</div>
+		<!--注册成功页面-->
+		<div id="successbg">
+			<img id = "background03" src="../images/smallbkg.png">
+			<img id="whitelogo03" src="../images/whitelogo.png"/>
+			<h4 id="softname03">电商大数据服务分析平台</h4>
+			<h4 id="congratulation">恭喜你</h4>
+			<h4 id="registerSuccess">注册成功</h4>
+			<hr id="successhr"/>
+			<h4 id="successMsg">邮件已发送,请登录邮箱进行验证</h4>
+			<!--<div id="backtoLogin">
+				登录
+			</div>
+			<div id="gotoPay">
+				支付
+			</div>-->
+		</div>
+		
+		<div id = "footer">
+			<p class ="copyright">备案号：蜀ICP备13021642号-4 Copyright 2015 成都数之联科技有限公司 版权所有</p>
+		</div>
+		<script src="../js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.selectlist.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.cxcalendar.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.cxcalendar.languages.js"></script>
+		<script src="../js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/login.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/cookie_control.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#rg-inputemail").keyup(function(){
+				var availableTags = ["@qq.com","@sina.com","@gmail.com","@126.com","@163.net","@163.com","@yahoo.com","@msn.com","hotmail.com"];
+				var _this=$(this).val();
+				if(_this.indexOf('@')<0){
+					for(var i=0;i<availableTags.length;i++){
+						availableTags[i]=_this+availableTags[i];
+					}
+					$("#rg-inputemail").autocomplete({
+						source:availableTags
+					});
+				}
+				});
+				$('#select01').selectlist({
+					zIndex: 11,
+					width: 370,
+					height: 40,
+					showMaxHeight:250,
+					triangleSize: 6,   //右侧小三角大小
+           			triangleColor: '#cd992f'  //右侧小三角颜色
+				});
+				$('#select02').selectlist({
+					zIndex: 10,
+					width: 350,
+					height: 40,
+					showMaxHeight:200,
+					triangleSize: 6,   //右侧小三角大小
+           			triangleColor: '#cd992f'  //右侧小三角颜色
+				});
+			})
+		</script>
+	</body>
+</html>

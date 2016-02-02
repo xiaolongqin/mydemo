@@ -1,0 +1,33 @@
+package service;
+
+import javax.annotation.Resource;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import service.imp.AdministratorServiceImp;
+import dao.imp.AdministratorDaoImp;
+
+import dao.imp.MvDaoImp;
+import entity.Mv;
+
+import dao.imp.SingerDaoImp;
+import entity.Singer;
+
+
+@Service
+@Transactional
+public class AdministratorService implements AdministratorServiceImp {
+    @Resource
+	private AdministratorDaoImp administratorDao;
+
+  
+    
+
+    private SingerDaoImp singerDaoImp;
+//ÐÂÔö ¸èÊÖ
+	public void addSinger(Singer singer) {
+		singerDaoImp.saveSinger(singer);
+	}
+
+}

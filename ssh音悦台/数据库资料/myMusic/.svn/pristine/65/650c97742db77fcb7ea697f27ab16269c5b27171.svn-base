@@ -1,0 +1,15 @@
+package action;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+
+import service.imp.AdministratorServiceImp;
+
+@Controller
+public class AdministratorAction {
+    
+	@Resource
+	private AdministratorServiceImp administratorService;
+
+}

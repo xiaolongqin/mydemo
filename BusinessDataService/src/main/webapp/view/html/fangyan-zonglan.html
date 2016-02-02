@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>数据服务平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/jquery.cxcalendar.css"/>
+    <link rel="stylesheet" href="../css/calendar.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/fangyan-zonglan.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<img class="now-in" src="../images/loading.gif"/>
+<div class="container-fluid content-box" style="visibility: hidden;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="header-box clearfix">
+                <p class="pull-left">线上电商视图分析</p>
+                <div class="pull-left title-tips">
+                    <img src="../images/tip-g.png"/>
+                    <span onclick="seeTips(this);">详情</span>
+                    <div class="tip-box">
+                        <img src="../images/triangle-g.png"/>
+                        <div class="tip-box-title clearfix">
+                            <h4 class="pull-left">指标口径:</h4>
+                            <div class="pull-right page-box"><span>1</span>/<span>1</span></div>
+                        </div>
+                        <div class="tip-content">
+                            <ul>
+                                <li>1. 指标解释：页面基础统计数据统计周期为T-1天，页面算法分析数据统计周期为T-7天。T为系统当前时间。</li>
+                                <li>2. 页面展现数据为对T-1天，线上电商所有渠道的TOP1商品、TOP1品牌、TOP1销售渠道、TOP1销售店铺进行统计。TOP1为统计时间排名第一的数据。</li>
+                            </ul>
+                        </div>
+                        <div class="tip-page-box clearfix">
+                            <div class="pull-left" onclick="tipNextPage(this);">
+                                <img src="../images/yellow-left-none.png"/>
+                            </div>
+                            <div class="pull-right" onclick="tipPrevPage(this);">
+                                <img src="../images/yellow-right-none.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix change-row">
+        <div class="change-box pull-left clearfix">
+            <ul class="change-list-box clearfix">
+                <li>
+                    <span class="pn-active price-number">销售额</span>
+                    <span class="price-number">销售量</span>
+                    <span class="price-number">评论数</span>
+                </li>
+                <li>
+                    <span class="channel-btn">渠道筛选</span>
+                </li>
+                <li>
+                    <div class="date-box">
+                        <input id="myCalender1" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/> - <input id="myCalender2" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="btn1" class="change-btn pull-left">确定</div>
+        <div class="channel-box">
+            <!--<img src="../images/smalltriangle.png"/>-->
+            <table class="channel-table">
+                <tbody></tbody>
+            </table>
+            <p class="channel-tips">至少选择1个渠道</p>
+            <div class="channel-btn-box clearfix">
+                <div class="all-none-box" onclick="noneChoose(this);">
+                    <img src="../images/check-none.png"/>
+                    <span class="channel-none">全否</span>
+                </div>
+                <div class="all-none-box" onclick="allChoose(this);">
+                    <img src="../images/check-all.png"/>
+                    <span class="channel-all">全选</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row channel-row">
+        <ul><li>渠道 :</li></ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12 chart-box" style="margin: 0;">
+            <div id="mainBox">
+                <img src="../images/home.png"/>
+                <div class="word-box">
+                    <h3>线上电商<span id="titleName">交易金额</span>合计</h3>
+                    <p id="numberBox"></p>
+                    <h2 class="grey-title">TOP1 数据</h2>
+                    <div class="pic-box">
+                        <div id="chart2">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li style="margin-top: 31px;"></li>
+                                <li style="margin-top: 31px;"></li>
+                            </ul>
+                        </div>
+                        <div id="chart1"></div>
+                        <div class="word-right">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div id="name1" class="name-box"></div>
+                        <div id="name2" class="name-box"></div>
+                        <div id="name3" class="name-box"></div>
+                        <div id="name4" class="name-box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/echarts-all.js"></script>
+<script src="../js/jquery.cxcalendar.min.js"></script>
+<script src="../js/jquery.cxcalendar.languages.js"></script>
+<script src="../js/calendar.js"></script>
+<script src="../js/ajax.js"></script>
+<script src="../js/change-list.js"></script>
+<script src="../js/fangyan-zonglan.js"></script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/usual.css"/>
+    <link rel="stylesheet" href="../css/add-user.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="row">
+    <div class="left-line pull-left"></div>
+    <div class="col-md-10 right-cont pull-left">
+        <div class="user-reg-step num4 clearfix">
+            <dl class="doing">
+                <dt class="st-num">
+                    <div class="st-bg"><img src="../images/set-user-info.png" alt=""/></div>
+                </dt>
+                <dd class="st-text">修改账户信息</dd>
+            </dl>
+            <dl>
+                <dt class="st-num">
+                    <div class="st-bg"><img src="../images/success.png" alt=""/></div>
+                </dt>
+                <dd class="st-text">修改成功</dd>
+            </dl>
+        </div>
+        <div class="input-items clearfix" id="content">
+            <div class="text-right text-items pull-left">
+                <div class="items">
+                    <p class=""><span>*</span>注册用户名</p>
+                </div>
+                <div class="items">
+                    <p class=""><span>*</span>角色名</p>
+                </div>
+                <!--<div class="items">-->
+                    <!--<p class="">登录密码</p>-->
+                <!--</div>-->
+            </div>
+            <div class="box-items pull-left">
+                <div class="items">
+                    <input id="UserName" class="input-sm form-control" type="text" placeholder="请输入4-15个字" onchange="redAlert(this);" disabled/>
+                    <span class="red-text-small hidden">*注册用户名由4到15个字组成</span>
+                </div>
+
+                <div class="items">
+                    <select class="input-sm" id="selectList" style="height: 30px;width: 150px;">
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <!--<div class="items" style="margin-bottom: 7px;">-->
+                    <!--<input class="input-sm form-control" id="PassWord" type="text"  placeholder="请输入6-20个字符" onchange="redAlert(this);"/>-->
+                    <!--<span class="red-text-small hidden">*密码由6到20个字符组成</span>-->
+                <!--</div>-->
+                <!--<div class="red-text-small" style="margin-top:25px;">-->
+                    <!--<p><span>*温馨提示：此项为非必填项，如果管理员不创建密码，默认密码为123456</span></p>-->
+                <!--</div>-->
+                <div class="btn-box">
+                    <div class="btn-small"><a onclick="SaveUser();">保存</a></div>
+                    <div class="btn-small"><a href="user_manage.html">取消</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/edit_user.js"></script>
+<script src="../js/href.js"></script>
+</html>

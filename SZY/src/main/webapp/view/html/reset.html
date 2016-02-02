@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>重置密码-数之云</title>
+    <link href="../view/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../view/css/szy_common.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../view/js/bootstrap/html5shiv.min.js"></script>
+    <script src="../view/js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="user-main-body">
+<!--顶部 S-->
+<header class="navbar user-nav user-nav-hei" id="top" role="banner">
+</header>
+<!--顶部 E-->
+<!--主体 S-->
+<div class="container user-main" id="J_userMain">
+    <div class="pull-right user-form">
+        <input id="email" type="hidden" class="form-control user-email" placeholder="请在输一次新密码"/>
+        <div class="user-tr"><input id="newPwd" type="text" class="form-control user-email" placeholder="请输入新密码"/></div>
+        <div class="user-tr"><input id="rnewPwd" type="text" class="form-control user-email" placeholder="请在输一次新密码"/></div>
+        <div id="J_userError" class="user-error yahei"> </div>
+        <button id="J_userSubmit" type="button" class="btn btn-default btn-lg user-submit yahei" data-loading-text="提交中..." >提 交</button>
+    </div>
+</div>
+<!--主体 E-->
+<!--FOOT S-->
+<footer class="user-footer user-footer-three">
+    <div class="container">
+        <p class="text">Copyright ©2012 成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+    </div>
+</footer>
+<!--FOOT E-->
+
+<script src="../view/js/jquery-1.9.1.min.js"></script>
+<script src="../view/js/bootstrap/bootstrap.min.js"></script>
+<script src="../view/js/szy_common.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#J_userSubmit').click(function(){
+            alert("提交");
+            $.ajax({
+                type: "GET",
+                url: "/szy/user/sureResetPass",
+                data: {'newPwd':$.trim($("#newPwd").val())},
+                dataType: "json",
+                success: function(data){
+                    if(data.state==true){
+                        alert("密码重置成功！");
+                    }else{
+                        alert("出现异常，请稍后重试!");
+                    }
+
+                }
+            });
+        });
+    });
+
+
+
+
+</script>
+</body>
+</html>

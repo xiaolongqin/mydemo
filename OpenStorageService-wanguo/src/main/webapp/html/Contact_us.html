@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta content="text/html" charset="utf-8">
+    <title>用户反馈</title>
+    <link rel="stylesheet" href="/oss/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/oss/css/ossCommon.css">
+    <link rel="stylesheet" href="/oss/css/user_response.css">
+</head>
+<body>
+<!--导航-->
+<div class="mynav">
+    <div>
+        <img class="logo_pic" style="cursor:pointer;" src="/oss/img/logo.png" alt="" onclick="oss_back_all();"/>
+    </div>
+    <ul class="rds_list">
+        <li>
+            <span style="font-size:14px;">所有产品</span>
+        </li>
+    </ul>
+    <div class="rds_do">
+        <div class="rds_introduce">
+            <h4>管理控制台</h4>
+            <p class="p_header" style="margin-top:-10px;">存储</p>
+        </div>
+        <div class="data_list">
+            <p onclick="">关系型数据库服务(RDS)</p>
+            <p>开放存储服务(OSS)</p>
+        </div>
+        <div class="rds_introduce">
+            <p class="p_header">传输</p>
+        </div>
+        <div class="data_list">
+            <p>数据传输服务(DTS)</p>
+        </div>
+        <div class="rds_introduce">
+            <p class="p_header">计算</p>
+        </div>
+        <div class="data_list">
+            <p>开放计算服务(OCS)</p>
+        </div>
+        <div class="rds_introduce">
+            <p class="p_header">应用</p>
+        </div>
+        <div class="data_list">
+            <p>开放应用服务(OAS)</p>
+        </div>
+    </div>
+    <ul class="do_list">
+        <li>
+            <!--存用户名-->
+            <span id="username"></span><span id="userId" style="display:none;"></span>
+            <ul class="user_do">
+                <li onclick="">订单管理</li>
+                <li onclick="">个人资料</li>
+                <li onclick="go_login();">登出</li>
+            </ul>
+        </li>
+        <li onmousemove="see_mynews(this)" btn=0>
+            <!--存消息-->
+            <span>消息中心&nbsp;</span>
+            <ul class="info_do">
+                <li onclick="go_all_msg()">
+                    <span style="float:right;padding-right:20px;color:#0099ff;">查看更多&gt;&gt;</span>
+                </li>
+            </ul>
+        </li>
+        <li onclick="go_userRes();">用户反馈</li>
+        <li>文档下载</li>
+        <li onclick="go_cont();">联系客服</li>
+    </ul>
+</div>
+<!--内容区域-->
+<div class="user_response">
+    <div class="res_header_left">联系客服</div>
+    <div class="res_header_right" onclick="back_all();">返回</div>
+    <div style="clear:both;border-top:1px solid #bababa;margin-top:125px;padding-left:20px;">
+        <p class="word_p" style="margin-top:40px;">欢迎联系我们,我们有以下两种联系方式:</p>
+        <p class="word_p">客服热线:15654332333</p>
+        <p class="word_p">客服邮箱:5464155645@qq.com</p>
+    </div>
+</div>
+<!--页脚-->
+<div class="myfooter">
+    <p class="footWords">Copyright &copy; 2012成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+    <p><span style="padding-right:40px;">联系电话:15654332333</span><span>邮箱:5464155645@qq.com</span></p>
+</div>
+</body>
+<script type="text/javascript" src="/oss/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="/oss/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/oss/js/ossCommon.js"></script>
+<script type="text/javascript">
+    //    var resHttp='http://192.168.2.32:8080';
+    var resHttp='';
+    $(function(){
+        $.ajax({
+            url:resHttp+'/oss/account/getUser',
+            type:'post',
+            data:{},
+            dataType:'json',
+            success:function(data){
+                if(data.state==true){
+                    $('#username').text(data.data.email);//存用户名
+//                    $('#userId').text(data.data[0].userid);//存用户id
+                }else{
+                    alert(data.msg);
+                }
+            }
+        });
+    });
+    <!--返回-->
+    function back_all(){
+        window.location.href="http://product.unionbigdata.com/szy/view/";
+    }
+    //返回rds与oss选择
+    function oss_back_all(){
+        window.location.href="http://product.unionbigdata.com/szy/view/";
+    }
+</script>
+</html>

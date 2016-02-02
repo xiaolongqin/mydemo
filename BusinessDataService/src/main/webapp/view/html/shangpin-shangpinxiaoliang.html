@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>数据服务平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/jquery.cxcalendar.css"/>
+    <link rel="stylesheet" href="../css/calendar.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/shangpin-shangpinxiaoliang.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container-fluid content-box">
+    <div class="row">
+        <div class="col-md-12" style="position: relative;">
+            <div class="header-box clearfix">
+                <p class="pull-left">商品参数与销量</p>
+                <div class="pull-left title-tips">
+                    <img src="../images/tip-g.png"/>
+                    <span onclick="seeTips(this);">详情</span>
+                    <div class="tip-box">
+                        <img src="../images/triangle-g.png"/>
+                        <div class="tip-box-title clearfix">
+                            <h4 class="pull-left">指标口径:</h4>
+                            <div class="pull-right page-box"><span>1</span>/<span>1</span></div>
+                        </div>
+                        <div class="tip-content">
+                            <ul>
+                                <li>1. 页面基础统计数据统计周期为T-1天，页面算法分析数据统计周期为T-7天。T为系统当前时间。</li>
+                                <li>2. 页面展现数据为对T-1天，对当前用户所选择的数据类别，进行类别的属性细分，如：白酒的度数和白酒的香型。点击所选择的度数或者香型参数指标，进入到细分的商品参数分析第二层详情页。</li>
+                            </ul>
+                        </div>
+                        <div class="tip-page-box clearfix">
+                            <div class="pull-left" onclick="tipNextPage(this);">
+                                <img src="../images/yellow-left-none.png"/>
+                            </div>
+                            <div class="pull-right" onclick="tipPrevPage(this);">
+                                <img src="../images/yellow-right-none.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix change-row">
+        <div class="change-box pull-left clearfix">
+            <ul class="change-list-box clearfix">
+                <li>
+                    <span class="pn-active price-number">销售额</span>
+                    <span class="price-number">销售量</span>
+                </li>
+                <li>
+                    <div class="date-box">
+                        <input id="myCalender1" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/> - <input id="myCalender2" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="btn1" class="change-btn pull-left">确定</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 chart-box">
+            <div id="chart1"></div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid content-box">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="header-box clearfix">
+                <p class="pull-left">各型号销量</p>
+                <div class="pull-left title-tips">
+                    <img src="../images/tip-g.png"/>
+                    <span onclick="seeTips(this);">详情</span>
+                    <div class="tip-box">
+                        <img src="../images/triangle-g.png"/>
+                        <div class="tip-box-title clearfix">
+                            <h4 class="pull-left">指标口径:</h4>
+                            <div class="pull-right page-box"><span>1</span>/<span>1</span></div>
+                        </div>
+                        <div class="tip-content">
+                            <ul>
+                                <li>1. 页面基础统计数据统计周期为T-1天，页面算法分析数据统计周期为T-7天。T为系统当前时间。</li>
+                                <li>2. 页面展现数据为对T-1天，对当前用户所选择的数据类别，进行类别的属性细分，如：白酒的度数和白酒的香型。点击所选择的度数或者香型参数指标，进入到细分的商品参数分析第二层详情页。</li>
+                            </ul>
+                        </div>
+                        <div class="tip-page-box clearfix">
+                            <div class="pull-left" onclick="tipNextPage(this);">
+                                <img src="../images/yellow-left-none.png"/>
+                            </div>
+                            <div class="pull-right" onclick="tipPrevPage(this);">
+                                <img src="../images/yellow-right-none.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix change-row">
+        <div class="change-box pull-left clearfix">
+            <ul class="change-list-box clearfix">
+                <li>
+                    <span class="pn-active price-number">销售额</span>
+                    <span class="price-number">销售量</span>
+                </li>
+                <li>
+                    <div class="date-box">
+                        <input id="myCalender3" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/> - <input id="myCalender4" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="btn2" class="change-btn pull-left">确定</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 chart-box">
+            <div id="chart2"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/echarts-all.js"></script>
+<script src="../js/jquery.cxcalendar.min.js"></script>
+<script src="../js/jquery.cxcalendar.languages.js"></script>
+<script src="../js/calendar.js"></script>
+<script src="../js/ajax.js"></script>
+<script src="../js/change-list.js"></script>
+<script src="../js/shangpin-shangpinxiaoliang.js"></script>
+</html>

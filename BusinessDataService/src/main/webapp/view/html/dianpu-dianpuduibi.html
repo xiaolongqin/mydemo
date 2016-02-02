@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>数据服务平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/pagination.css"/>
+    <link rel="stylesheet" href="../css/jquery.cxcalendar.css"/>
+    <link rel="stylesheet" href="../css/calendar.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/dianpu-dianpuduibi.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container-fluid content-box">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="header-box clearfix">
+                <p class="pull-left"><span class="shop-name"></span>线上店铺对比 — 行业店铺推荐</p>
+                <div class="pull-left title-tips">
+                    <img src="../images/tip-g.png"/>
+                    <span onclick="seeTips(this);">详情</span>
+                    <div class="tip-box">
+                        <img src="../images/triangle-g.png"/>
+                        <div class="tip-box-title clearfix">
+                            <h4 class="pull-left">指标口径:</h4>
+                            <div class="pull-right page-box"><span>1</span>/<span>1</span></div>
+                        </div>
+                        <div class="tip-content">
+                            <ul>
+                                <li>1. 页面基础统计数据统计周期为T-1天，页面算法分析数据统计周期为T-7天。T为系统当前时间。</li>
+                                <li>2. 页面上层表头默认，展现数据为对T-1天，对当前用户所注册的数据类别，对销售额TOP5的店铺数据，TOP1为统计时间排名第一的数据。以此类推。</li>
+                                <li>3. 页面中下层默认，展现销售量全部店铺信息。</li>
+                                <li>4. 页面上层表头，输入店铺名和选择时间范围，可以对选择的时间范围的店铺进行查询。</li>
+                                <li>5. 查询后，点击店铺数据右边(+)可加入对比，最多可添加5个店铺的对比。</li>
+                                <li>6. 点击开始对比，可进入店铺对比详情页二级页面。</li>
+                            </ul>
+                        </div>
+                        <div class="tip-page-box clearfix">
+                            <div class="pull-left" onclick="tipNextPage(this);">
+                                <img src="../images/yellow-left-none.png"/>
+                            </div>
+                            <div class="pull-right" onclick="tipPrevPage(this);">
+                                <img src="../images/yellow-right-none.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 chart-box" style="margin-top: -10px;margin-bottom: 0;">
+            <div class="top-box">
+                <ul class="clearfix" style="margin-bottom: 0;">
+                    <li>
+                        <div>
+                            <span class="num-box">NO.1</span>
+                            <span class="word-box">行业店铺推荐</span>
+                        </div>
+                        <div style="margin-top: -5px;">
+                            <span class="time-box"></span>
+                        </div>
+                        <div>
+                            <p class="good-name"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="num-box">NO.2</span>
+                            <span class="word-box">行业店铺推荐</span>
+                        </div>
+                        <div style="margin-top: -5px;">
+                            <span class="time-box"></span>
+                        </div>
+                        <div>
+                            <p class="good-name"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="num-box">NO.3</span>
+                            <span class="word-box">行业店铺推荐</span>
+                        </div>
+                        <div style="margin-top: -5px;">
+                            <span class="time-box"></span>
+                        </div>
+                        <div>
+                            <p class="good-name"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="num-box">NO.4</span>
+                            <span class="word-box">行业店铺推荐</span>
+                        </div>
+                        <div style="margin-top: -5px;">
+                            <span class="time-box"></span>
+                        </div>
+                        <div>
+                            <p class="good-name"></p>
+                        </div>
+                    </li>
+                    <li style="border: none;">
+                        <div>
+                            <span class="num-box">NO.5</span>
+                            <span class="word-box">行业店铺推荐</span>
+                        </div>
+                        <div style="margin-top: -5px;">
+                            <span class="time-box"></span>
+                        </div>
+                        <div>
+                            <p class="good-name"></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix change-row" style="margin-top: 15px;">
+        <div class="change-box pull-left clearfix">
+            <ul class="change-list-box clearfix">
+                <li>
+                    <input id="shopName" class="form-control input-sm" type="text" placeholder="请输入店铺名"/>
+                </li>
+                <li>
+                    <div class="date-box">
+                        <input id="myCalender1" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/> - <input id="myCalender2" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="btn1" class="change-btn pull-left">确定</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 chart-box" style="margin-top: 15px;">
+            <div id="chart1" class="clearfix">
+                <table id="shopTable" class="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>店铺名</th>
+                        <th>店铺动态评分</th>
+                        <th>与同行业相比</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div id="pageBox1" class="pagination"></div>
+                <div class="compare-box">
+                    <ul>
+                        <li class="compare-btn-go">
+                            开始对比
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/echarts-all.js"></script>
+<script src="../js/jquery.pagination.js"></script>
+<script src="../js/jquery.cxcalendar.min.js"></script>
+<script src="../js/jquery.cxcalendar.languages.js"></script>
+<script src="../js/calendar.js"></script>
+<script src="../js/ajax.js"></script>
+<script src="../js/change-list.js"></script>
+<script src="../js/dianpu-dianpudubi.js"></script>
+</html>

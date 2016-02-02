@@ -1,0 +1,196 @@
+*{
+    margin:0;
+    padding:0;
+}
+#nav{
+    background-color:#0160bf;
+    height:80px;
+    min-width:1000px;
+}
+#nav img{
+    float:left;
+    margin-top:25px;
+    margin-left:30px;
+}
+#nav div{
+    float:right;
+    margin-top:30px;
+    margin-right:50px;
+    color:white;
+}
+#nav span{
+    vertical-align:middle;
+}
+#nav a{
+    color:white;
+}
+#nav ul{
+    margin-top:-32px;
+    margin-left:-15px;
+}
+#nav ul li{
+    background-color:#fd9800;
+    width:80px;
+    text-align:center;
+    margin-top:12px;
+    font-size:12px;
+    font-weight:600;
+    height:25px;
+    line-height:25px;
+    cursor:pointer;
+}
+#footer{
+    clear:both;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    min-width:1000px;
+    height:88px;
+    background-color:#b3c4d5;
+    text-align:center;
+    overflow:hidden;
+}
+#footer p{
+    font-size:13px;
+    color:#387ecb;
+}
+#container{
+    width:100%;
+    min-width:1000px;
+    height:auto;
+    overflow:hidden;
+}
+.left-box{
+    float:left;
+    margin-left:40px;
+    margin-top:20px;
+    height:700px;
+    background-color:#dfdede;
+}
+.left-box ul li{
+    list-style:none;
+    width:200px;
+    height:60px;
+    line-height:60px;
+    background-color:#0160bf;
+    color:white;
+    font-size:20px;
+    padding-left:30px;
+    cursor:pointer;
+}
+.hidetips{
+    display:none;
+}
+.right-box{
+    height:700px;
+    margin-right:45px;
+    margin-top:20px;
+    padding-left:280px;
+}
+.myPages:hover{
+    cursor:pointer;
+}
+.table{
+    clear:right;
+    border-top:1px solid #bdbdbd;
+}
+.table th,.table td{
+    font-size:18px;
+}
+.verifyPic{
+    display:inline-block;
+}
+.verifyPic:hover{
+    cursor:pointer;
+}
+.NewPage{
+    border-radius:5px;
+    background-color:#dddddd;
+    width:50px;
+    text-align:center;
+    display:inline-block;
+    cursor:pointer;
+}
+.doList{
+    cursor:pointer;
+    color:#0160bf;
+}
+#addSpace,#addUser,#addDb,#addConDb{
+    width:130px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    background-color:#fd9800;
+    font-size:15px;
+    float:right;
+    color:white;
+    cursor:pointer;
+    margin-bottom:40px;
+}
+#sPageNum,#uPageNum,#dPageNum,#uDetailsNewPage{
+    display:inline-block;
+    height:30px;
+    width:50px;
+}
+/*****************************************************项目空间****************************************************/
+.mySpace{
+    cursor:pointer;
+    color:#0160bf;
+}
+/***************************************************数据库用户管理**************************************************/
+#userInfo,#dbInfo{
+    margin-top:20px;
+}
+.userDo{
+    float:left;
+    font-size:15px;
+    margin-left:30px;
+    cursor:pointer;
+}
+.dbDo{
+    float:left;
+    font-size:20px;
+    margin-left:30px;
+    cursor:pointer;
+}
+.yellow{
+    color:#fd9800;
+}
+#dataPwd{
+    display:none;
+}
+#closePwd{
+    display:none;
+    width:60px;
+    text-align:center;
+    height:20px;
+    color:white;
+    background-color:#0099ff;
+    cursor:pointer;
+}
+/***************************************************数据库管理详情**************************************************/
+#dbInfo ul li{
+    list-style:none;
+    display:block;
+    height:40px;
+    line-height:40px;
+    margin-top:40px;
+    font-size:18px;
+}
+#dbInfo span{
+    display:inline-block;
+}
+.myBtn{
+    display:inline-block;
+    width:150px;
+    text-align:center;
+    height:40px;
+    line-height:40px;
+    color:white;
+    cursor:pointer;
+    background-color:#0099ff;
+    font-size:18px;
+    margin-top:50px;
+}
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../css/base.css" rel="stylesheet" />
+    <link type="text/css" href="../css/Spacetree.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/yemian-yonghufangwen.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="page-tab">
+    <span class="tab-words">全网访问页面查询</span>
+    <span>&gt;&gt;</span>
+    <span class="tab-words">全网搜索页面查询</span>
+</div>
+<div class="btn-box">
+    <form class="form-inline">
+        <div class="form-group pull-left" style="margin-top: 20px;">
+            <div class="input-group">
+                <input id="search-content" type="text" class="form-control input-sm" size="35" placeholder="例如：美食外卖">
+                <div class="input-group-addon" style="background: #98c9f4;cursor: pointer;" onclick="accessPath();">
+                    <img src="../images/find.png" style="width: 14px;"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group pull-left">
+            <select id="time-select" class="form-control input-sm">
+                <option value="1">昨天</option>
+                <option value="2">最近3天</option>
+                <option value="3">最近7天</option>
+                <option value="4">最近30天</option>
+                <option value="5">最近90天</option>
+            </select>
+        </div>
+    </form>
+</div>
+<img src="../images/loading.gif" alt="" class="load-pic"/>
+<div id="container">
+    <div id="center-container">
+        <div id="infovis">
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/jquery-ui-widget-combobox.js"></script>
+<!--[if IE]><script language="javascript" type="text/javascript" src="../js/excanvas.js"></script><![endif]-->
+<script language="javascript" type="text/javascript" src="../js/jit.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script language="javascript" type="text/javascript" src="../js/yemian-yonghufangwen.js"></script>
+<script src="../js/href.js"></script>
+</html>

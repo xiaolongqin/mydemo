@@ -1,0 +1,54 @@
+package entity;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "m_recommend")
+public class Recommend {
+	@Id
+	@GeneratedValue
+	private int id;
+	private String periods;
+	@ManyToOne
+	private Mv mv;
+	private Date upload_date=new Date();
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getPeriods() {
+		return periods;
+	}
+
+	public void setPeriods(String periods) {
+		this.periods = periods;
+	}
+
+	public Mv getMv() {
+		return mv;
+	}
+
+	public void setMv(Mv mv) {
+		this.mv = mv;
+	}
+
+	public String getUpload_date() {
+		return upload_date.toString();
+	}
+
+	public void setUpload_date(Date upload_date) {
+		this.upload_date = upload_date;
+	}
+
+}

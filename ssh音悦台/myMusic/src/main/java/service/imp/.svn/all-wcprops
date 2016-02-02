@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mymusic/!svn/ver/98/src/main/java/service/imp
+END
+FrontServiceImp.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/mymusic/!svn/ver/98/src/main/java/service/imp/FrontServiceImp.java
+END
+RecommendServiceImp.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/mymusic/!svn/ver/79/src/main/java/service/imp/RecommendServiceImp.java
+END
+UserServiceImp.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/mymusic/!svn/ver/85/src/main/java/service/imp/UserServiceImp.java
+END
+MvServiceImp.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/mymusic/!svn/ver/96/src/main/java/service/imp/MvServiceImp.java
+END
+AdminService.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/mymusic/!svn/ver/92/src/main/java/service/imp/AdminService.java
+END
+SingerServiceImp.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/mymusic/!svn/ver/98/src/main/java/service/imp/SingerServiceImp.java
+END

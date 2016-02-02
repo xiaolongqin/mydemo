@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta content="text/html" charset="utf-8">
+    <title>oss开通</title>
+    <link rel="stylesheet" href="/oss/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/oss/css/ossCommon.css">
+    <link rel="stylesheet" href="/oss/css/oss_kaitong.css">
+</head>
+<body>
+<!--导航-->
+<div class="mynav">
+    <div>
+        <img class="logo_pic" style="cursor:pointer;padding:5px 10px;" src="/oss/img/szy_logo_hei.png" alt="" onclick="oss_back_all();"/>
+    </div>
+</div>
+<!--二级导航-->
+<div class="myrds">
+    <span class="oss_title">开放式存储OSS</span>
+</div>
+<!--内容区域-->
+<div class="mymain" style="min-width:1340px;padding-left:100px;">
+    <h2>提示信息:</h2>
+    <p>你还没有开通OSS开放存储服务,开通后可以免费获得5G空间,是否即可开通？</p>
+    <div class="oss_btn" style="margin-left:350px;background:#0d9dff;color:#ffffff">立即开通</div>
+    <div class="oss_btn">暂不开通</div>
+</div>
+<!--页脚-->
+<div class="myfooter">
+    <p class="footWords">Copyright &copy; 2012-2015成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+    <p><span style="padding-right:40px;">联系电话:028-82140078</span><span>邮箱:shuzhilian@unionbigdata.com</span></p>
+</div>
+<!--存用户名-->
+<input id="userName" type="hidden"/>
+<!--存电话-->
+<input id="phone" type="hidden"/>
+<!--存真实姓名-->
+<input id="relName" type="hidden"/>
+</body>
+<script type="text/javascript" src="/oss/js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+    var openServ='';
+//    var openServ='http://192.168.2.32:8080';
+    $(function(){//存用户名
+        $.ajax({
+            url:openServ+'/oss/account/get',//上线修改url
+            type:'post',
+            data:{},
+            dataType:'json',
+            success:function(data){
+                if(data.state==true){
+                    $('#userName').val(data.data.email);
+                    $('#phone').val(data.data.phone);
+                    $('#relName').val(data.data.realname);
+                }else{
+                    alert(data.msg);
+                }
+            }
+        });
+        $('#userName').val();
+    });
+    $('.oss_btn').eq(0).on('click',function(){//进入OSS页面
+        var userName=$('#userName').val();
+        var phone=$('#phone').val();
+        var relName=$('#relName').val();
+        $.ajax({
+            url:openServ+'/oss/hdfs/openServ',
+            type:'post',
+            data:{'email':userName,'tel':phone,'realname':relName},
+            dataType:'json',
+            success:function(data){
+                if(data.state==true){
+                    window.location.href="/oss/view/main";
+                }else{
+                    alert(data.msg);
+                }
+            }
+        });
+    });
+    $('.oss_btn').eq(1).on('click',function(){//返回不开通页面
+        window.location.href="http://product.unionbigdata.com/szy/view/index";//上线改成http://product.unionbigdata.com
+    });
+    //返回rds与oss选择
+    function oss_back_all(){
+        window.location.href="http://product.unionbigdata.com/szy/view/";
+    }
+</script>
+</html>

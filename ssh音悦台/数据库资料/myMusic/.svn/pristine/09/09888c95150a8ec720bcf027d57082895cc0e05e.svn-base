@@ -1,0 +1,68 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="layer/layer.min.js"></script>
+<script type="text/javascript">
+
+function clickbyid(id,url) {
+	$("#"+id).click(function() {
+		window.location.href = url;
+	});
+}
+function loginchange() {
+	$("#exitlogin").css("display","inline");
+	$("#userlogin").css("display","none");
+}
+$(function() {
+	loginchange();
+	$('#userlogin').on('click', function(){
+		login();
+	});
+	$('#exitlogin').on('click', function(){
+		$.get("/myMusic/front/exit");
+	});
+	$('#shouye').click(function(){
+		window.location.href = "/myMusic/index.jsp";
+	});
+	
+});
+function login() {
+	    $.layer({
+	        type: 2,
+	        title: '请登录',
+	        area : ['400px' , '280px'],
+	        offset : ['200px', ''],
+	        iframe: {src: 'login.jsp'}
+	    });
+}
+
+</script>
+<html>
+<body style="width: 100%">
+	<div style="height: 50px; background: black;">
+		<span
+			style="color: green; font-size: 40px; font-style: inherit; margin-left: 20px;">音悦台</span>
+		<span class="vv" id="shouye"
+			style="color: #fefefe; font-size: 20px; font-style: inherit; margin-left: 20px; cursor: pointer;">首页</span>
+		<span
+			style="color: #fefefe; font-size: 20px; font-style: inherit; margin-left: 20px; cursor: pointer;">我的家</span>
+		<span
+			style="color: #fefefe; font-size: 20px; font-style: inherit; margin-left: 20px; cursor: pointer;">资讯</span>
+		<span
+			style="color: #fefefe; font-size: 20px; font-style: inherit; margin-left: 20px; cursor: pointer;">Mv</span>
+		<span
+			style="color: #fefefe; font-size: 20px; font-style: inherit; margin-left: 20px; cursor: pointer;">音乐人</span>
+		<span
+			style="color: #fefefe; font-size: 20px; font-style: inherit; margin-left: 20px; cursor: pointer;"><input
+			type="text" value="诸杰成"> <input value="搜索" type="button"></span>
+		<span id="userlogin"
+			style="color: #fefefe; font-size: 15px; font-style: inherit; margin-left: 350px; cursor: pointer;">登陆</span>
+			<span id="exitlogin" 
+			style="color: #fefefe; font-size: 15px; font-style: inherit; margin-left: 350px; cursor: pointer; display: none;">注销</span>
+		<span
+			style="color: #fefefe; font-size: 15px; font-style: inherit; margin-left: 20px; cursor: pointer;">注册</span>
+
+	</div>
+</body>
+</html>

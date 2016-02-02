@@ -1,0 +1,19 @@
+package service.imp;
+
+
+import entity.Mv;
+
+
+import entity.Singer;
+
+
+public interface AdministratorServiceImp {
+
+	
+
+
+	
+	//ĞÂÔö¸èÊÖ
+   public void addSinger(Singer singer);
+
+}

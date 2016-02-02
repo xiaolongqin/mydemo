@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mymusic/!svn/ver/99/src/main/java/dao
+END
+UserDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/mymusic/!svn/ver/95/src/main/java/dao/UserDao.java
+END
+BuyDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mymusic/!svn/ver/22/src/main/java/dao/BuyDao.java
+END
+AdministratorDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/mymusic/!svn/ver/88/src/main/java/dao/AdministratorDao.java
+END
+HeatDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/mymusic/!svn/ver/22/src/main/java/dao/HeatDao.java
+END
+CommentDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/mymusic/!svn/ver/98/src/main/java/dao/CommentDao.java
+END
+MvDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mymusic/!svn/ver/99/src/main/java/dao/MvDao.java
+END
+AttentionDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/mymusic/!svn/ver/98/src/main/java/dao/AttentionDao.java
+END
+CollectDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/mymusic/!svn/ver/22/src/main/java/dao/CollectDao.java
+END
+SingerDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mymusic/!svn/ver/98/src/main/java/dao/SingerDao.java
+END
+RecommendDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/mymusic/!svn/ver/79/src/main/java/dao/RecommendDao.java
+END

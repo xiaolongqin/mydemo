@@ -1,0 +1,124 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/style.css" />
+    <script type="text/javascript" src="../Js/jquery.js"></script>
+    <script type="text/javascript" src="../Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="../Js/bootstrap.js"></script>
+    <script type="text/javascript" src="../Js/ckform.js"></script>
+    <script type="text/javascript" src="../Js/common.js"></script> 
+
+    <style type="text/css">
+        body {
+            padding-bottom: 40px;
+        }
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+    </style>
+   <script type="text/javascript">
+    $(function () {
+    	var mappictype=$("#pictype").val();
+    	
+		$('#backid').click(function(){
+				window.location.href="index.jsp";
+		 });
+		
+		$(".pictype").each(function(j){
+			if($("#item"+j).val()==mappictype){
+				
+				$("#item"+j).attr("checked","checked");
+			}	
+		});
+
+    });
+    
+    
+    
+    
+</script>
+    
+</head>
+<body>
+<form action="sysphoto.do?v=editPhotoSure" method="post" class="definewidth m20" enctype="multipart/form-data">
+<input type="hidden" name="id" value="" />
+<table class="table table-bordered table-hover definewidth m10">
+     <tr>
+        <td width="15%" class="tableleft" >图片ID</td>
+        <td> <input type="text"   name="picid" readonly="readonly" value="${map.photography_id}"/></td>
+    </tr>
+     <tr>
+        <td class="tableleft">上传用户ID</td>
+        <td><input type="text" name="userid" value="${map.USER_ID}"/></td>
+    </tr>
+    
+    
+    <tr>
+        <td class="tableleft">图片名称</td>
+        <td><input type="text" name="pictitle" value="${map.PHOTOGRAPHY_TITLE}"/></td>
+    </tr>   
+	    <tr>
+        <td class="tableleft">图片类型</td>
+        <td>
+            <input type="hidden"  id="pictype" value="${map.PHOTOGRAPHY_TYPE}" >  
+            <input type="radio" name="pictype"  class="pictype" id="item0" value="风光" /> 风光
+            <input type="radio" name="pictype"  class="pictype" id="item1" value="动物"/> 动物
+			<input type="radio" name="pictype"  class="pictype" id="item2" value="星空"/> 星空
+			<input type="radio" name="pictype"  class="pictype" id="item3" value="人文"/>人文
+			<input type="radio" name="pictype"  class="pictype" id="item4" value="田园"/>田园
+			<input type="radio" name="pictype"  class="pictype" id="item5" value="大海"/> 大海
+			<input type="radio" name="pictype"  class="pictype" id="item6" value="其它"/> 其它
+        </td>
+    </tr>
+    
+    
+	<tr>
+        <td class="tableleft">图片加载导入时间</td>
+        <td><input type="text" value="${map.PHOTOGRAPHY_UPLOADINGTIME}"  name="picloadtime"/></td>
+    </tr>
+	
+    <tr>
+        <td width="10%" class="tableleft">图片和路径</td>
+       
+        <td><div><img alt="图片没传过来！" src="${pageContext.request.contextPath }/${map.PHOTOGRAPHY_IMGURL }"  width="100px" height="100px"> </div> 
+          <input type="text" name="picimgurl" value="${map.PHOTOGRAPHY_IMGURL }"/>
+           <input type="file" name="picimgurl" value="${map.PHOTOGRAPHY_IMGURL }" /></td>
+    </tr>
+    
+	<tr>
+        <td class="tableleft">图片标签</td>
+        <td><input type="text" name="pictag" value="${map.PHOTOGRAPHY_TAG}"/></td>
+    </tr>
+	<tr>
+        <td class="tableleft">图片解读</td>
+        <td><input type="text" name="picscramble" value="${map.PHOTOGRAPHY_IMGUNSCRAMBLE}"/></td>
+    </tr>
+	<tr>
+        <td class="tableleft">图片描述</td>
+        <td><input type="text" name="picexplain" value="${map.PHOTOGRAPHY_IMGEXPLAIN}"/></td>
+    </tr>
+    <tr>
+        <td class="tableleft"></td>
+        <td>
+            <button type="submit" class="btn btn-primary" type="button">修改</button>&nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+        </td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

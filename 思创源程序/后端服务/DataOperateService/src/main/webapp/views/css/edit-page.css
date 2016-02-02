@@ -1,0 +1,27 @@
+.user-reg-step{border-top: solid 4px #99caf6;}
+.user-reg-step dl{
+    border-top-color: #99caf6;
+}
+.user-reg-step dl .st-bg{background-color: #99caf6;border-color: #d6eafb;}
+.user-reg-step dl .st-text{color: #5e5e5e;}
+.edit-page-find{
+    width:50%;
+    margin:0 0 50px;
+}
+
+@media only screen and (max-width: 900px) {
+    .user-reg-step{
+        zoom:80%;
+    }
+}
+a{
+   cursor: pointer;
+}
+a.status-t{
+
+}
+a.status-f{
+    color:#666;
+    cursor: default;
+    text-decoration: none;
+}

@@ -1,0 +1,5 @@
+$(function(){
+	$("#addSinger").click(function(){
+		window.location.href("addSinger.jsp");
+	});
+});

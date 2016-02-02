@@ -1,0 +1,16 @@
+package service;
+
+import javax.annotation.Resource;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import service.imp.UserServiceImp;
+import dao.imp.UserDaoImp;
+@Service
+@Transactional
+public class UserService implements UserServiceImp {
+	@Resource
+	private UserDaoImp  userDao;
+	
+}

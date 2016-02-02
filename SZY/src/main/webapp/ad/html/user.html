@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<title>用户管理-数之云</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="css/ad_common.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+	        <script src="js/bootstrap/html5shiv.min.js"></script>
+	        <script src="js/bootstrap/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+	    <!--顶部 S-->
+		<header class="navbar ad-nav" id="top" role="banner">
+		 	<div class="container">
+			    <div class="navbar-header">
+			      <a class="navbar-brand"><img height="30" src="images/szy_logo.png"/></a>
+			    </div>
+			    <nav class="collapse navbar-collapse" role="navigation">
+			      	<ul class="nav navbar-nav navbar-right">
+			        	<li id="J_navUserRegist">
+			        		<a class="dropdown-toggle" href="javascript:;" data-toggle="dropdown" aria-expanded="true">
+			        			<span class="glyphicon glyphicon-user"></span>
+			        			&ensp;<span id="J_navUserName">...</span>
+			        		</a>
+			        		<ul class="dropdown-menu" role="menu">
+							    <li><a class="first" href="info" title="个人资料">个人资料</a></li>
+							    <li class="divider"></li>
+							    <li><a href="javascript:;" onclick="exitLogin();return false;">退出</a></li>
+							</ul>
+			        	</li>
+			      	</ul>
+			    </nav>	    
+		  	</div>
+		</header>
+		<!--主体 S-->
+		<div class="container">
+			<div class="ad-wrap row clearfix">
+				<div class="ad-main pull-right">
+					<div class="ad-main-two">
+						<ul class="ad-nav-tab nav nav-tabs" role="tablist">
+						  	<li role="presentation" class="active"><a href="javascript:;" title="用户管理">用户管理</a></li>
+						  	<li id="J_adminTag" class="none" role="presentation"><a href="admin" title="管理员授权管理">管理员授权管理</a></li>
+						</ul>
+
+						<div class="ad-filter row">
+							<div class="col-sm-3">
+								<div id="J_userState" class="user-state">
+									<span>用户状态：</span>
+									<label class="radio-inline">
+									  <input type="radio" name="userState" value="1"> 正常
+									</label>
+									<label class="radio-inline">
+									  <input type="radio" name="userState" value="0"> 禁用
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-4"></div>
+							<div class="col-sm-2">
+								<div class="msg-tag"><a href="message" target="_blank" title="消息服务">消息服务</a></div>
+							</div>
+							<div class="col-sm-3">
+								<div class="input-group">
+						          	<div class="sch-name input-group-btn">
+						          		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><span id="J_userSchKey" data-key="email">用户邮箱</span>  <span class="caret"></span></button>
+							            <ul id="J_userSchKeyList" class="dropdown-menu" role="menu">
+							              	<li><a href="javascript:;" data-key="email">用户邮箱</a></li>
+							              	<li><a href="javascript:;" data-key="realname">真实姓名</a></li>
+							            </ul>
+						          	</div>
+						          	<input id="J_userSchValue" type="text" class="form-control">
+						          	<span class="input-group-btn">
+            							<button class="btn btn-default" type="button" onclick="userSearch();">
+            								<span class="glyphicon glyphicon-search"></span>
+            							</button>
+          							</span>
+						        </div>
+							</div>
+						</div>
+
+						<table class="ad-user-table table table-bordered">
+						    <thead>
+						        <tr>
+						          <th>用户邮箱</th>
+						          <th>手机号码</th>
+						          <th>注册用户名</th>
+						          <th>真实姓名</th>
+						          <th>公司名称</th>
+						          <th>注册时间</th>
+						          <th>用户状态</th>
+						          <th>发送消息</th>
+						        </tr>
+					    	</thead>
+						    <tbody id="J_userTbody">
+						       
+						    </tbody>
+					    </table>
+					    <div id="J_comPage" class="comPage"></div>
+					</div>
+				</div>
+				<div class="ad-menu pull-left">
+					<ul id="J_adAdminMenu" class="nav nav-pills nav-stacked" role="tablist">
+						<li class="active"><a href="user">用户管理</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	    <!--主体 E-->
+	    <!--FOOT S-->
+		<footer class="ad-footer">
+		    <div class="container">
+	    		<p class="text">Copyright ©2012 成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+	    	</div>
+		</footer>
+	    <!--FOOT E-->
+
+    	<script src="js/jquery-1.9.1.min.js"></script>
+	    <script src="js/bootstrap/bootstrap.min.js"></script>
+	    <script>var pageConfig=pageConfig || {};pageConfig.menuId=-1;</script>
+	    <script src="js/ad_common.min.js"></script>
+	    <script src="js/ad_user.min.js"></script>
+	</body>
+</html>

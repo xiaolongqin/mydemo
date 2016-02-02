@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/jichu-lujingjiankong.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="btn-box">
+    <form class="form-inline">
+        <div class="form-group">
+            <div class="input-group">
+                <input id="search-content" size="30" type="text" class="form-control input-sm" placeholder="例如：关键路径id或描述"/>
+                <div class="input-group-addon" style="background: #98c9f4;cursor: pointer;" onclick="searchRoute();">
+                    <img src="../images/find.png" style="width: 14px;" alt=""/>
+                </div>
+            </div>
+        </div>
+        <div id="add-btn" onclick="goAddUpd();">
+            <img src="../images/add.png" alt=""/>
+            <span>新增</span>
+        </div>
+    </form>
+</div>
+<div class="path-box">
+    <table id="path-table" class="table table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th>路径ID</th>
+                <th>路径描述</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td colspan="4">暂无数据</td></tr>
+        </tbody>
+    </table>
+    <div class="page">
+        <nav class="text-center">
+            <ul class="page-change">
+                <li><a>上一页</a></li>
+                <li>&nbsp; 当前页码：<span id="newPage">1</span>&nbsp; </li>
+                <li><a>下一页</a></li>
+                <li style="margin-left: 20px;">共<span id="totalPage"></span>页</li>
+                <li style="margin-left: 20px;"><a>跳转</a>到第 <input id="goPage" type="text" class="form-control"/> 页</li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="node-box">
+    <div class="node-line">
+        <div class="img-box">
+            <img src="../images/down-gray.png" alt=""/>
+        </div>
+    </div>
+    <div class="table-box">
+        <table id="node-table" class="table table-bordered table-condensed">
+            <thead>
+            <tr>
+                <th>节点ID</th>
+                <th>节点描述</th>
+                <th>上级页面URL</th>
+                <th>下级页面URL</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <h4>关键路径分析结果</h4>
+    <div class="charts-box row">
+        <div id="lujingChart1" class="col-md-6"></div>
+        <div id="lujingChart2" class="col-md-6"></div>
+    </div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/echarts-all.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/jichu-lujingjiankong.js"></script>
+<script src="../js/href.js"></script>
+</html>

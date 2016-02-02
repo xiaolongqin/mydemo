@@ -1,0 +1,53 @@
+package action;
+
+import javax.annotation.Resource;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import entity.Administrator;
+import service.imp.AdminService;
+
+@Component("adminAction")
+@Scope("prototype")
+public class AdminAction {
+
+	@Resource
+	private AdminService adminService;
+	
+	private String adminname;
+	private String password;
+	private String url;
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public String getAdminname() {
+		return adminname;
+	}
+	public void setAdminname(String adminname) {
+		this.adminname = adminname;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	//π‹¿Ì‘±µ«¬º
+	public String login(){
+		System.out.println(adminname);
+		System.out.println(password);
+		Administrator admin = adminService.queryAdmin(adminname, password);
+		if(admin!=null){
+			url = "/sys/index.jsp";
+			return "ok";
+		}
+		url = "login.jsp";
+		return "ok";
+		
+	}
+}

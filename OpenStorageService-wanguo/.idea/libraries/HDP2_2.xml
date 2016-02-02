@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="HDP2.2">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../jar/HDP2.2.42633" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../jar/HDP2.2.42633" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../jar/HDP2.2.42633" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../jar/HDP2.2.42633" recursive="false" type="SOURCES" />
+  </library>
+</component>

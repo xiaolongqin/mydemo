@@ -1,0 +1,18 @@
+package dao.imp;
+
+import java.util.List;
+
+import entity.Singer;
+
+
+
+public interface SingerDaoImp {
+	//增加歌手
+   public void saveSinger(Singer singer);
+   //统计歌手总记录条数
+   public long count();
+   //分页查询歌手 
+   public List<Singer> querySingerByPage(int begin,int pageSize);
+   //查询全部歌手
+   public List<Singer> allSinger();
+}

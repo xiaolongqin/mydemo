@@ -1,0 +1,7 @@
+package dao;
+
+import dao.imp.BuyDaoImp;
+
+public class BuyDao implements BuyDaoImp {
+
+}

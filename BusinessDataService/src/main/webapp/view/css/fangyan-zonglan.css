@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size:100%;
+}
+body{
+    position: relative;
+    font-family: 'Microsoft Yahei';
+    font-size: 1em;
+}
+#mainBox{
+    width: 100%;
+    height: 41em;
+    background: #fff;
+    /*background: url("../images/home.png") no-repeat right;*/
+    position: relative;
+}
+.word-box{
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+#mainBox>img{
+    width: 50%;
+    width: 40%\0/ ;
+    max-width: 700px;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    z-index: 1;
+}
+#mainBox h3{
+    margin-top: 30px;
+    color: #273f67;
+    font-weight: 600;
+    font-size: 1.4em;
+    padding-left: 40px;
+    letter-spacing: 5px;
+    word-spacing: 5px;
+}
+.grey-title{
+    color: #a2abb2;
+    font-size: 1.875em;
+    padding-left: 40px;
+    font-weight: 600;
+    margin-top: 80px;
+}
+#numberBox{
+    color: #f3b026;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 2.5em;
+    padding-left: 40px;
+    letter-spacing: 5px;
+}
+.name-box{
+    position: absolute;
+    font-size: 1em;
+    color: #a1abb4;
+    top: 0;
+    left: 40px;
+    overflow: hidden;
+    max-width: 70%;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.pic-box{
+    position: relative;
+    top: -30px;
+    width: 50%;
+}
+#chart1{
+    width: 88%;
+    height: 18.75em;
+    position: relative;
+}
+#chart2{
+    /*display: none;*/
+    width: 70%;
+    height: 15em;
+    position: absolute;
+    top: 46px;
+    left: 40px;
+}
+.word-right{
+    width: 100%;
+    z-index: 99999;
+    position: absolute;
+    top: 44px;
+    left: 80%;
+}
+#chart2 ul,.word-right ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.word-right ul li{
+    font-size: 13px;
+    color: #4a5f6f;
+    font-weight: 600;
+    margin: 28px 0;
+}
+#chart2 ul li{
+    width: 100%;
+    height: 15px;
+    margin: 29px 0;
+    background: #edf2f5;
+}
+.now-in{
+    position: absolute;
+    left: 50%;
+    top: 30%;
+}
+#name1{
+    top: 50px;
+}
+#name2{
+    top: 95px;
+}
+#name3{
+    top: 140px;
+}
+#name4{
+    top: 185px;
+}

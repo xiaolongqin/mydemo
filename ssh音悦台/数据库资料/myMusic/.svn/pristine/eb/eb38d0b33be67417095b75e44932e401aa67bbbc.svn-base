@@ -1,0 +1,5 @@
+package dao.imp;
+
+public interface AttentionDaoImp {
+
+}

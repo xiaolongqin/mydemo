@@ -1,0 +1,13 @@
+package entity;
+
+public class User {
+  private int id;
+  private String nickname;
+  private String username;
+  private String userpass;
+  private String phone;
+  private String email;
+  private Double money;
+  
+	
+}

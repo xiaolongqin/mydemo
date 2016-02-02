@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<title>数之云</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="css/szy_common.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+	        <script src="js/bootstrap/html5shiv.min.js"></script>
+	        <script src="js/bootstrap/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body class="szy-in-body">
+	    <!--顶部 S-->
+		<header class="navbar user-nav user-nav-hei" role="banner">
+		 	<div class="container">
+			    <div class="navbar-header">
+			      <a href="index" class="navbar-brand"><img height="30" src="images/szy_logo_hei.png"/></a>
+			    </div>
+			    <a class="nav-all-tag pull-left" href="all" title="产品">产品</a>
+			    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+			      	<ul class="nav navbar-nav navbar-right">
+			      		<li id="J_navUserLogin"></li>
+			      		<li id="J_navUserline" class="line none">|</li>
+			        	<li id="J_navUserRegist">
+			        		<a id="J_navUserName" class="dropdown-toggle" href="javascript:;" data-toggle="dropdown" aria-expanded="true">...</a>
+			        		<ul class="dropdown-menu" role="menu">
+							    <li><a class="first" href="rdsorder" title="订单管理">订单管理</a></li>
+							    <li><a href="info" title="个人资料">个人资料</a></li>
+							    <li class="divider"></li>
+							    <li><a href="javascript:;" onclick="exitLogin();return false;">退出</a></li>
+							</ul>
+			        	</li>
+			        	<li class="line">|</li>
+			        	<li><a href="#" title="管理控制台">管理控制台</a></li>
+			      	</ul>
+			    </nav>
+		  	</div>
+		</header>
+	    <!--顶部 E-->
+		<!--主体 S-->
+		<div class="szy-in-wrap container">
+			<ul id="J_szyInUl" class="szy-in-ul clearfix">
+				<li>
+					<a class="href" href="rds">
+						<div class="img"><img src="images/szy_in_rds.png" width="119" height="76"/></div>
+						<h2 class="title">关系型数据库RDS</h2>
+					</a>
+					<h3 class="des">替换您的Mysql服务器</h3>
+				</li>
+				<li>
+					<a class="href" href="oss">
+						<div class="img"><img src="images/szy_in_oss.png" width="119" height="76"/></div>
+						<h2 class="title">开放存储服务OSS</h2>
+					</a>
+					<h3 class="des">给您最广阔的空间</h3>
+				</li>
+				<li>
+					<a class="href" href="#">
+						<div class="img"><img src="images/szy_in_oas.png" width="119" height="76"/></div>
+						<h2 class="title">开放应用服务OAS</h2>
+					</a>
+					<h3 class="des"></h3>
+				</li>
+				<li>
+					<a class="href" href="#">
+						<div class="img"><img src="images/szy_in_ocs.png" width="119" height="76"/></div>
+						<h2 class="title">开放计算服务OCS</h2>
+					</a>
+					<h3 class="des"></h3>
+				</li>
+				<li>
+					<a class="href" href="#">
+						<div class="img"><img src="images/szy_in_dts.png" width="119" height="76"/></div>
+						<h2 class="title">数据传输服务DTS</h2>
+					</a>
+					<h3 class="des"></h3>
+				</li>
+			</ul>
+			<div id="J_szyInLayer" class="layer"></div>
+		</div>
+	    <!--主体 E-->
+	    <!--FOOT S-->
+		<footer class="user-footer user-footer-two">
+		    <div class="container">
+	    		<p class="text">Copyright ©2012 成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+	    	</div>
+		</footer>
+	    <!--FOOT E-->
+
+    	<script src="js/jquery-1.9.1.min.js"></script>
+	    <script src="js/bootstrap/bootstrap.min.js"></script>
+	    <script src="js/szy_common.min.js"></script>
+	    <script>
+	    	$(function(){
+	    		var lis=$("#J_szyInUl a"),
+	    			len=lis.length,
+	    			des=$("#J_szyInUl  .des"),
+	    			me=null,
+					curr_i=null,
+					currDes=null,
+					currDesTxt=null;
+	    		for(var i=0;i<len;i++){
+	    			lis[i]._i=i;
+	    			lis[i].onmouseover=function(){
+    					me=this,
+    					curr_i=me._i,
+    					currDes=$(des[curr_i]),
+    					currDesTxt=currDes.text();
+    					$("#J_szyInLayer").addClass('hover');
+	    				if(currDesTxt!=""){
+	    					currDes.show();
+	    				}
+	    			}
+	    			lis[i].onmouseout=function(){
+	    				$("#J_szyInLayer").removeClass('hover');
+	    				if(currDesTxt!=""){
+		    				currDes.hide();
+		    			}
+	    			}
+	    		}
+	    	});
+		</script>
+	</body>
+</html>

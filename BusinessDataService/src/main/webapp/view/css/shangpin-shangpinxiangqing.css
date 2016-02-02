@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Microsoft Yahei';
+}
+#chart1,#chart2,#chart3,#chart31{
+    width: 100%;
+    height: 400px;
+}
+#chart3,#chart31{
+    width: 90%;
+    margin: 0 auto;
+}
+#chart4,#chart5{
+    width: 100%;
+    overflow: hidden;
+}
+.comment-pic{
+    float: left;
+    margin-left: 20px;
+    *margin-left: 0;
+    margin-right: 10px;
+    *margin-right: 5px;
+}
+.comment-pic img{
+    width: 45px;
+}
+.comment-content{
+    width: 80%;
+    /*height: 50px;*/
+    padding: 5px 15px;
+    font-size: 14px;
+    float: left;
+    word-break: break-all;
+    color: #3c763d;
+}
+.chart-box .my-col-box{
+    overflow:hidden;
+    *width: 49%;
+}
+.good-name{
+    float: left;
+    max-width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.title-last{
+    float: left;
+}
+.table-name{
+    max-width: 450px;
+}

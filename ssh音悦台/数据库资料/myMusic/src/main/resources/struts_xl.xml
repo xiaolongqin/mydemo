@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 解决post中文乱码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- 开发模式，修改类无需重启服务器 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 设置文件上传最大大小为50M -->
+	<constant name="struts.multipart.maxSize" value="52428800" />
+	<package name="mv" namespace="/mv" extends="struts-default">
+		<action name="mv_*" class="mvAction" method="{1}">
+			<result name="success" type="redirect">/sys/MV/index.jsp</result>
+
+			<result name="downLoadMv" type="stream">
+				<param name="contentType">application/octet-stream </param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="inputName">downloadFile</param>
+				<param name="bufferSize">4096</param>
+				
+			</result>
+
+
+		</action>
+	</package>
+
+
+
+</struts>

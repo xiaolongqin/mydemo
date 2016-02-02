@@ -1,0 +1,7 @@
+package service;
+
+import service.imp.SingerServiceImp;
+
+public class SingerService implements SingerServiceImp {
+
+}

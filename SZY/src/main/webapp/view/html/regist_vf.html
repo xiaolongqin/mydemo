@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<title>验证账户信息-注册-数之云</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="css/szy_common.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+	        <script src="js/bootstrap/html5shiv.min.js"></script>
+	        <script src="js/bootstrap/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+	    
+	    <!--顶部 S-->
+		<header class="navbar user-nav" id="top" role="banner">
+		 	<div class="container">
+			    <div class="navbar-header">
+			      <a href="index" class="navbar-brand"><img height="30" src="images/szy_logo.png"/></a>
+			    </div>
+			    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+			      	<ul class="nav navbar-nav navbar-right">
+			        	<li><a href="javascript:;" onclick="userLogin();return false;" title="登录">登录</a></li>
+			        	<li class="line">|</li>
+			        	<li><a href="#" title="管理控制台">管理控制台</a></li>
+			      	</ul>
+			    </nav>
+		  	</div>
+		</header>
+	    <!--顶部 E-->
+		<!--主体 S-->
+		<div class="container">
+			<div class="user-reg-step num4 clearfix">
+				<dl class="doing">
+					<dt class="st-num">
+						<div class="st-bg">1</div>
+					</dt>
+					<dd class="st-text">设置账户信息</dd>
+				</dl>
+				<dl class="doing">
+					<dt class="st-num">
+						<div class="st-bg">2</div>
+					</dt>
+					<dd class="st-text">检验账户信息</dd>
+				</dl>
+				<dl>
+					<dt class="st-num">
+						<div class="st-bg">3</div>
+					</dt>
+					<dd class="st-text">管理员审核</dd>
+				</dl>
+				<dl>
+					<dt class="st-num">
+						<div class="st-bg succ"></div>
+					</dt>
+					<dd class="st-text">注册成功</dd>
+				</dl>
+			</div>
+			<div class="user-reg-wrap">
+				<div class="user-reg-vf">
+					<h2 class="one">恭喜您！信息已提交成功！</h2>
+					<div class="two">已发送验证邮件至：<span id="J_vfEmail"></span>   <a id="J_vfEmailGo" class="go" href="#" target="_blank" title="去验证">去验证</a></div>
+					<div class="get">没收到邮件？&ensp;<a href="javascript:;" onclick="reGetEamil();return false;">重新获取</a></div>
+					<p class="three">验证邮件24小时内有效，请尽快登录您的邮箱点击验证链接完成验证。</p>
+				</div>
+			</div>
+			<div class="user-reg-notice" style="padding-bottom: 170px;">
+				<h2>重要公告：</h2>
+				<h3>注册成功，即享特权：</h3>
+				<ul>
+					<li>1、领取新人大礼包</li>
+					<li>2、免费试用云服务器</li>
+				</ul>
+			</div>
+		</div>
+	    <!--主体 E-->
+	    <!--FOOT S-->
+		<footer class="user-footer">
+		    <div class="container">
+	    		<p class="text">Copyright ©2012 成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+	    	</div>
+		</footer>
+	    <!--FOOT E-->
+
+    	<script src="js/jquery-1.9.1.min.js"></script>
+	    <script src="js/bootstrap/bootstrap.min.js"></script>
+	    <script src="js/szy_common.min.js"></script>
+	    <script>
+			var search     =location.search,
+				email      =decodeURIComponent(search.split("?email=")[1]);
+				if(email){
+					$("#J_vfEmail").html(email);
+					var href="http://mail."+email.split("@")[1];
+					$("#J_vfEmailGo").attr("href",href);
+				}else{
+					window.history.go(-1);
+				}
+			function reGetEamil(){
+				$.ajax({
+					url:AJAXURL.resendMail,
+					data:{"email":email},
+					type:"POST",
+					dataType:"JSON",
+					success:function(json){
+						if(json.state){
+							ALERT.init({info:'邮件获取成功！<a href="'+href+'" target="_blank" title="去验证">去验证</a>'});
+						}else{
+							ALERT.init({info:'邮件获取失败！'});
+						}
+					},
+					error:function(){
+						ALERT.init({info:'链接异常，请稍后再试！'});
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+package action;
+
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import entity.Singer;
+import service.imp.SingerServiceImp;
+
+
+@Controller
+public class SingerAction {
+	@Resource
+	private SingerServiceImp singerServiceIMP ;
+	//ÐÂÔö¸èÊÖ
+	private Singer singer;
+	private String url;
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public Singer getSinger() {
+		return singer;
+	}
+	public void setSinger(Singer singer) {
+		this.singer = singer;
+	}
+	
+	public String addSinger(){
+		singerServiceIMP.addSinger(singer);
+		url = "index.jsp";
+		return "ok";
+	}
+	
+}

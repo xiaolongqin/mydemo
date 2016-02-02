@@ -1,0 +1,398 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: '微软雅黑';
+    padding-left: 30px;
+    background: #fff;
+}
+.title h3{
+    margin: 0 0 0 18px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.calculate-box{
+    width: 75%;
+    margin-left: 20px;
+    border: 2px solid #b7b7b7;
+    border-radius: 7px;
+    margin-top: 15px;
+}
+.calculate-box>p{
+    margin: 0;
+    padding: 10px 0 10px 20px;
+    font-size: 15px;
+    color: red;
+    border-bottom: 2px solid #b7b7b7;
+}
+.cal-btn-box p{
+    margin: 80px auto;
+    width: 200px;
+    height: 40px;
+    background: #0165bb;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+.cal-content{
+    width: 96%;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: none;
+}
+#fenxiChart1{
+    width: 100%;
+    height: 300px;
+}
+.cal-content>p{
+    color: red;
+    font-size: 15px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    border-bottom: 2px solid #b7b7b7;
+}
+.charts-box{
+    margin-left: -20px;
+}
+.charts-box:after{
+    content: ".";
+    clear: both;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    display: block;
+}
+.big-box h4{
+    text-align: center;
+    font-weight: 600;
+}
+.time-box{
+    padding-left: 20px;
+}
+.big-box h5,.small-box h5{
+    font-weight: 600;
+    font-size: 15px;
+    margin: 15px 0 10px 0;
+}
+.time-list{
+    list-style: none;
+    display: inline-block;
+    border: 2px solid #82c3c7;
+    border-radius: 5px;
+}
+.time-list li{
+    font-size: 13px;
+    display: inline-block;
+    padding: 2px 10px;
+    cursor: pointer;
+    border-right: 1px solid #82c3c7;
+}
+.input-sm{
+    height: 25px;
+}
+.input-group-addon{
+    padding: 3px 12px;
+}
+.time-btn{
+    text-align: center;
+    background: #0064bc;
+    color: #fff;
+    width: 50px;
+    height: 24px;
+    line-height: 24px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.big-box{
+    padding: 20px 0;
+    float: left;
+    width: 100%;
+    border-bottom: 2px solid #d1d1d1;
+}
+.small-box{
+    padding: 15px;
+    border-right: 2px solid #d1d1d1;
+    position: relative;
+}
+.small-box h5{
+    text-align: center;
+}
+.person-box{
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.person-box:after{
+    content: ".";
+    clear: both;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    display: block;
+}
+#fenxiChart2{
+    width: 40%;
+    height: 350px;
+    float: left;
+    padding: 20px 0 0 20px;
+}
+.num-box{
+    padding: 10px;
+    float: left;
+    width: 60%;
+    border-bottom: 1px solid #d1d1d1;
+    border-left: 1px solid #d1d1d1;
+    height: 195px;
+}
+.man-word{
+    text-align: center;
+}
+.man-word h6{
+    font-weight: 600;
+    margin-top: 70px;
+}
+.man-word p{
+    color: #6495ed;
+    font-weight: 600;
+}
+#fenxiChart3,#fenxiChart4{
+    width: 100%;
+    height: 195px;
+    margin-top: -10px;
+    position: relative;
+    z-index: -1;
+}
+.percent-word{
+    margin-top: -2px;
+    padding-bottom: 2px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+}
+.age-list li{
+    padding: 1px 3px;
+    font-size: 13px;
+}
+.small-box h4{
+    text-align: center;
+    font-weight: 600;
+}
+.details-box{
+    text-align: center;
+    position: relative;
+}
+.details-box h4{
+    display: inline-block;
+    position: relative;
+}
+.details{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    background: #5a5a5a;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 0 0 0 5px;
+}
+.details-content{
+    display: none;
+    box-shadow: 2px 2px 6px 1px #c0c0c0;
+    position: absolute;
+    z-index: 50;
+    background: #fff;
+    font-size: 13px;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    padding: 15px;
+    left: 50%;
+    margin-left: -47px;
+    top: -215px;
+    width: 340px;
+    height: 210px;
+}
+.details-content p{
+    text-align: left;
+}
+.triangle{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-top: 9px solid #fff;
+    border-right: 9px solid transparent;
+    left: 140px;
+    bottom: -9px;
+}
+.data-title{
+    width: 120px;
+    padding: 8px 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #0165bb;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    text-align: center;
+}
+.xiguan-data{
+    display: inline-block;
+    list-style: none;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+}
+.xiguan-data li{
+    display: inline-block;
+    border-right: 1px solid #d1d1d1;
+    padding: 10px 20px;
+}
+.xiguan-data li p{
+    margin-top: 5px;
+    font-size: 13px;
+}
+.xiguan-data li h6{
+    font-size: 16px;
+    font-weight: 600;
+}
+#fenxiChart5{
+    margin-top: 20px;
+    width: 100%;
+    height: 350px;
+}
+.list-box{
+    margin-top: 20px;
+}
+.list-box p{
+    color: red;
+    font-size: 15px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+}
+#fenxiChart6{
+    width: 100%;
+    margin-top: 30px;
+    height: 400px;
+}
+#fenxiChart7{
+    width: 100%;
+    height: 300px;
+}
+#fenxiChart8{
+    width: 100%;
+    height: 300px;
+    margin-top: 55px;
+}
+#fenxiChart9{
+    width: 110%;
+    margin-top: 55px;
+    height: 300px;
+}
+.color-tips{
+    text-align: center;
+    height: 25px;
+}
+.color-tips ul{
+    list-style: none;
+}
+.color-tips ul li{
+    display: inline-block;
+    font-size: 14px;
+}
+.color-box {
+    width: 20px;
+    height: 12px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-left: 8px;
+}
+.time-active{
+    color: #82c3c7;
+}
+.details-btn{
+    position: relative;
+    top: 144px;
+}
+.details-btn span{
+    margin-right: 10px;
+}
+.details-btn span:hover{
+    cursor: pointer;
+}
+.details-list{
+    position: absolute;
+    width: 340px;
+    height: 145px;
+    top: 35px;
+    left: 0;
+    padding-left: 15px;
+    display: none;
+}
+.details-list h5{
+    text-align: left;
+    font-size: 14px;
+    margin-top: 0;
+}
+.details-huge h5{
+    margin: -13px 0 0 0;
+}
+.details-huge p{
+    margin: 0;
+    padding: 0;
+}
+.details-middle h5{
+    margin-top: -10px;
+    margin-bottom: 2px;
+}
+.details-middle p{
+    margin: 0 0 5px;
+    padding-right: 15px;
+}
+.details-active{
+    display: block;
+}
+#birth-list{
+    visibility: hidden;
+    position: absolute;
+    z-index: 999;
+    top: 80px;
+    right: 30px;
+    width: 920px;
+    height: 400px;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #d1d1d1;
+}
+#birth-dis{
+    width: 250px;
+}
+.map-title{
+    height: 25px;
+    background: #0064bc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin: 0;
+    color: #fff;
+    line-height: 25px;
+    padding-left: 20px;
+}
+.table-box{
+    padding: 20px;
+    height: 300px;
+    overflow: auto;
+}
+.table-box tr td,.table-box tr th{
+    text-align: center;
+    font-size: 13px;
+}
+#downLoadBir{
+    display: none;
+}

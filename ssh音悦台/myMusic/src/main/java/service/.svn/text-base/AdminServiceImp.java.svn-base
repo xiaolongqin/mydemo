@@ -1,0 +1,25 @@
+package service;
+
+import javax.annotation.Resource;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import dao.imp.AdministratorDaoImp;
+import entity.Administrator;
+import service.imp.AdminService;
+@Service
+@Transactional
+public class AdminServiceImp implements AdminService {
+@Resource
+private AdministratorDaoImp adminDao;
+//查询管理员
+	public Administrator queryAdmin(String adminname, String password) {
+		return adminDao.queryAdmin(adminname, password);
+	}
+	//新增管理员
+	public void addAdmin(Administrator admin) {
+		adminDao.savaAdmin(admin);	
+	}
+
+}

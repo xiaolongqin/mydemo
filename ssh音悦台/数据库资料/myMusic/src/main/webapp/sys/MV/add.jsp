@@ -1,0 +1,151 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@include file="common.jsp"%>
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css"
+	href="${ctx}/sys/Css/bootstrap.css" />
+<link rel="stylesheet" type="text/css"
+	href="${ctx}/sys/Css/bootstrap-responsive.css" />
+<link rel="stylesheet" type="text/css" href="${ctx}/sys/Css/style.css" />
+<script type="text/javascript" src="${ctx}/sys/Js/jquery.js"></script>
+<script type="text/javascript" src="${ctx}/sys/Js/jquery.sorted.js"></script>
+<script type="text/javascript" src="${ctx}/sys/Js/bootstrap.js"></script>
+<script type="text/javascript" src="${ctx}/sys/Js/ckform.js"></script>
+<script type="text/javascript" src="${ctx}/sys/Js/common.js"></script>
+<style type="text/css">
+body {
+	padding-bottom: 40px;
+}
+
+.sidebar-nav {
+	padding: 9px 0;
+}
+
+@media ( max-width : 980px) {
+	/* Enable use of floated navbar text */
+	.navbar-text.pull-right {
+		float: none;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+</style>
+
+<script type="text/javascript">
+	$(function() {
+		$('#backid').click(function() {
+			window.location.href = "index.jsp";
+		});
+		$('#ok').click(function() {
+			if($("#singername").val()==0){
+				alert("请选择歌手");
+				return false;
+			};
+			
+		});
+		$('#singername').change(function() {
+			var id=$("#singername").val();
+			if(id!=0){
+			$("#singerid").html(id);
+			}
+			
+		});
+
+		$("#singers").keyup(
+				function() {
+					singers = $("#singers").val();
+					if(singers.trim()==""){
+						$("#singername").html("<option value='0'>输入不能为空</option>");
+						return false;
+					}
+					$.get("${ctx}/mv/mv_querySingerByName", {
+						name : singers
+					}, function(data) {
+						var content = "";
+						if (data.length > 0) {
+							content = "<option value='0'>--请选择--</option>";
+							$.each(data, function(i, s) {
+								content = content + "<option value="+s.id+">" + s.name
+										+ "</option>";
+							});
+						} else {
+							content = "<option value='0'>没有找到先关歌手</option>";
+						}
+						$("#singername").html(content);
+					}, "json");
+
+				});
+
+	});
+</script>
+
+</head>
+<form action="${ctx}/mv/mv_saveMv" method="post"
+	enctype="multipart/form-data">
+	<table class="table table-bordered table-hover definewidth m10">
+		<tr>
+			<td class="tableleft">选择歌手</td>
+			<td><input type="text" id="singers" style="width: 100px;" /> <select
+				name="mv.singer.id" id="singername" style="width: 150px;" >
+					<option value="0">请先查询</option>
+			</select>
+			    歌手ID:<span   id="singerid"></span> 
+				</td>
+		</tr>
+		<tr>
+			<td class="tableleft">输入名称</td>
+			<td><input type="text" name="mv.name" /></td>
+		</tr>
+		<tr>
+			<td width="10%" class="tableleft">上传图片</td>
+			<td><input type="file" name="upload" /></td>
+		</tr>
+		<tr>
+			<td class="tableleft">类型</td>
+			<td><input type="radio" name="mv.type" value="流行" checked /> 流行
+				<input type="radio" name="mv.type" value="古典"  /> 古典 <input
+				type="radio" name="mv.type" value="摇滚"  /> 摇滚 <input
+				type="radio" name="mv.type" value="民谣"  /> 民谣 <input
+				type="radio" name="mv.type" value="其他"  /> 其他</td>
+		</tr>
+		<tr>
+			<td class="tableleft">地区</td>
+			<td><input type="radio" name="mv.area" value="内地" checked /> 内地
+				<input type="radio" name="mv.area" value="港台" /> 港台 <input
+				type="radio" name="mv.area" value="欧美" /> 欧美 <input type="radio"
+				name="mv.area" value="日韩" />日韩 <input type="radio" name="mv.area"
+				value="其它" /> 其它</td>
+		</tr>
+		<tr>
+			<td width="10%" class="tableleft">上传Mv</td>
+			<td><input type="file" name="upload" /></td>
+		</tr>
+		<tr>
+			<td class="tableleft">点击量</td>
+			<td><input type="text" name="mv.click" value="0"
+				readonly="readonly" /></td>
+		</tr>
+		<tr>
+			<td class="tableleft">价格</td>
+			<td><input type="text" value="0" name="mv.price" /></td>
+		</tr>
+		<tr>
+			<td class="tableleft">描述</td>
+			<td><textarea rows="5" cols="21" name="mv.describe"></textarea></td>
+		</tr>
+		<tr>
+			<td class="tableleft"></td>
+			<td>
+				<button type="submit" class="btn btn-primary" type="button" id="ok">保存</button>&nbsp;&nbsp;
+				<button type="button" class="btn btn-success" name="backid"
+					id="backid">返回列表</button>
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+package entity;
+
+import java.util.Date;
+
+public class Heat {
+   private int id;
+   private User user;
+   private Mv mv;
+   private Date heat_date;
+}

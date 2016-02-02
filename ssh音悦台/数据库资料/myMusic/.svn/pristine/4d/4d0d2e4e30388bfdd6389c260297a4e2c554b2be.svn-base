@@ -1,0 +1,14 @@
+package service;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import service.imp.UserServiceImp;
+import dao.imp.UserDaoImp;
+@Service
+public class UserService implements UserServiceImp {
+	@Resource
+	private UserDaoImp  userDao;
+	
+}

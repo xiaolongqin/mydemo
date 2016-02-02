@@ -1,0 +1,73 @@
+package dao;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import dao.imp.SingerDaoImp;
+import entity.Mv;
+import entity.Singer;
+@Repository
+public class SingerDao implements SingerDaoImp {
+	@Autowired
+	private SessionFactory sessionFactory;
+//增加歌手
+	public void saveSinger(Singer singer) {
+		Session session = sessionFactory.getCurrentSession();
+		session.save(singer);
+	}
+	//统计歌手总记录数
+	public long count() {
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "select count(*) from Singer";
+		Query q = session.createQuery(hql);
+		long totalRecord = (Long)q.uniqueResult();
+		return totalRecord;
+	}
+	//分页查询歌手
+	public List<Singer> querySingerByPage(int begin,int pageSize) {
+		Session session = sessionFactory.getCurrentSession();
+		Query q = session.createQuery("from Singer");
+		q.setFirstResult(begin);
+		q.setMaxResults(pageSize);
+        List<Singer> singers = q.list();
+		return singers;
+	}
+	//查询所有歌手
+	public List<Singer> allSinger() {
+		Session session = sessionFactory.getCurrentSession();
+		Query q = session.createQuery("from Singer");
+		List<Singer> singers = q.list();
+		return singers;
+	}
+	//删除歌手
+	public void deleteSinger(Singer singer) {
+		Session session = sessionFactory.getCurrentSession();
+        session.delete(singer);		
+	}
+	public List<Singer> querySingerByName(String name) {
+		Session session=sessionFactory.getCurrentSession();
+		String hql=" from Singer where name like ?";
+		Query query=session.createQuery(hql);
+		query.setParameter(0, "%"+name+"%");
+		List<Singer> list=query.list();
+		return list;
+	}
+	public List<Singer> querySingerByArea(int page,String area){
+		Session session=sessionFactory.getCurrentSession();
+		String hql=" from Singer where area like ?";
+		Query query=session.createQuery(hql);
+		query.setParameter(0, "%"+area+"%");
+		List<Singer> list=query.list();
+		return list;
+	}
+	public Singer querySingerById(int id) {
+		Session session=sessionFactory.getCurrentSession();
+		return (Singer) session.get(Singer.class, id);
+	}
+	
+}

@@ -1,0 +1,39 @@
+.user_response{
+    min-width:1680px;
+    padding:0 40px;
+    overflow:hidden;
+}
+#response_name{
+    width:200px;
+}
+.user_response td{
+    padding-right:10px;
+    padding-top:30px;
+    vertical-align:top;
+}
+#myresponse{
+    color:white;
+    background:#ff6633;
+    height:25px;
+    line-height:25px;
+    width:100px;
+    text-align:center;
+    cursor:pointer;
+}
+.res_header_left,.res_header_right{
+    float:left;
+    margin-top:80px;
+    font-family:'微软雅黑';
+}
+.res_header_left{
+    font-size:20px;
+    padding-left:10px;
+    border-left:2px solid #ff4500;
+}
+.res_header_right{
+    margin-top:87px;
+    margin-left:30px;
+    color:#0099ff;
+    cursor:pointer;
+    font-size:15px;
+}

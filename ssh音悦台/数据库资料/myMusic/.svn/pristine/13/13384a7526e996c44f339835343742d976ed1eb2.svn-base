@@ -1,0 +1,112 @@
+package dao;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Repository;
+
+import dao.imp.MvDaoImp;
+import entity.Mv;
+import entity.Singer;
+@Repository
+@Scope("prototype")
+public class MvDao implements MvDaoImp {
+	@Autowired
+	
+	private SessionFactory sessionFactory;
+
+	public void save(Mv mv) {
+		System.out.println("---------dao--------");
+		Session session=sessionFactory.getCurrentSession();
+		session.save(mv);
+	}
+
+	public List<Mv> queryMvByName(String name) {
+		System.out.println(name);
+		Session session=sessionFactory.getCurrentSession();
+		String hql=" from Mv where name like ?";
+		Query query=session.createQuery(hql);
+		query.setParameter(0, "%"+name+"%");
+		List<Mv> list=query.list();
+		System.out.println(list);
+		return list;
+	}
+	
+	public List<Mv> queryMvByName(String name, int page) {
+		int pagesize =5;
+		Session session = sessionFactory.getCurrentSession();
+		String hql="from Mv where name like ?";
+		Query query=session.createQuery(hql);
+		query.setParameter(0, "%"+name+"%");
+		query.setFirstResult((page-1)*pagesize);
+		query.setMaxResults(pagesize);
+		List<Mv> list=query.list();
+		return list;
+	}
+
+	public List<Mv> queryMv() {
+		Session session=sessionFactory.getCurrentSession();
+		String hql=" from Mv";
+		Query query=session.createQuery(hql);
+		List<Mv> list=query.list();
+		return list;
+	}
+
+	public Mv queryMvById(int id) {
+		Session session=sessionFactory.getCurrentSession();
+		return (Mv) session.get(Mv.class,id);
+	}
+
+	public List<Mv> queryMvBySinger(Singer singer) {
+		Session session=sessionFactory.getCurrentSession();
+		String hql=" from Mv where singer=?";
+		Query query=session.createQuery(hql);
+		query.setParameter(0, singer);
+		List<Mv> list=query.list();
+		System.out.println(list);
+		return list;
+	}
+
+	public List<Mv> queryMvByAreaAndDate(int page, String area) {
+		int pagesize=7;
+		Session session=sessionFactory.getCurrentSession();
+		String hql=" from Mv where area like ? order by upload_date desc";
+		Query query=session.createQuery(hql);
+		query.setFirstResult((page-1)*pagesize);
+		query.setMaxResults(pagesize);
+		query.setParameter(0, "%"+area+"%");
+		List<Mv> list=query.list();
+		System.out.println(list);
+		return list;
+	}
+
+	public List<Mv> queryMvByAreaAndClick(int page, String area) {
+		int pagesize=5;
+		Session session=sessionFactory.getCurrentSession();
+		String hql=" from Mv where area like ? order by click desc";
+		Query query=session.createQuery(hql);
+		query.setFirstResult((page-1)*pagesize);
+		query.setMaxResults(pagesize);
+		query.setParameter(0, "%"+area+"%");
+		List<Mv> list=query.list();
+		System.out.println(list);
+		return list;
+	}
+	public List<Mv> queryMvByRandom() {
+		int pagesize=5;
+		Session session=sessionFactory.getCurrentSession();
+		String hql="from Mv order by id * dbms_random.value()";
+		Query query=session.createQuery(hql);
+		query.setFirstResult(0);
+		query.setMaxResults(5);
+		List<Mv> list=query.list();
+		System.out.println(list);
+		return list;
+	}
+
+	
+}

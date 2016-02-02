@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/usual.css"/>
+    <link rel="stylesheet" href="../css/add-page.css"/>
+    <link rel="stylesheet" href="../css/edit-page.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="main" id="main">
+    <div class="edit-page-head">
+        <div class="title">
+            <ul><li>选页面归属</li></ul>
+        </div>
+        <div class="user-reg-step num4 clearfix">
+            <dl>
+                <dt class="st-num">
+                <div class="st-bg">1</div>
+                </dt>
+                <dd class="st-text"><input type="radio" name="pageFrom" id="pageRadio1" value="1" checked="checked" onclick="FindPage('');"/> 用户端</dd>
+            </dl>
+            <dl>
+                <dt class="st-num">
+                <div class="st-bg succ">2</div>
+                </dt>
+                <dd class="st-text"><input type="radio" name="pageFrom" id="pageRadio2" value="2" onclick="FindPage('');"/> 商户端</dd>
+            </dl>
+            <dl>
+                <dt class="st-num">
+                <div class="st-bg succ">3</div>
+                </dt>
+                <dd class="st-text"><input type="radio" name="pageFrom" id="pageRadio3" value="3" onclick="FindPage('');"/> 管家端</dd>
+            </dl>
+        </div>
+        <div class="find-bar edit-page-find clearfix">
+            <div class="input-group">
+            <input id="pageName" type="text" class="pull-left form-control" style="display: inline" placeholder="例如：页面描述"/>
+            <div class="input-group-addon find-btn" onclick="FindSomePage();">
+                <img src="../images/find.png" alt="find"/>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive table-show-pages">
+        <table class="common-table table table-striped table-bordered table-condensed" id="PageTable">
+            <thead>
+                <tr>
+                    <th>页面ID</th>
+                    <th>节点描述</th>
+                    <th>页面URL</th>
+                    <th>页面状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="page" style="margin-top: 50px;">
+        <nav class="text-center">
+            <ul class="page-change">
+                <li><a>上一页</a></li>
+                <li>&nbsp; 当前页码：<span>1</span>&nbsp; </li>
+                <li><a>下一页</a></li>
+                <li id="totalPage" style="margin-left: 20px;"></li>
+                <li style="margin-left: 20px;"><a>跳转</a>到第 <input type="text" class="form-control"/> 页</li>
+            </ul>
+        </nav>
+    </div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/add_page.js"></script>
+<script src="../js/edit-page.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/href.js"></script>
+</html>

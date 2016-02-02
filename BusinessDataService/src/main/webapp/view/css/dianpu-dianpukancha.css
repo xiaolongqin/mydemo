@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Microsoft Yahei';
+}
+#chart1{
+    width: 100%;
+    overflow: hidden;
+}
+#chart2{
+    width: 100%;
+    height: 400px;
+}
+#shopName{
+    border: none;
+}
+.good-id{
+    display: none;
+}
+.table-name:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+#channelList{
+    border: none;
+    color: #f3b026;
+    height: 27px;
+}
+/*对比按钮*/
+.compare-btn{
+    padding: 4px 0;
+    background: #f1f1f1;
+    border-radius: 5px;
+    color: #9ba2ae;
+    width: 100px;
+    margin: 0 auto;
+    cursor: pointer;
+    border: 1px solid #f1f1f1;
+}
+.btn-blue{
+    border: 1px solid #1986e8;
+    color: #1986e8;
+    background: #fff;
+}
+.compare-box{
+    clear: both;
+    float: right;
+    visibility: hidden;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    font-size: 12px;
+}
+.compare-btn-go{
+    cursor: pointer;
+    background: #1885e8;
+    color: #fff;
+}
+.compare-box ul li{
+    padding: 7px 10px;
+    text-align: center;
+    border: 1px solid #d1d1d1;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 0 2px;
+}
+.glyphicon{
+    cursor: pointer;
+}
+.glyphicon-remove{
+    cursor: pointer;
+    margin-left: 5px;
+    top: -2px;
+}

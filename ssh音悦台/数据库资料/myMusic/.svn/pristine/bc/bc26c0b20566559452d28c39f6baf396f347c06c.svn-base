@@ -1,0 +1,17 @@
+package dao.imp;
+
+import java.util.List;
+
+import entity.User;
+
+
+public interface UserDaoImp {
+	//≤È—Ø
+	public List<User> queryUser(int page, String name);
+	
+	//ÃÌº”
+	public void addUser(User user);
+	
+	//∑÷“≥
+	public List<User> PageUser(String periods,int pageSize);
+}

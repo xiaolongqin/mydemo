@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" href="../css/jichu-zenggai.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="charts-box">
+    <div id="zenggaiChart1"></div>
+</div>
+<div class="time-box">
+    <p class="tip-word">温馨提示：开始时间到结束时间最大跨度为180天，且开始时间必须小于等于结束时间</p>
+    <div class="row" style="margin-top: 20px;">
+        <h5 class="col-md-2">请选择时间</h5>
+        <div class="col-md-3">
+            <div class="input-group date form_date" data-link-format="yyyy-mm-dd">
+                <input id="time-start" class="form-control input-sm" type="text" readonly placeholder="开始时间"/>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+        </div>
+        <span style="float: left;margin-top: 5px;">至</span>
+        <div class="col-md-3">
+            <div class="input-group date form_date" data-link-format="yyyy-mm-dd">
+                <input id="time-end" class="form-control input-sm" type="text" readonly placeholder="结束时间"/>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+        </div>
+        <!--<div class="time-btn" style="margin-top: 2px;" onclick="timeTest();">检测时间</div>-->
+    </div>
+</div>
+<div class="node-add">
+    <div class="node-step1">
+        <h5>节点配置</h5>
+        <div id="add-btn" data-toggle="modal" data-target="#myModal" onclick="shade();">
+            <img src="../images/add.png" alt=""/>
+            <span>新增</span>
+        </div>
+    </div>
+</div>
+<div id="table-box">
+    <table id="pageTable" class="table table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th>节点ID</th>
+            <th>节点描述</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div class="node-save">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="path-id" class="col-md-3 control-label">路径id</label>
+            <div class="col-md-8">
+                <input type="email" class="form-control input-sm" id="path-id" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="path-desc" class="col-md-3 control-label">路径描述</label>
+            <div class="col-md-8">
+                <input type="email" class="form-control input-sm" id="path-desc">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">路径状态</label>
+            <div class="col-md-8">
+                <div id="path-state">生效</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="save-btn" onclick="saveAll();">保存</div>
+        </div>
+    </form>
+</div>
+<!--弹窗-->
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" style="overflow: hidden;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeShade();"><span aria-hidden="true" style="color: #fff;">&times;</span></button>
+                <h4 class="modal-title">修改节点</h4>
+            </div>
+            <div class="modal-body">
+                <div id="modal-div">
+                    <button type="button" class="close" aria-label="Close" onclick="delSearch();"><span aria-hidden="true" style="color: #fff;margin-right: 10px;">&times;</span></button>
+                    <p class="id-title">查询ID</p>
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input id="search-content" type="text" size="35" class="form-control input-sm" placeholder="例如：页面描述/URL">
+                                <div class="input-group-addon" style="background: #98c9f4;cursor: pointer;" onclick="searchId();">
+                                    <img src="../images/find.png" style="width: 14px;" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-box">
+                        <table id="page-table" class="table table-condensed table-bordered">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>描述</th>
+                                <th>URL</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td colspan="5">暂无数据</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pull-right" style="margin: 30px 10px 0 0;">
+                        <button type="button" class="btn btn-default btn-sm" onclick="delSearch();">取消</button>
+                        <button type="button" class="btn btn-primary btn-sm" onclick="saveId();">确定</button>
+                    </div>
+                </div>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="parentID" class="col-md-2 col-md-offset-2 control-label">上级页面ID：</label>
+                        <div class="col-md-4">
+                            <input type="text" onchange="cancelNoParent();" class="form-control input-sm" id="parentID" placeholder="示例：100031" readonly/>
+                        </div>
+                        <div class="time-btn search-btn" onclick="seeSearch(this);">查询</div>
+                        <div class="col-md-2">
+                            <div class="checkbox" style="margin-top: -4px;">
+                                <label>
+                                    <input id="no-parent" type="checkbox" onchange="noParent(this);">无上级
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="childID" class="col-md-2 col-md-offset-2 control-label">下级页面ID：</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control input-sm" id="childID" placeholder="示例：100032" readonly/>
+                        </div>
+                        <div class="time-btn search-btn" onclick="seeSearch(this);">查询</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="node-desc" class="col-md-2 col-md-offset-2 control-label">节点描述：</label>
+                        <div class="col-md-4">
+                            <textarea id="node-desc" class="form-control" rows="2"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2 col-md-offset-2 control-label">节点状态：</div>
+                        <div class="col-md-2">
+                            <div class="modal-box1">生效</div>
+                        </div>
+                    </div>
+                </form>
+                <div class="row" style="border-top: 1px solid #c1c1c1;padding-top: 10px;">
+                    <form class="form-horizontal col-md-6 parent-form">
+                        <div class="form-group">
+                            <label class="col-md-4 col-md-offset-4 control-label">上级页面</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">页面描述：</label>
+                            <div class="col-md-8">
+                                <p class="form-control parent-content">暂无</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">页面归属：</label>
+                            <div class="col-md-8">
+                                <p class="form-control parent-content">暂无</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">页面状态：</label>
+                            <div class="col-md-4">
+                                <p class="form-control parent-content">暂无</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">版本号：</label>
+                            <div class="col-md-4">
+                                <p class="form-control parent-content">暂无</p>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="form-horizontal col-md-6 child-form">
+                        <div class="form-group">
+                            <label class="col-md-4 col-md-offset-4 control-label">下级页面</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">页面描述：</label>
+                            <div class="col-md-8">
+                                <p class="form-control child-content">暂无</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">页面归属：</label>
+                            <div class="col-md-8">
+                                <p class="form-control child-content">暂无</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">页面状态：</label>
+                            <div class="col-md-4">
+                                <p class="form-control child-content">暂无</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">版本号：</label>
+                            <div class="col-md-4">
+                                <p class="form-control child-content">暂无</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal" onclick="closeShade();">取消</button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="saveNode();">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/echarts-all.js"></script>
+<script src="../js/bootstrap-datetimepicker.min.js"></script>
+<script src="../js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/jichu-change.js"></script>
+<script src="../js/href.js"></script>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/kehu-shengmingfenxi.css"/>
+    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="title">
+    <h3>客户分析计算</h3>
+</div>
+<div class="calculate-box">
+    <p>温馨提示：请先配置生命周期阀值定义，再点击分析计算</p>
+    <div class="cal-btn-box" onclick="calculate();">
+        <p>分析计算</p>
+    </div>
+</div>
+<!--计算分析的图表开始全部是隐藏的，点了分析计算按钮之后才显示出来，所以要用一个大div来包裹-->
+<div class="cal-content">
+    <div id="fenxiChart1"></div>
+    <p>温馨提示：此图展现您当前配置的用户声明周期阀值对应的指标占比分布</p>
+    <div class="charts-box">
+        <h3 class="title" style="text-align: center;">客户特定场景分析</h3>
+        <div class="big-box">
+            <h4>消费客户群体特征分析</h4>
+            <div class="time-box">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h5>快速选择时间</h5>
+                        <ul class="time-list customer-time">
+                            <li class="time-active" onclick="getCustomerGroup(this);">昨天</li>
+                            <li onclick="getCustomerGroup(this);">最近3天</li>
+                            <li onclick="getCustomerGroup(this);">最近7天</li>
+                            <li onclick="getCustomerGroup(this);">最近30天</li>
+                            <li style="border: none;" onclick="getCustomerGroup(this);">最近90天</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-7">
+                        <h5>自定义时间</h5>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="input-group date form_date" data-link-format="yyyy-mm-dd">
+                                    <input id="group-start" class="form-control input-sm" type="text" readonly=""/>
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
+                            <span style="float: left;margin-top: 5px;">至</span>
+                            <div class="col-md-4">
+                                <div class="input-group date form_date" data-link-format="yyyy-mm-dd">
+                                    <input id="group-end" class="form-control input-sm" type="text" readonly=""/>
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
+                            <div class="time-btn" onclick="getTimeCustomer();">确定</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="person-box">
+                    <div id="fenxiChart2"></div>
+                    <div>
+                        <div class="num-box">
+                            <div style="width: 20%;float: left;" class="man-word">
+                                <h6>男性人数</h6>
+                                <p></p>
+                            </div>
+                            <div style="width: 20%;float: left;">
+                                <ul class="list-unstyled age-list" style="margin-left: 10px;">
+                                    <li style="font-weight: 600;">年龄分布</li>
+                                    <li>18岁以下</li>
+                                    <li>18-24岁</li>
+                                    <li>25-29岁</li>
+                                    <li>30-34岁</li>
+                                    <li>35-39岁</li>
+                                    <li>40-49岁</li>
+                                    <li>50-59岁</li>
+                                    <li>60岁及以上</li>
+                                </ul>
+                            </div>
+                            <div style="width: 60%;float: left;">
+                                <p class="percent-word">百分比</p>
+                                <div id="fenxiChart3"></div>
+                            </div>
+                        </div>
+                        <div class="num-box" style="border-bottom: none;">
+                            <div style="width: 20%;float: left;" class="man-word">
+                                <h6>女性人数</h6>
+                                <p style="color: #da7982;"></p>
+                            </div>
+                            <div style="width: 20%;float: left;">
+                                <ul class="list-unstyled age-list" style="margin-left: 10px;">
+                                    <li style="font-weight: 600;">年龄分布</li>
+                                    <li>18岁以下</li>
+                                    <li>18-24岁</li>
+                                    <li>25-29岁</li>
+                                    <li>30-34岁</li>
+                                    <li>35-39岁</li>
+                                    <li>40-49岁</li>
+                                    <li>50-59岁</li>
+                                    <li>60岁及以上</li>
+                                </ul>
+                            </div>
+                            <div style="width: 60%;float: left;">
+                                <p class="percent-word">百分比</p>
+                                <div id="fenxiChart4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="big-box">
+        <div class="details-box">
+            <h4>客户习惯分析</h4>
+            <div class="details" flag="1" onclick="seeDetails(this);">详情</div>
+            <div class="details-content" style="margin-left: -90px;">
+                <p>指标解释：</p>
+                <p>消费客户：定义近2月订单有消费金额大于0</p>
+                <p>活跃客户：定义近2月访问行为有日志记录</p>
+                <p>沉没客户：定义上月有访问行为且本月没有访问行为</p>
+                <p>全部用户：定义存量的全部用户</p>
+                <div class="triangle"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <h5>选择客户</h5>
+                <ul class="time-list habit-type">
+                    <li class="time-active" onclick="getCustHabit(this);">消费客户</li>
+                    <li onclick="getCustHabit(this);">活跃客户</li>
+                    <li onclick="getCustHabit(this);">沉默客户</li>
+                    <li style="border: none;" onclick="getCustHabit(this);">全部客户</li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>选择时间</h5>
+                <ul class="time-list habit-time">
+                    <li class="time-active" onclick="getCustHabit(this);">昨天</li>
+                    <li onclick="getCustHabit(this);">最近7天</li>
+                    <li style="border: none;" onclick="getCustHabit(this);">最近30天</li>
+                </ul>
+            </div>
+        </div>
+        <h4 class="data-title">数据概况</h4>
+        <ul class="xiguan-data">
+            <li>
+                <p>高峰来访时段TOP1</p>
+                <h6 class="time-store"></h6>
+                <p>人数：<span class="person-store"></span></p>
+            </li>
+            <li>
+                <p>高峰来访时段TOP2</p>
+                <h6 class="time-store"></h6>
+                <p>人数：<span class="person-store"></span></p>
+            </li>
+            <li>
+                <p>高峰来访时段TOP3</p>
+                <h6 class="time-store"></h6>
+                <p>人数：<span class="person-store"></span></p>
+            </li>
+            <li>
+                <p>高峰来访时段TOP4</p>
+                <h6 class="time-store"></h6>
+                <p>人数：<span class="person-store"></span></p>
+            </li>
+            <li style="border: none;">
+                <p>高峰来访时段TOP5</p>
+                <h6 class="time-store"></h6>
+                <p>人数：<span class="person-store"></span></p>
+            </li>
+        </ul>
+        <div id="fenxiChart5"></div>
+    </div>
+    <div class="big-box">
+        <h4>消费客户地域分布分析</h4>
+        <div class="row">
+            <div class="col-md-5">
+                <h5>快速选择时间</h5>
+                <ul class="time-list distri-time">
+                    <li class="time-active" onclick="getCustDistribute(this);">昨天</li>
+                    <li onclick="getCustDistribute(this);">最近3天</li>
+                    <li onclick="getCustDistribute(this);">最近7天</li>
+                    <li onclick="getCustDistribute(this);">最近30天</li>
+                    <li style="border: none;" onclick="getCustDistribute(this);">最近90天</li>
+                </ul>
+            </div>
+            <div class="col-md-7">
+                <h5>自定义时间</h5>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="input-group date form_date" data-link-format="yyyy-mm-dd">
+                            <input id="distri-start" class="form-control input-sm" type="text" readonly=""/>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                    <span style="float: left;margin-top: 5px;">至</span>
+                    <div class="col-md-4">
+                        <div class="input-group date form_date" data-link-format="yyyy-mm-dd">
+                            <input id="distri-end" class="form-control input-sm" type="text" readonly=""/>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                    <div class="time-btn" onclick="getTimeDistri();">确定</div>
+                </div>
+            </div>
+        </div>
+        <h3 style="color: #58789e;margin-bottom: 15px;">您的消费者在哪里?</h3>
+        <ul class="xiguan-data" style="border-radius: 5px;">
+            <li>
+                <p>买家消费城市TOP1</p>
+                <h6 class="city-store"></h6>
+            </li>
+            <li>
+                <p>买家消费城市TOP2</p>
+                <h6 class="city-store"></h6>
+            </li>
+            <li>
+                <p>买家消费城市TOP3</p>
+                <h6 class="city-store"></h6>
+            </li>
+            <li>
+                <p>买家消费城市TOP4</p>
+                <h6 class="city-store"></h6>
+            </li>
+            <li style="border: none;">
+                <p>买家消费城市TOP5</p>
+                <h6 class="city-store"></h6>
+            </li>
+        </ul>
+        <div class="list-box">
+            <ul class="time-list distri-money">
+                <li class="time-active" onclick="getCustDistribute(this);">成交金额</li>
+                <li onclick="getCustDistribute(this);">购买人数</li>
+                <li onclick="getCustDistribute(this);">成交笔数</li>
+                <li style="border: none;" onclick="getCustDistribute(this);">客单价</li>
+            </ul>
+        </div>
+        <div id="fenxiChart6"></div>
+    </div>
+    <div class="big-box row" style="border-top: none;border-bottom: 2px solid #d1d1d1;">
+        <div class="details-box" style="margin-left: -20px;">
+            <h4>客户离网大数据预测分析</h4>
+            <div class="details" flag="1" onclick="seeDetails(this);">详情</div>
+            <div class="details-content">
+                <p style="margin-top: -8px;">指标解释：</p>
+                <div class="details-active details-list">
+                    <h5>消费习惯：</h5>
+                    <p>购物忠实型：连续3月消费用户</p>
+                    <p>购物热衷型：连续2月消费用户标示</p>
+                    <p>购物关注型：最近1周消费用户标示</p>
+                </div>
+                <div class="details-list details-huge">
+                    <h5>消费金额：</h5>
+                    <p>蓝领型：消费金额 0~300元</p>
+                    <p>灰领型：消费金额 300~500元</p>
+                    <p>粉领型：消费金额 500元~1500元</p>
+                    <p>白领型：消费金额 1500元~3000元</p>
+                    <p>富帅型：消费金额 3000元~5000元</p>
+                    <p>富豪型：消费金额 5000元~8000元</p>
+                    <p>大富豪型：消费金额 8000元~10000元</p>
+                    <p>土豪型：消费金额 10000元以上</p>
+                </div>
+                <div class="details-list">
+                    <h5>余额习惯：</h5>
+                    <p>半面不忘型：连续3月余额大于0,且3月内有充值记录</p>
+                    <p>触目成诵型：连续2月余额大于0,且2月内有充值记录</p>
+                    <p>多闻强记型：近1月余额大于0,且1月内有充值记录</p>
+                </div>
+                <div class="details-list">
+                    <h5>活跃度：</h5>
+                    <p>狂热忠诚型：连续3月活跃客户标示</p>
+                    <p>粉丝忠诚型：连续2月活跃客户标示</p>
+                    <p>爱好兴趣型：近1月活跃客户标示</p>
+                    <p>关注使用型：近1周活跃客户标示</p>
+                </div>
+                <div class="details-list details-middle">
+                    <h5>沉默度：</h5>
+                    <p>离网死亡型：定义上上月、上月和本月均无访问行为</p>
+                    <p>沉默离网趋向型：定义上上月有访问行为且上月和本月无访问行为</p>
+                    <p>活跃突减型：定义上月有访问行为且本月没有访问行为或者上上月、上月有访问行为且本月没有访问行为</p>
+                    <p>沉默使用型：定义上周有访问行为且本周没有访问行为</p>
+                </div>
+                <div class="details-btn">
+                    <span class="glyphicon glyphicon-chevron-left" onclick="prevPage();"></span>
+                    <span class="glyphicon glyphicon-chevron-right" onclick="nextPage();"></span>
+                </div>
+                <div class="triangle"></div>
+            </div>
+            <div class="list-box" style="text-align: left;">
+                <p>温馨提示：客户离网大数据预测分析针对所有的用户进行分析</p>
+            </div>
+            <h5 style="font-size: 15px;color:#0e90cf;">客户离网大数据预测分析图</h5>
+            <div class="color-tips">
+                <ul>
+                    <li>
+                        <div class="color-box" style="background: #ffb981;"></div>
+                        <span class="color-word">消费习惯</span>
+                    </li>
+                    <li>
+                        <div class="color-box" style="background: #57b1ed;"></div>
+                        <span class="color-word">消费金额</span>
+                    </li>
+                    <li>
+                        <div class="color-box" style="background: #2dc6cb;"></div>
+                        <span class="color-word">余额习惯</span>
+                    </li>
+                    <li>
+                        <div class="color-box" style="background: #b6a2e1;"></div>
+                        <span class="color-word">活跃度</span>
+                    </li>
+                    <li>
+                        <div class="color-box" style="background: #da7982;"></div>
+                        <span class="color-word">沉默度</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="fenxiChart7"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-box col-md-6">
+            <h4>客户消费TOP5分析</h4>
+            <h5 style="text-align: left;">快速选择时间</h5>
+            <ul class="time-list">
+                <li class="time-active" onclick="getTopBrand(this);">昨天</li>
+                <li onclick="getTopBrand(this);">最近3天</li>
+                <li onclick="getTopBrand(this);">最近7天</li>
+                <li onclick="getTopBrand(this);">最近30天</li>
+                <li style="border: none;" onclick="getTopBrand(this);">最近90天</li>
+            </ul>
+            <div id="fenxiChart8"></div>
+        </div>
+        <div class="small-box col-md-6" style="border-right: none;">
+            <h4>客户生日祝福提醒</h4>
+            <h5>选择生日时间</h5>
+            <ul class="time-list bir-date">
+                <li class="time-active" onclick="getBirthBless(this);">明天</li>
+                <li onclick="getBirthBless(this);">最近7天</li>
+                <li style="border: none;" onclick="getBirthBless(this);">最近30天</li>
+            </ul>
+            <div id="fenxiChart9"></div>
+            <div id="birth-list">
+                <button type="button" class="close" aria-label="Close" onclick="closeList();"><span aria-hidden="true" style="color: #fff;margin-right: 10px;">×</span></button>
+                <p class="map-title">生日列表</p>
+                <form class="form-inline" style="margin: 20px 20px 0;">
+                    <div class="form-group">
+                        <input id="birth-dis" class="form-control input-sm" type="text" placeholder="请输入：省、市、区县、小区、地址查询..."/>
+                    </div>
+                    <div class="form-group">
+                        <div class="time-btn" onclick="searchBirList();">搜索</div>
+                    </div>
+                </form>
+                <div class="table-box">
+                    <iframe id="downLoadBir" src=""></iframe>
+                    <table class="table table-bordered table-condensed">
+                        <thead>
+                        <tr>
+                            <th>用户ID</th>
+                            <th>用户名</th>
+                            <th>手机号码</th>
+                            <th>省</th>
+                            <th>市</th>
+                            <th>区县</th>
+                            <th>小区</th>
+                            <th>地址</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td colspan="8">暂无数据</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/echarts-all.js"></script>
+<script src="../js/bootstrap-datetimepicker.min.js"></script>
+<script src="../js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/kehu-shengmingfenxi.js"></script>
+<script src="../js/href.js"></script>
+</html>

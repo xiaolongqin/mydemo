@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding:0;
+}
+.myrds{
+    clear:both;
+    height:45px;
+    line-height:45px;
+    padding-left:20px;
+    background:#eee;
+    position:relative;
+    top:40px;
+}
+.oss_title{
+    color:#ff6633;
+    font-size:23px;
+    display:inline-block;
+}
+.mymain h2{
+    margin-top:50px;
+}
+.mymain p{
+    margin-left:40px;
+    margin-top:30px;
+    font-size:15px;
+}
+.oss_btn{
+    width:80px;
+    height:25px;
+    display:inline-block;
+    text-align:center;
+    line-height:23px;
+    cursor:pointer;
+    margin-left:20px;
+    margin-top:30px;
+    border:1px solid #d1d1d1;
+}

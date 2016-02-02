@@ -1,0 +1,14 @@
+package service;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import service.imp.AdministratorServiceImp;
+import dao.imp.AdministratorDaoImp;
+
+@Service
+public class AdministratorService implements AdministratorServiceImp {
+    @Resource
+	private AdministratorDaoImp administratorDao;
+}

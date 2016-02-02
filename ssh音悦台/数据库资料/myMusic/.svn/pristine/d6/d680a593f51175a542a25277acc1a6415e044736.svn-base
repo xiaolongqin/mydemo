@@ -1,0 +1,10 @@
+package dao.imp;
+
+import entity.Singer;
+
+
+
+public interface SingerDaoImp {
+	//Ôö¼Ó¸èÊÖ
+   public void saveSinger(Singer singer);
+}

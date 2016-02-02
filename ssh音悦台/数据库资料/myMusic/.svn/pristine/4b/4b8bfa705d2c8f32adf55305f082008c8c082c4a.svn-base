@@ -1,0 +1,122 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<script>
+	window._bd_share_config = {
+		"common" : {
+			"bdSnsKey" : {},
+			"bdText" : "",
+			"bdMini" : "2",
+			"bdMiniList" : false,
+			"bdPic" : "",
+			"bdStyle" : "0",
+			"bdSize" : "30"
+		},
+		"share" : {
+			"bdSize" : 30
+		}
+	};
+	with (document)
+		0[(getElementsByTagName('head')[0] || body)
+				.appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
+				+ ~(-new Date() / 36e5)];
+</script>
+<script type="text/javascript">
+	$(function() {
+		var mvdiv = $("#playdiv");
+		var mv = $("#video1");
+		$("#logo").load("logo.jsp");
+		$("#floot").load("floot.jsp");
+		mvdiv.click(function() {
+			if (mv.prop("paused")) {
+				mv[0].play();
+				mvdiv.css("opacity", 1);
+				$("#fristplay").css("display", "none");
+			} else {
+				$("#fristplay").css("display", "block");
+				mvdiv.css("opacity", 0.6);
+				mv[0].pause();
+			}
+		});
+		setInterval(function() {//定时检测	
+			if (!mv.prop("paused")) {
+				mvdiv.css("opacity", 1);
+				$("#fristplay").css("display", "none");
+			} else {
+				$("#fristplay").css("display", "block");
+				mvdiv.css("opacity", 0.6);
+			}
+		}, 300);
+	});
+</script>
+<style type="text/css">
+</style>
+<title>音悦台--周杰伦 — 听妈妈的话</title>
+</head>
+<body style="background-color: #fefefe; padding: 0">
+	<div
+		style="width: 100%; position: fixed; top: 0px; left: 0px; z-index: 2;"
+		id="logo"></div>
+	<div id="mvtitle"
+		style="font-weight: bold; font-size: 20px; width: 75%; margin: auto; margin-top: 52px;background: #dcdcdc;">
+		<span id="singername">周杰伦</span>&nbsp;>>&nbsp;<span id="mvname">听妈妈的话</span>
+	</div>
+	<div id="playdiv"
+		style="width: 75%; margin: auto; margin-top: 5px; border-style: inset;background: #dcdcdc;">
+		<img id="fristplay" src="resource/image/play.png"
+			style="display: none; position: absolute; bottom: 45%; left: 45%; width: 100px; height: 100px; z-index: 2">
+		<video id="video1" width="100% " autoplay="autoplay"
+			controls="controls">
+			<source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4"
+				type="video/mp4" />
+		</video>
+	</div>
+	<div id="" style="width: 75%; margin: auto;background: #dcdcdc;">
+
+		<span class="bdsharebuttonbox" style="font-size: 16px;"> <a
+			href="#" class="bds_more" data-cmd="more">我要分享：</a><a href="#"
+			class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a
+			href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a
+			href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a><a
+			href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">QQ好友</a><a
+			href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a
+			href="#" class="bds_kaixin001" data-cmd="kaixin001" title="分享到开心网">开心网</a><a
+			href="#" class="bds_taobao" data-cmd="taobao" title="分享到我的淘宝">我的淘宝</a>
+		</span> 
+	</div>
+	<div style="width: 75%; margin: auto; margin-top: 10px;">
+	<div style="font-weight: bolder;">mv信息：</div>
+	<div style="width: 100% ;border-style: inset;background: #fffeee;">Taylor Swift出席2014 American Music Awards全美音乐颁奖礼 正式首秀 撕B前任新单《Blank
+					Space》现场神还原MV布景 太壕太任性！凭此单
+					Taylor收获了她的第3支冠单，并成为该榜单56年来，首位凭借不同单曲连续登顶的女艺人Space》现场神还原MV布景 太壕太任性！凭此单
+					Taylor收获了她的第3支冠单，并成为该榜单56年来，首位凭借不同单曲连续登顶的女艺人</div>
+					<br>
+	<span style="cursor: pointer; background: #dcdcdc;">赞一下</span>:<span>115</span>
+		&nbsp;&nbsp;&nbsp;<span style="cursor: pointer; background: #dcdcdc;">下载</span>:<span>115</span>
+	</div>
+	<div id="mvcomment" style="width: 75%; margin: auto; margin-top: 10px;">
+		<span>我要评论：<br></span><textarea rows="3" cols="140" style="background: #fffeee;"></textarea> <br><input
+			type="button" value="发表评论">
+			
+		<div style="width: 100%;margin: auto; font-weight: bold;margin-top:10px ;">评论列表：</div>
+		
+		<div style="width: 100%;margin: auto; border-style: inset;background: #fffeee;">
+		<br>
+		&nbsp;&nbsp;&nbsp;<span style="width: 10%">张三</span>:&nbsp;&nbsp;&nbsp;<span style="width:80%; border-style: inset;background: #dcdcdc;">gdsfgdfgfdgdfgdf</span><br><br>
+		&nbsp;&nbsp;&nbsp;<span style="width: 10%">张三</span>:&nbsp;&nbsp;&nbsp;<span style="width:80%; border-style: inset;background: #dcdcdc;">音悦台官方Fan Club牵手追星神器【口袋·FAN】新装登场啦！这是我们打造的粉丝服务平台，会有更多艺人加入，</span><br><br>
+		&nbsp;&nbsp;&nbsp;<span style="width: 10%">张三</span>:&nbsp;&nbsp;&nbsp;<span style="width:80%; border-style: inset;background: #dcdcdc;">青春活力的他们和她们抢先亮相，偶像在梦想的舞台上闪耀，粉丝的爱在四周发光，</span><br><br>
+		&nbsp;&nbsp;&nbsp;<span style="width: 10%">张三</span>:&nbsp;&nbsp;&nbsp;<span style="width:80%; border-style: inset;background: #dcdcdc;">亲妈台要把你们圈起来，一起向上！你们约定好的旅程，让我们阻挡风雨送上阳光。</span><br><br>
+		&nbsp;&nbsp;&nbsp;<span style="width: 10%">张三</span>:&nbsp;&nbsp;&nbsp;<span style="width:80%; border-style: inset;background: #dcdcdc;">gdsfgdfgfdgdfgdf</span><br><br>
+		&nbsp;&nbsp;&nbsp;<span style="width: 10%">张三</span>:&nbsp;&nbsp;&nbsp;<span style="width:80%; border-style: inset;background: #dcdcdc;">gdsfgdfgfdgdfgdf</span><br><br>
+		&nbsp;&nbsp;&nbsp;<span style="width: 10%">张三</span>:&nbsp;&nbsp;&nbsp;<span style="width:80%; border-style: inset;background: #dcdcdc;">gdsfgdfgfdgdfgdf</span><br><br>
+		
+		</div>
+
+	</div>
+	<div id="floot" style="margin-left: 0; clear: both;"></div>
+</body>
+</html>

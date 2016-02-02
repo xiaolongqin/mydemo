@@ -1,0 +1,19 @@
+package service;
+
+import javax.annotation.Resource;
+
+import dao.imp.MvDaoImp;
+import entity.Mv;
+import service.imp.MvServiceImp;
+
+public class MvService implements MvServiceImp {
+
+	  @Resource
+	    private MvDaoImp mvDao;
+		
+	    /*-----------------------mv²Ù×÷-----------begin-----------*/
+	      public void save(Mv mv) {
+			mvDao.save(mv);
+		 }
+	    /*-----------------------mv²Ù×÷-----------end------------*/
+}

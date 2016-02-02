@@ -1,0 +1,67 @@
+package service;
+
+
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import service.imp.MvServiceImp;
+import dao.imp.MvDaoImp;
+import dao.imp.SingerDaoImp;
+import entity.Mv;
+import entity.Singer;
+@Service
+@Transactional
+public class MvService implements MvServiceImp {
+
+	@Resource
+	private MvDaoImp mvDao;
+	@Resource
+	private SingerDaoImp singerDao;
+
+	// 保存MV
+	public void save(Mv mv) {
+		mvDao.save(mv);
+	}
+	//查询所有歌手
+	public List<Singer> getAllSinger(){
+		return singerDao.allSinger();
+	}
+	public List<Mv> queryMvByName(String name) {
+		// TODO Auto-generated method stub
+		return mvDao.queryMvByName(name);
+	}
+	public List<Singer> querySingerByName(String name) {
+		// TODO Auto-generated method stub
+		return singerDao.querySingerByName(name);
+	}
+	public List<Mv> queryMv() {
+		// TODO Auto-generated method stub
+		return mvDao.queryMv();
+	}
+	public Mv queryMvById(int id) {
+		// TODO Auto-generated method stub
+		return mvDao.queryMvById(id);
+	}
+	public List<Mv> queryMvBySinger(Singer singer) {
+		// TODO Auto-generated method stub
+		return mvDao.queryMvBySinger(singer);
+	}
+	public List<Mv> queryMvByAreaAndDate(int page, String area) {
+		// TODO Auto-generated method stub
+		return mvDao.queryMvByAreaAndDate(page, area);
+	}
+	public List<Mv> queryMvByAreaAndClick(int page, String area) {
+		// TODO Auto-generated method stub
+		return mvDao.queryMvByAreaAndClick(page, area);
+	}
+	public List<Mv> queryMvByRandom() {
+		// TODO Auto-generated method stub
+		return mvDao.queryMvByRandom();
+	}
+	
+	
+}

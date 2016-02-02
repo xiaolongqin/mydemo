@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: '微软雅黑';
+    background: #fff;
+}
+.time-box{
+    width: 95%;
+    border: 2px solid #82c3c7;
+    border-radius: 7px;
+    margin-top: 25px;
+    padding: 30px;
+    overflow: hidden;
+    margin-left: 50px;
+}
+.time-box:after{
+    content: ".";
+    clear: both;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    display: block;
+}
+.time-list{
+    list-style: none;
+    display: inline-block;
+    border: 2px solid #82c3c7;
+    border-radius: 5px;
+}
+.time-list li{
+    display: inline-block;
+    padding: 2px 10px;
+    cursor: pointer;
+    border-right: 1px solid #82c3c7;
+    font-size: 13px;
+}
+.time-box h5{
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: -12px;
+}
+.time-btn{
+    text-align: center;
+    background: #0064bc;
+    color: #fff;
+    width: 50px;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#wordCloud{
+    margin-left: 20px;
+}
+#topWord{
+    width: 90%;
+    height: 350px;
+    margin: 20px 0;
+}
+#canvas-container{
+    height: 400px;
+    position: relative;
+}
+#screen {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: -200px;
+    z-index: -1;
+    width: 85%;
+    height: 800px;
+}
+#screen a {
+    position: absolute;
+    font-size: 15px;
+    overflow: hidden;
+    padding: 1px 2px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.charts-box{
+    visibility: hidden;
+}
+.input-sm{
+    height: 25px;
+}
+.input-group-addon{
+    padding: 3px 12px;
+}
+.chosen-active{
+    color: #82c3c7;
+}

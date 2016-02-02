@@ -1,0 +1,7 @@
+package dao;
+
+import dao.imp.AttentionDaoImp;
+
+public class AttentionDao implements AttentionDaoImp {
+
+}

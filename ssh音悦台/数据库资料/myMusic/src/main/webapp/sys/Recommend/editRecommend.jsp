@@ -1,0 +1,89 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="sys/Css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="sys/Css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="sys/Css/style.css">
+    <script type="text/javascript" src="sys/Js/jquery.js"></script>
+    <script type="text/javascript" src="sys/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="sys/Js/ckform.js"></script>
+    <script type="text/javascript" src="sys/Js/common.js"></script>
+ 
+    <style type="text/css">
+        body {
+            padding-bottom: 40px;
+        }
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+   </style>
+   <script type="text/javascript">
+      $(function () {
+           	$("#back").click(function() {
+    		window.location.href="sys/users/index.jsp";
+    		}); 
+    $.post("tourTarento.do",{v:"gettourById",RECOMMEND_ID:$("#RECOMMEND_ID").val()},function(data){
+			$.each(data, function (i,vdata) {
+				$("#RECOMMEND_TITLE").val(vdata.RECOMMEND_TITLE);
+				$("#USER_ID").val(vdata.USER_ID);
+				$("#RECOMMEND_DESCRIPTION").val(vdata.RECOMMEND_DESCRIPTION);
+				$("#RECOMMEND_TYPE").val(vdata.RECOMMEND_TYPE);
+				$("#RECOMMEND_IMGURL").val(vdata.RECOMMEND_IMGURL);
+				$("#RECOMMEND_WORDURL").val(vdata.RECOMMEND_WORDURL);
+			});
+		},"json");
+    });
+</script>  
+</head>
+<body>
+<form action="tourTarento.do?v=edittourdata" method="post" class="definewidth m20">
+<input type="hidden" name="RECOMMEND_ID" id="RECOMMEND_ID" value="${RECOMMEND_ID }">
+    <table class="table table-bordered table-hover definewidth m10">
+        <tr>
+            <td width="10%" class="recommend">推荐标题</td>
+            <td><input type="text" id="RECOMMEND_TITLE" name="RECOMMEND_TITLE" value=""/></td>
+        </tr>
+        <tr>
+            <td class="recommend">上传用户</td>
+            <td><input type="text" id="USER_ID" name="USER_ID"/></td>
+        </tr>
+        <tr>
+            <td class="recommend">推荐描述</td>
+            <td><input type="text" id="RECOMMEND_DESCRIPTION" name="RECOMMEND_DESCRIPTION" value=""/></td>
+        </tr>
+        <tr>
+            <td class="recommend">推荐类型</td>
+            <td><input type="text" id="RECOMMEND_TYPE" name="RECOMMEND_TYPE" value=""/></td>
+        </tr>
+        <tr>
+            <td class="imgurl">推荐路径</td>
+            <td><input type="text" id="RECOMMEND_IMGURL" name="RECOMMEND_IMGURL" value=""/></td>
+             </tr>
+         <tr>
+            <td class="recommend">推荐Word路径</td>
+            <td><input type="text" id="RECOMMEND_WORDURL" name="RECOMMEND_WORDURL" value=""/></td>
+        </tr>
+        <tr> 
+            <td class="tableleft"></td>
+            <td>
+                <button type="submit" class="btn btn-primary" type="button">保存</button>				 &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+ 

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mymusic/!svn/ver/83/src/main/webapp/sys/singer
+END
+index.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/mymusic/!svn/ver/75/src/main/webapp/sys/singer/index.jsp
+END
+addScenicimg.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/singer/addScenicimg.jsp
+END
+editScenic.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/singer/editScenic.jsp
+END
+editSinger.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/mymusic/!svn/ver/83/src/main/webapp/sys/singer/editSinger.jsp
+END
+addSinger.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/mymusic/!svn/ver/60/src/main/webapp/sys/singer/addSinger.jsp
+END
+scenicimg.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/singer/scenicimg.jsp
+END

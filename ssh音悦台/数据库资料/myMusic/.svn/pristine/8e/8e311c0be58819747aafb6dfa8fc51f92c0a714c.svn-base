@@ -1,0 +1,6 @@
+package dao.imp;
+
+
+public interface UserDaoImp {
+	
+}

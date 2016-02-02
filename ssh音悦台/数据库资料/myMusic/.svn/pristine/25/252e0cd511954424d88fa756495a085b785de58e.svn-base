@@ -1,0 +1,11 @@
+package service.imp;
+
+import entity.Mv;
+
+public interface MvServiceImp {
+   /**
+    * Ôö¼Ómv
+    * @param mv
+    */
+	public void save(Mv mv);
+}

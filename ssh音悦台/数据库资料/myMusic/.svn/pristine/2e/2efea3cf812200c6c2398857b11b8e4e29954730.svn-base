@@ -1,0 +1,10 @@
+package entity;
+
+import java.util.Date;
+
+public class Recommend {
+  private int id;
+  private String periods;
+ // private Mv mv;
+  private Date upload_date;
+}

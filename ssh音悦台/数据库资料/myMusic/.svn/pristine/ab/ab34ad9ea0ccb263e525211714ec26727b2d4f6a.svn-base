@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<script type="text/javascript">
+	$("#querybalance").click(function() {
+		window.location.href = "user!queryBalance";
+	});
+	$("#draw").click(function() {
+		window.location.href = "draw.jsp";
+	});
+	$("#deposit").click(function() {
+		window.location.href = "deposit.jsp";
+	});
+	$("#transfer").click(function() {
+		window.location.href = "transfer.jsp";
+	});
+	$("#business").click(function() {
+		window.location.href = "user.jsp";
+	});
+	$("#querylog").click(function() {
+		window.location.href = "user!queryLogByUser";
+	});
+	$("#userexit").click(function() {
+		window.location.href = "user!exit";
+	});
+	$(function() {
+		$.get("/OnlineBanking/user!isLogin", {}, function(name) {
+			if (name == 404) {
+				window.location.href = "index.jsp";
+			}
+			$("#name").html(name);
+		});
+	})
+</script>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<body style="position: fixed;top: 0px; width: 100%">
+	<div style="height: 50px; background: #145b7d;">
+		<input id="business" type="button"
+			style="width: 130px; height: 50px; font-size: 20px;" value="营业大厅">
+		<input id="querybalance" type="button"
+			style="width: 130px; height: 50px; font-size: 20px;" value="余额查询">
+		<input id="draw" type="button"
+			style="width: 130px; height: 50px; font-size: 20px;" value="取款操作">
+		<input id="deposit" type="button"
+			style="width: 130px; height: 50px; font-size: 20px;" value="存款操作">
+		<input id="transfer" type="button"
+			style="width: 130px; height: 50px; font-size: 20px;" value="转账缴费">
+		<input id="querylog" type="button"
+			style="width: 130px; height: 50px; font-size: 20px;" value="记录查询">
+		<input id="queryuser" type="button"
+			style="width: 130px; height: 50px; font-size: 20px;" value="个人信息">
+		<input id="userexit" type="button"
+			style="width: 130px; height: 50px; font-size: 20px;" value="安全退出">
+		<span id="name"
+			style="float: right; margin-top: 10px; margin-right: 50px; color: white; font-size: 18px;"></span>
+	</div>
+</body>
+</html>

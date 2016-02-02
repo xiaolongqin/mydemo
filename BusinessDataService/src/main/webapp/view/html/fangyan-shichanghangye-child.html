@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>数据服务平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/pagination.css"/>
+    <link rel="stylesheet" href="../css/jquery.cxcalendar.css"/>
+    <link rel="stylesheet" href="../css/calendar.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/fangyan-shichanghangye-child.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container-fluid content-box">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="header-box clearfix">
+                <p class="pull-left">细分市场<span class="price-box"></span>价格区间 — 热销商品扫描</p>
+                <div class="pull-left title-tips">
+                    <img src="../images/tip-g.png"/>
+                    <span onclick="seeTips(this);">详情</span>
+                    <div class="tip-box">
+                        <img src="../images/triangle-g.png"/>
+                        <div class="tip-box-title clearfix">
+                            <h4 class="pull-left">指标口径:</h4>
+                            <div class="pull-right page-box"><span>1</span>/<span>1</span></div>
+                        </div>
+                        <div class="tip-content">
+                            <ul>
+                                <li>1. 页面基础统计数据统计周期为T-1天，页面算法分析数据统计周期为T-7天。T为系统当前时间。</li>
+                                <li>2. 对T-1天，对当前用户所选择的数据类别，对上级页面选择的价格区间和时间区间，进行T-1天的商品清单详情页分析、销量趋势变化分析、市场品牌占比分析等。</li>
+                                <li>3. 点击每个单品名字，进入对当前点击的单品分析第三层详情页。
+                                    对点击的商品进行：商品销量情况、商品价格走势、商品各渠道销量占比、商品销售地域覆盖情况、商品口碑分析、商品同类竞争排名分析、商品同类品牌竞争排名分析。
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tip-page-box clearfix">
+                            <div class="pull-left" onclick="tipNextPage(this);">
+                                <img src="../images/yellow-left-none.png"/>
+                            </div>
+                            <div class="pull-right" onclick="tipPrevPage(this);">
+                                <img src="../images/yellow-right-none.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-left down-box">
+                    <img src="../images/download-g.png"/>
+                    <span onclick="downLoad();">导出</span>
+                    <iframe src="" frameborder="0" class="downLoad-box"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix change-row">
+        <div class="change-box pull-left clearfix">
+            <ul class="change-list-box clearfix">
+                <li>
+                    <span class="pn-active price-number">销售额</span>
+                    <span class="price-number">销售量</span>
+                    <span class="price-number">评论数</span>
+                </li>
+                <li>
+                    <span class="channel-btn">渠道筛选</span>
+                </li>
+                <li>
+                    <div class="date-box">
+                        <input id="myCalender1" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/> - <input id="myCalender2" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="btn1" class="change-btn pull-left">确定</div>
+        <div class="channel-box">
+            <!--<img src="../images/smalltriangle.png"/>-->
+            <table class="channel-table">
+                <tbody></tbody>
+            </table>
+            <p class="channel-tips">至少选择1个渠道</p>
+            <div class="channel-btn-box clearfix">
+                <div class="all-none-box" onclick="noneChoose(this);">
+                    <img src="../images/check-none.png"/>
+                    <span class="channel-none">全否</span>
+                </div>
+                <div class="all-none-box" onclick="allChoose(this);">
+                    <img src="../images/check-all.png"/>
+                    <span class="channel-all">全选</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row channel-row">
+        <ul>
+            <li>渠道 :</li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12 chart-box" style="margin-top: 20px;">
+            <div id="chart1" class="clearfix">
+                <table id="goodTable" class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>排名</th>
+                            <th>商品名</th>
+                            <th>
+                                <span style="vertical-align: middle;">销售额</span>
+                                <div class="triangle-box">
+                                    <span class="triangle-up up-down" onclick="upDown(this);"></span>
+                                    <span class="triangle-down up-down" onclick="upDown(this);"></span>
+                                </div>
+                            </th>
+                            <th>
+                                <span style="vertical-align: middle;">销售量</span>
+                                <div class="triangle-box">
+                                    <span class="triangle-up up-down" onclick="upDown(this);"></span>
+                                    <span class="triangle-down up-down" onclick="upDown(this);"></span>
+                                </div>
+                            </th>
+                            <th>渠道名</th>
+                            <th>排名变化</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div id="pageBox1" class="pagination"></div>
+                <div class="compare-box">
+                    <ul>
+                        <li class="compare-btn-go">
+                            开始对比
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid content-box">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="header-box clearfix">
+                <p class="pull-left">细分市场<span class="price-box"></span> — 市场变化</p>
+                <div class="pull-left title-tips">
+                    <img src="../images/tip-g.png"/>
+                    <span onclick="seeTips(this);">详情</span>
+                    <div class="tip-box">
+                        <img src="../images/triangle-g.png"/>
+                        <div class="tip-box-title clearfix">
+                            <h4 class="pull-left">指标口径:</h4>
+                            <div class="pull-right page-box"><span>1</span>/<span>1</span></div>
+                        </div>
+                        <div class="tip-content">
+                            <ul>
+                                <li>1. 页面基础统计数据统计周期为T-1天，页面算法分析数据统计周期为T-7天。T为系统当前时间。</li>
+                                <li>2. 对T-1天，对当前用户所选择的数据类别，对上级页面选择的价格区间和时间区间，进行T-1天的商品清单详情页分析、销量趋势变化分析、市场品牌占比分析等。</li>
+                                <li>3. 点击每个单品名字，进入对当前点击的单品分析第三层详情页。
+                                    对点击的商品进行：商品销量情况、商品价格走势、商品各渠道销量占比、商品销售地域覆盖情况、商品口碑分析、商品同类竞争排名分析、商品同类品牌竞争排名分析。
+                                </li>
+                                <li>4. 商品原始地址说明：以爬取商品的时间为准。可能存在历史数据在最新的时间内地址有变化的情况。</li>
+                            </ul>
+                        </div>
+                        <div class="tip-page-box clearfix">
+                            <div class="pull-left" onclick="tipNextPage(this);">
+                                <img src="../images/yellow-left-none.png"/>
+                            </div>
+                            <div class="pull-right" onclick="tipPrevPage(this);">
+                                <img src="../images/yellow-right-none.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix change-row">
+        <div class="change-box pull-left clearfix">
+            <ul class="change-list-box clearfix">
+                <li>
+                    <span class="pn-active price-number">销售额</span>
+                    <span class="price-number">销售量</span>
+                    <span class="price-number">评论数</span>
+                </li>
+                <li>
+                    <span class="channel-btn">渠道筛选</span>
+                </li>
+                <li>
+                    <div class="date-box">
+                        <input id="myCalender3" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/> - <input id="myCalender4" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="btn2" class="change-btn pull-left">确定</div>
+        <div class="channel-box">
+            <!--<img src="../images/smalltriangle.png"/>-->
+            <table class="channel-table">
+                <tbody></tbody>
+            </table>
+            <p class="channel-tips">至少选择1个渠道</p>
+            <div class="channel-btn-box clearfix">
+                <div class="all-none-box" onclick="noneChoose(this);">
+                    <img src="../images/check-none.png"/>
+                    <span class="channel-none">全否</span>
+                </div>
+                <div class="all-none-box" onclick="allChoose(this);">
+                    <img src="../images/check-all.png"/>
+                    <span class="channel-all">全选</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row channel-row">
+        <ul><li>渠道 :</li></ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12 chart-box">
+            <div id="chart2"></div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid content-box">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="header-box clearfix">
+                <p class="pull-left">细分市场<span class="price-box"></span> — 市场品牌占比</p>
+                <div class="pull-left title-tips">
+                    <img src="../images/tip-g.png"/>
+                    <span onclick="seeTips(this);">详情</span>
+                    <div class="tip-box">
+                        <img src="../images/triangle-g.png"/>
+                        <div class="tip-box-title clearfix">
+                            <h4 class="pull-left">指标口径:</h4>
+                            <div class="pull-right page-box"><span>1</span>/<span>1</span></div>
+                        </div>
+                        <div class="tip-content">
+                            <ul>
+                                <li>1. 页面基础统计数据统计周期为T-1天，页面算法分析数据统计周期为T-7天。T为系统当前时间。</li>
+                                <li>2. 对T-1天，对当前用户所选择的数据类别，对上级页面选择的价格区间和时间区间，进行T-1天的商品清单详情页分析、销量趋势变化分析、市场品牌占比分析等。</li>
+                                <li>3. 点击每个单品名字，进入对当前点击的单品分析第三层详情页。
+                                    对点击的商品进行：商品销量情况、商品价格走势、商品各渠道销量占比、商品销售地域覆盖情况、商品口碑分析、商品同类竞争排名分析、商品同类品牌竞争排名分析。
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tip-page-box clearfix">
+                            <div class="pull-left" onclick="tipNextPage(this);">
+                                <img src="../images/yellow-left-none.png"/>
+                            </div>
+                            <div class="pull-right" onclick="tipPrevPage(this);">
+                                <img src="../images/yellow-right-none.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix change-row">
+        <div class="change-box pull-left clearfix">
+            <ul class="change-list-box clearfix">
+                <li>
+                    <span class="pn-active price-number">销售额</span>
+                    <span class="price-number">销售量</span>
+                    <span class="price-number">评论数</span>
+                </li>
+                <li>
+                    <span class="channel-btn">渠道筛选</span>
+                </li>
+                <li>
+                    <div class="date-box">
+                        <input id="myCalender5" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/> - <input id="myCalender6" type="text" data-position="bottom" class="input" data-wday="0" size="12" readonly/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="btn3" class="change-btn pull-left">确定</div>
+        <div class="channel-box">
+            <!--<img src="../images/smalltriangle.png"/>-->
+            <table class="channel-table">
+                <tbody></tbody>
+            </table>
+            <p class="channel-tips">至少选择1个渠道</p>
+            <div class="channel-btn-box clearfix">
+                <div class="all-none-box" onclick="noneChoose(this);">
+                    <img src="../images/check-none.png"/>
+                    <span class="channel-none">全否</span>
+                </div>
+                <div class="all-none-box" onclick="allChoose(this);">
+                    <img src="../images/check-all.png"/>
+                    <span class="channel-all">全选</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row channel-row">
+        <ul><li>渠道 :</li></ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12 chart-box" style="margin-top: 15px;">
+            <div id="chart3"></div>
+        </div>
+    </div>
+</div>
+<!--<input id="count" type="hidden" value="0"/>-->
+<input id="price" type="hidden"/>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/echarts-all.js"></script>
+<script src="../js/jquery.pagination.js"></script>
+<script src="../js/jquery.cxcalendar.min.js"></script>
+<script src="../js/jquery.cxcalendar.languages.js"></script>
+<script src="../js/calendar.js"></script>
+<script src="../js/ajax.js"></script>
+<script src="../js/change-list.js"></script>
+<script src="../js/fangyan-shichanghangye-child.js"></script>
+</html>

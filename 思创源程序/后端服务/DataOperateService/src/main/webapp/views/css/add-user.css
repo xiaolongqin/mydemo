@@ -1,0 +1,67 @@
+.user-reg-step{margin-top: 100px;width:540px;}
+.left-line{
+    border-left: 2px solid #b5b5b5;
+    margin-left: 60px;
+    height:500px;
+    width:50px;
+    margin-top:50px;
+}
+.text-items{
+    width: 30%;
+    margin-right:2%;
+}
+.box-items{
+    width: 50%;
+}
+.input-items input{
+    height:30px;
+    width: 100%;
+    border:1px solid #8f9199;
+    font-size:16px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.input-items p span{
+    color:red;
+}
+.items{
+    height:30px;
+    line-height: 30px;
+    margin:28px 0;
+    font-size: 16px;
+}
+.dropdown button{
+    height:25px;
+    line-height: 25px;
+    font-size: 16px;
+    padding:0px;
+    border:1px solid #8f9199;
+    color:#ababab;
+    width:247px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.btn-box{
+    margin: 90px auto 0 23px;
+    width:230px;
+    height:25px;
+}
+.btn-small a{
+    margin:0 14px;
+}
+.regist-success{
+    height:270px;
+    line-height: 270px;
+    font-size: 25px;
+    color:#5e5e5e;
+    font-weight:bold;
+    border:2px solid #ababab;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+.regist-success img{
+    margin-right:40px;
+}

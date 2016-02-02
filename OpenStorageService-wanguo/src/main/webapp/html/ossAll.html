@@ -1,0 +1,688 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta content="text/html" charset="utf-8">
+    <title>开放存储服务OSS</title>
+    <link rel="stylesheet" href="/oss/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/oss/css/ossCommon.css">
+    <link rel="stylesheet" href="/oss/css/ossAll.css">
+    <link rel="stylesheet" href="/oss/css/jquery.treeview.css">
+</head>
+<body style="position:relative;">
+
+<!--导航-->
+<div class="mynav">
+    <div>
+        <img class="logo_pic" style="cursor:pointer;padding:5px 10px;" src="/oss/img/szy_logo_hei.png" alt="" onclick="oss_back_all();"/>
+    </div>
+    <ul class="rds_list">
+        <li>
+            <span style="font-size:14px;">OSS</span>
+        </li>
+    </ul>
+    <div class="rds_do">
+        <div class="rds_introduce">
+            <h4>管理控制台</h4>
+            <p class="p_header" style="margin-top:-10px;">存储</p>
+        </div>
+        <div class="data_list">
+            <p onclick="">关系型数据库服务(RDS)</p>
+            <p>开放存储服务(OSS)</p>
+        </div>
+        <div class="rds_introduce">
+            <p class="p_header">传输</p>
+        </div>
+        <div class="data_list">
+            <p>数据传输服务(DTS)</p>
+        </div>
+        <div class="rds_introduce">
+            <p class="p_header">计算</p>
+        </div>
+        <div class="data_list">
+            <p>开放计算服务(OCS)</p>
+        </div>
+        <div class="rds_introduce">
+            <p class="p_header">应用</p>
+        </div>
+        <div class="data_list">
+            <p>开放应用服务(OAS)</p>
+        </div>
+    </div>
+    <ul class="do_list">
+        <li>
+            <!--存用户名-->
+            <span id="username"></span><span id="userId" style="display:none;"></span>
+            <ul class="user_do">
+                <li onclick="">订单管理</li>
+                <li onclick="">个人资料</li>
+                <li onclick="go_login();">登出</li>
+            </ul>
+        </li>
+        <li onmousemove="see_mynews(this)" btn=0>
+            <!--存消息-->
+            <span>消息中心&nbsp;</span>
+            <ul class="info_do">
+                <li onclick="go_all_msg()">
+                    <span style="float:right;padding-right:20px;color:#0099ff;">查看更多&gt;&gt;</span>
+                </li>
+            </ul>
+        </li>
+        <li onclick="go_userRes();">用户反馈</li>
+        <li>文档下载</li>
+        <li onclick="go_cont();">联系客服</li>
+    </ul>
+</div>
+<!--二级导航-->
+<div class="myrds">
+    <span class="oss_title">开放式存储OSS</span>
+    <div class="oss_contain">存储空间( <span style="color:#ff6633;"></span>/<span></span> )</div>
+    <div class="contain_num">
+        <div id="used_num"></div>
+    </div>
+    <a style="color:#0d9dff;" onclick="go_ossBuy();">立即扩容&gt;&gt;</a>
+</div>
+<!--内容区域-->
+<div class="mymain">
+
+
+
+</div>
+<!--弹出框操作-->
+<!--新建文件夹-->
+<div class="modal fade" id="add_file" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="width:450px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">新建文件夹</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group has-feedback">
+                        <label class="control-label col-sm-4" for="file_name">新建文件夹命名:</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="file_name" placeholder="最多10个字" maxlength="10"/>
+                        </div>
+                    </div>
+                </form>
+                <div style="font-size:12px;padding-left:20px;">
+                    <p>文件命名规范:</p>
+                    <p>1.只能包含字母,数字,中文,下划线(_),短横线(-)和小数点(.)</p>
+                    <p>2.只能以字母、数字或者中文开头</p>
+                    <p>3.文件名最多10个字</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" onclick="do_newFile();">确定新建</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改名称弹出框-->
+<div class="modal fade" id="upd_fileName" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="width:450px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">修改名称</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group has-feedback">
+                        <label class="control-label col-sm-4" for="FileNewName">请输入新名称:</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="FileNewName" placeholder="最多10个字" maxlength="10"/>
+                        </div>
+                    </div>
+                </form>
+                <div style="font-size:12px;padding-left:20px;">
+                    <p>文件命名规范:</p>
+                    <p>1.只能包含字母,数字,中文,下划线(_),短横线(-)和小数点(.)</p>
+                    <p>2.只能以字母、数字或者中文开头</p>
+                    <p>3.文件名最多10个字</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" onclick="updFileName();">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--上传文件弹出框-->
+<div class="modal fade" id="myUpdiv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="width:450px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">确认上传</h4>
+            </div>
+            <div class="modal-body">
+                <div class="upload_div">
+                    <div id="uBtn3" class="upload_btn">直接上传</div>
+                    <p class="upload_tips">文件小于50M推荐</p>
+                </div>
+                <div class="upload_div">
+                    <div id="uBtn4" class="upload_btn" onclick="client_up();">客户端上传</div>
+                    <p class="upload_tips">文件大于50M推荐</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="reWord();">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--下载单个文件弹出框-->
+<div class="modal fade" id="myUpload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="width:450px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">确认下载</h4>
+            </div>
+            <div class="modal-body">
+                <h5>确认下载 &nbsp;<span id="myUpload_name"> </span> &nbsp;吗?</h5>
+                <div class="upload_div">
+                    <div id="uBtn1" class="upload_btn" onclick="upload_one();">直接下载</div>
+                    <p class="upload_tips">浏览器单线程下载</p>
+                </div>
+                <div class="upload_div">
+                    <div id="uBtn2" class="upload_btn" onclick="client_up();">复制客户端下载地址</div>
+                    <p class="upload_tips">支持断点续传</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--单个文件移动弹出框-->
+<div class="modal fade" id="myMoveFile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="width:450px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">移动至</h4>
+                <span style="color:red;">(若不选文件夹默认移动至根目录)</span>
+            </div>
+            <div class="modal-body">
+                <ul id="browser1" class="filetree treeview">
+
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button id="one_move" type="button" class="btn btn-warning" onclick="move_one();">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--删除单个文件弹出框-->
+<div class="modal fade" id="delFile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="width:450px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">确认删除</h4>
+            </div>
+            <div class="modal-body">
+                <h5 style="color:red;">确认删除 &nbsp;<span id="myDel_name"> </span> &nbsp;吗?</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" onclick="delFile_one();">确定删除</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--分享单个文件弹出框-->
+<div class="modal fade" id="FileShare" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="width:450px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">分享</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group has-feedback">
+                        <label class="control-label col-sm-4" for="myEmail1">请输入分享人邮箱:</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="myEmail1"/>
+                        </div>
+                    </div>
+                </form>
+                <div style="font-size:12px;padding-left:4px;">
+                    <p>注意:</p>
+                    <p>1.如要对多个邮箱进行分享，则邮箱之间用"、"隔开</p>
+                    <p>2.如要对多个邮箱进行分享，则邮箱不能包含外部用户</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" onclick="share_one();">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--批量下载弹出框-->
+<div class="modal fade" id="allUpload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="width:450px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">批量下载</h4>
+            </div>
+            <div class="modal-body">
+                <h5>确认下载所选文件吗?</h5>
+                <div class="upload_div">
+                    <div id="allBtn1" class="upload_btn" onclick="upload_all();">直接下载</div>
+                    <p class="upload_tips">浏览器单线程下载</p>
+                </div>
+                <div class="upload_div">
+                    <div id="allBtn2" class="upload_btn" onclick="client_up();">复制客户端下载地址</div>
+                    <p class="upload_tips">支持断点续传</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--批量移动弹出框-->
+<div class="modal fade" id="allMove" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="width:450px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">批量移动至</h4>
+            </div>
+            <div class="modal-body">
+                <ul id="browser2" class="filetree treeview">
+
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="two_move" class="btn btn-warning" onclick="move_all();">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--批量分享弹出框-->
+<div class="modal fade" id="allShare" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="width:450px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">批量分享</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group has-feedback">
+                        <label class="control-label col-sm-4" for="myEmail2">请输入分享人邮箱:</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="myEmail2"/>
+                        </div>
+                    </div>
+                </form>
+                <div style="font-size:12px;padding-left:4px;">
+                    <p>注意:</p>
+                    <p>1.如要对多个邮箱进行分享，则邮箱之间用"、"隔开</p>
+                    <p>2.如要对多个邮箱进行分享，则邮箱不能包含外部用户</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" onclick="shareAll();">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--批量删除弹出框-->
+<div class="modal fade" id="delAll" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="width:450px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">批量删除</h4>
+            </div>
+            <div class="modal-body">
+                <h5 style="color:red;">确认删除所选文件吗?</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" onclick="del_All();">确定删除</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改描述弹出框-->
+<div class="modal fade" id="udpDes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="width:450px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">修改文件描述</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <textarea id="newDes" style="resize:none;" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    
+                       
+                    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" onclick="upd_Des();">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--页脚-->
+<div class="myfooter" style="min-width:1340px;z-index:999;">
+    <!--上传进度条-->
+    <div id="upload_div" style="position:absolute;right:0;bottom:70px;color:#dcfdff;display:none;">
+        <p style="font-size:14px;text-align:left;position:relative;top:30px;">上传中,请不要刷新页面</p>
+        <img src="/oss/img/loading3.gif" alt="" style="width:300px;height:50px;margin-left:-37px;"/>
+    </div>
+    <p class="footWords">Copyright &copy; 2012-2015成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+    <p class="footWords"><span style="padding-right:40px;">联系电话:028-82140078</span><span>邮箱:shuzhilian@unionbigdata.com</span></p>
+</div>
+
+<!--接收上传信息-->
+<div id="res_hide" style="display:none;"></div>
+<!--下载iframe-->
+<iframe id="upload_iframe" src="" frameborder="0" style="display:none;"></iframe>
+<!--上传 文件-->
+<input id="myUpFile" type="file" name="myUpFile" style="display:none;"/>
+<!--存用户名-->
+<input id="user" type="hidden"/>
+<!--要操作的文件名字-->
+<input id="iFileName" type="hidden"/>
+<!--要操作的文件夹全路径-->
+<input id="filePath" type="hidden"/>
+<!--要移动的文件的全路径-->
+<input id="movePath" type="hidden"/>
+<!--判断分享移动的文件夹是不是我的分享下面的-->
+<input id="sharePage" type="hidden"/>
+<!--要修改的文件后缀-->
+<input id="file_last" type="hidden"/>
+<!--要修改的文件类型-->
+<input id="file_type" type="hidden"/>
+<!--判断是几级页面-->
+<!--<input id="tableBtn" type="hidden"/>-->
+<!--存分享页面文件大小-->
+<input id="share_Files" type="hidden"/>
+<!--存修改描述文件名-->
+<input id="desc_name" type="hidden"/>
+</body>
+<script type="text/javascript" src="/oss/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="/oss/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/oss/js/ajaxupload.js"></script>
+<script type="text/javascript" src="/oss/js/handlebars-v2.0.0.js"></script>
+
+<script type="text/javascript" src="/oss/js/jquery.treeview.js"></script>
+<script type="text/javascript" src="/oss/js/ossCommon.js"></script>
+<script type="text/javascript" src="/oss/js/ossAll.js"></script>
+<!--主页面-->
+<script type="text/x-handlebars-template" id="oss_total">
+    <div class="oss_header">
+        <div>数据管理</div>
+        <div class="myCommon"><span onclick="go_myshare();">我的分享</span></div>
+    </div>
+    <div class="head_tips" style="margin-left:-8px;">
+        <div style="float:left;">数据列表</div>
+        <div id="new_file" class="head_btn" data-toggle="modal" data-target="#add_file" onclick="add_new_file();">新建文件夹</div>
+        <div id="upload_file" class="head_btn myup_btns" data-toggle="modal" data-target="#myUpdiv" onclick="changeColo();">上传文件</div>
+        <!--<input type="file" style="display:none;"/>-->
+    </div>
+    <div style="padding:15px;" class="table_box" btn="1">
+        <table class="table table-hover mytable" style="border-top:1px solid #ddd;">
+            <thead>
+            <tr>
+                <td>
+                    <input id="allCheck1" style="vertical-align:top;" onchange="all_chose(this)" type="checkbox"/>
+                    <span>文件名</span>
+                </td>
+                <td>描述</td>
+                <td class="col-md-1">大小</td>
+                <td class="col-md-1">类型</td>
+                <td class="col-md-2">创建时间</td>
+                <td colspan="4"  class="col-md-2">操作</td>
+            </tr>
+            </thead>
+            <tbody style="border-bottom:1px solid #ddd;">
+            {{#each data}}
+                <tr>
+                    <td>
+                        <input onchange="my_chose('allCheck1');" class="checkbox_class" type="checkbox"/>
+                        <img class="img_class" src={{url}} alt=""/>
+                        <span class="file_name name_box" onclick="go_childPage1(this);">{{file}}</span>
+                        <span class="file_id">{{dirUrl}}</span>
+                        <img class="update_pic" src="/oss/img/pencil.png" alt="" data-toggle="modal" data-target="#upd_fileName" onclick="upd_FileName(this);"/>
+                    </td>
+                    <td>
+                        <span class="desc_box">
+                            {{#descNull desc}}
+                                {{desc}}
+                            {{/descNull}}
+                        </span>
+                        <img class="update_pic" src="/oss/img/pencil.png" alt="" data-toggle="modal" data-target="#udpDes" onclick="reUpd(this);"/>
+                    </td>
+                    <td>{{size}}</td>
+                    <td>{{type}}</td>
+                    <td>{{ctime}}</td>
+                    <td>
+                        <span class="blue_words" onclick="myDo_file(this,'myUpload_name');" data-toggle="modal" data-target="#myUpload">下载</span>
+                    </td>
+                    <td>
+                        <span class="blue_words" onclick="myMove_file(this);" data-toggle="modal" data-target="#myMoveFile">移动</span>
+                    </td>
+                    <td>
+                        <span class="blue_words" onclick="myShare_file(this,'myEmail1');" data-toggle="modal" data-target="#FileShare">分享</span>
+                    </td>
+                    <td>
+                        <span class="orange_words" onclick="myDo_file(this,'myDel_name');" data-toggle="modal" data-target="#delFile">删除</span>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="9" style="text-align:center;padding-top:30px;visibility:hidden;" class="all_btns">
+                    <div class="file_btn" data-toggle="modal" data-target="#allUpload">批量下载</div>
+                    <div class="file_btn" onclick="all_moveFile();" data-toggle="modal" data-target="#allMove">批量移动</div>
+                    <div class="file_btn" onclick="myShare_allFile('myEmail2');" data-toggle="modal" data-target="#allShare">批量分享</div>
+                    <div class="file_btn" data-toggle="modal" data-target="#delAll">批量删除</div>
+                    <div class="file_btn" onclick="not_chose('allCheck1')">取消选择</div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</script>
+<!--分享页面-->
+<script type="text/x-handlebars-template" id="oss_share">
+    <div class="oss_header">
+        <div>数据管理</div>
+    </div>
+    <div class="head_tips" style="margin-left:-8px;">
+        <div class="share_nav" style="float:left;"><span class="myback" onclick="go_ossAll();">数据列表</span>&gt;<span class="myback" onclick="go_myshare();">我的分享</span></div>
+    </div>
+    <div style="padding:15px;" class="table_box" btn="3">
+        <table class="table table-hover mytable" style="border-top:1px solid #ddd;">
+            <thead>
+            <tr>
+                <td>
+                    <input id="allCheck2" onchange="all_chose(this)" type="checkbox"/>
+                    <span>文件名</span>
+                </td>
+                <td>描述</td>
+                <td class="col-md-1">大小</td>
+                <td class="col-md-1">类型</td>
+                <td class="col-m-d2">创建时间</td>
+                <td colspan="3" class="col-md-2">操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each data}}
+                <tr>
+                    <td>
+                        <input class="checkbox_class" type="checkbox" onchange="my_chose('allCheck2');"/>
+                        <img class="img_class" src={{url}} alt=""/>
+                        <span class="file_name name_box" onclick="go_childPage2(this);">{{file}}</span>
+                        <span class="file_id">{{dirUrl}}</span>
+                    </td>
+                    <td>
+                        <span class="desc_box">
+                            {{#descNull desc}}
+                                {{desc}}
+                            {{/descNull}}
+                        </span>
+                    </td>
+                    <td>{{size}}</td>
+                    <td>{{type}}</td>
+                    <td>{{ctime}}</td>
+                    <td>
+                        <span class="blue_words" onclick="myDo_file(this,'myUpload_name');" data-toggle="modal" data-target="#myUpload">下载</span>
+                    </td>
+                    <td>
+                        <span class="blue_words" onclick="myMove_file(this);" data-toggle="modal" data-target="#myMoveFile">移动</span>
+                    </td>
+                    <td>
+                        <span class="orange_words" onclick="myDo_file(this,'myDel_name');" data-toggle="modal" data-target="#delFile">删除</span>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="8" style="text-align:center;padding-top:30px;visibility:hidden;" class="all_btns">
+                    <div class="file_btn" data-toggle="modal" data-target="#allUpload">批量下载</div>
+                    <div class="file_btn" data-toggle="modal" data-target="#delAll">批量删除</div>
+                    <div class="file_btn" onclick="not_chose('allCheck2')">取消选择</div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</script>
+<!--二级页面-->
+<script type="text/x-handlebars-template" id="oss_child">
+    <div class="oss_header">
+        <div>数据管理</div>
+        <div class="myCommon"><span onclick="go_myshare();">我的分享</span></div>
+    </div>
+    <div class="head_tips" style="margin-left:-8px;">
+        <div class="list_nav" style="float:left;"><span class="myback" onclick="go_ossAll();">数据列表</span></div>
+        <div id="new_file2" class="head_btn" data-toggle="modal" data-target="#add_file" onclick="add_new_file();">新建文件夹</div>
+        <div id="upload_file2" class="head_btn myup_btns" data-toggle="modal" data-target="#myUpdiv" onclick="changeColo();">上传文件</div>
+        <!--<input type="file" style="display:none;"/>-->
+    </div>
+    <div style="padding:15px;" class="table_box" btn="2">
+        <table class="table table-hover mytable" style="border-top:1px solid #ddd;">
+            <thead>
+            <tr>
+                <td>
+                    <input id="allCheck3" style="vertical-align:top;" onchange="all_chose(this)" type="checkbox"/>
+                    <span>文件名</span>
+                </td>
+                <td>描述</td>
+                <td class="col-md-1">大小</td>
+                <td class="col-md-1">类型</td>
+                <td class="col-md-2">创建时间</td>
+                <td colspan="4" class="col-md-2">操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each data}}
+            <tr>
+                <td>
+                    <input onchange="my_chose('allCheck3');" class="checkbox_class" type="checkbox"/>
+                    <img class="img_class" src={{url}} alt=""/>
+                    <span class="file_name name_box" onclick="go_childPage1(this);">{{file}}</span>
+                    <span class="file_id">{{dirUrl}}</span>
+                    <img class="update_pic" src="/oss/img/pencil.png" alt="" data-toggle="modal" data-target="#upd_fileName" onclick="upd_FileName(this);"/>
+                </td>
+                <td>
+                    <span class="desc_box">
+                        {{#descNull desc}}
+                                {{desc}}
+                            {{/descNull}}
+                    </span>
+                    <img class="update_pic" src="/oss/img/pencil.png" alt="" data-toggle="modal" data-target="#udpDes" onclick="reUpd(this);"/>
+                </td>
+                <td>{{size}}</td>
+                <td>{{type}}</td>
+                <td>{{ctime}}</td>
+                <td>
+                    <span class="blue_words" onclick="myDo_file(this,'myUpload_name');" data-toggle="modal" data-target="#myUpload">下载</span>
+                </td>
+                <td>
+                    <span class="blue_words" onclick="myMove_file(this);" data-toggle="modal" data-target="#myMoveFile">移动</span>
+                </td>
+                <td>
+                    <span class="blue_words" onclick="myShare_file(this,'myEmail1');" data-toggle="modal" data-target="#FileShare">分享</span>
+                </td>
+                <td>
+                    <span class="orange_words" onclick="myDo_file(this,'myDel_name');" data-toggle="modal" data-target="#delFile">删除</span>
+                </td>
+            </tr>
+            {{/each}}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="9" style="text-align:center;padding-top:30px;visibility:hidden;" class="all_btns">
+                    <div class="file_btn" data-toggle="modal" data-target="#allUpload">批量下载</div>
+                    <div class="file_btn" onclick="all_moveFile();"data-toggle="modal" data-target="#allMove">批量移动</div>
+                    <div class="file_btn" onclick="myShare_allFile('myEmail2');" data-toggle="modal" data-target="#allShare">批量分享</div>
+                    <div class="file_btn" data-toggle="modal" data-target="#delAll">批量删除</div>
+                    <div class="file_btn" onclick="not_chose('allCheck3')">取消选择</div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</script>
+<!--购买页面-->
+<script type="text/x-handlebars-template" id="oss_buy">
+    <div class="oss_header">
+        <div>数据管理</div>
+            <div class="myCommon"><span id="back_list" onclick="back_ossAll();">返回数据列表</span></div>
+        </div>
+        <div class="add_store">
+            存储扩容
+        </div>
+        <div class="buy_box">
+            <div class="buy_div">
+            <div style="font-size:16px;">现有配置</div>
+            <div style="margin-top:15px;">存储空间 ( <span class="red_words">已用</span>/<span class="green_words">未用</span> )</div>
+            <div class="store_div">
+                <div class="store_left"></div>
+                <div class="store_right"></div>
+            </div>
+            <div style="margin-top:40px;font-size:16px;">扩充配置</div>
+            <div style="margin-top:20px;font-size:12px;">扩充存储空间</div>
+            <div style="margin-top:20px;">
+                <input id="buy_input" type="range" max="1000" min="5" step="5" value="5" onmousedown="buyNum(this);"/>
+                <span style="display:inline-block;position:relative;top:-6px;left:-5px;">最多1000G</span>
+                <input id="buy_num" class="form-control" type="text" readonly value="5"/>
+                <span style="display:inline-block;position:relative;top:-6px;">GB</span>
+            </div>
+            <p style="font-size:12px;color:#949494;margin-bottom:20px;">步长为5GB</p>
+            <div>费用: <span id="oss_cost">￥0</span></div>
+            <div id="buy_btn" onclick="buy_oss();">立即扩容</div>
+        </div>
+    </div>
+</script>
+</html>

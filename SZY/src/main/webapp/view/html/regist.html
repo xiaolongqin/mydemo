@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<title>注册-数之云</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="css/szy_common.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+	        <script src="js/bootstrap/html5shiv.min.js"></script>
+	        <script src="js/bootstrap/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body> 
+	    <!--顶部 S-->
+		<header class="navbar user-nav" id="top" role="banner">
+		 	<div class="container">
+			    <div class="navbar-header">
+			    	<a href="index" class="navbar-brand"><img height="30" src="images/szy_logo.png"/></a>
+			    </div>
+			    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+			      	<ul class="nav navbar-nav navbar-right">
+			        	<li><a href="javascript:;" onclick="userLogin();return false;" title="登录">登录</a></li>
+			        	<li class="line">|</li>
+			        	<li><a href="#" title="管理控制台">管理控制台</a></li>
+			      	</ul>
+			    </nav>
+		  	</div>
+		</header>
+	    <!--顶部 E-->
+		<!--主体 S-->
+		<div class="container">
+			<div class="user-reg-step num4 clearfix">
+				<dl class="doing">
+					<dt class="st-num">
+						<div class="st-bg">1</div>
+					</dt>
+					<dd class="st-text">设置账户信息</dd>
+				</dl>
+				<dl>
+					<dt class="st-num">
+						<div class="st-bg">2</div>
+					</dt>
+					<dd class="st-text">检验账户信息</dd>
+				</dl>
+				<dl>
+					<dt class="st-num">
+						<div class="st-bg">3</div>
+					</dt>
+					<dd class="st-text">管理员审核</dd>
+				</dl>
+				<dl>
+					<dt class="st-num">
+						<div class="st-bg succ"></div>
+					</dt>
+					<dd class="st-text">注册成功</dd>
+				</dl>
+			</div>
+			<div class="user-reg-wrap">
+				<div class="user-reg-form">
+					<dl class="clearfix">
+						<dt><span class="xing">*</span>注册邮箱：</dt>
+						<dd class="clearfix"><input id="J_regEmail" class="ipt form-control" type="text" onfocus="REGCHECK.EAML.FOCUS();" onblur="REGCHECK.EAML.BLUR(this.value);"/><p id="J_errorEmail" class="error none">邮箱格式不正确</p></dd>
+					</dl>
+					<dl class="clearfix">
+						<dt><span class="xing">*</span>注册用户名：</dt>
+						<dd class="clearfix"><input id="J_regUserName" class="ipt form-control" type="text" onfocus="REGCHECK.USERNAME.FOCUS();" onblur="REGCHECK.USERNAME.BLUR(this.value);" placeholder="请输入5-15个字"/><p id="J_errorUserName" class="error none"></p></dd>
+					</dl>
+					<dl class="clearfix">
+						<dt><span class="xing">*</span>真实姓名：</dt>
+						<dd class="clearfix"><input id="J_regName" class="ipt form-control" type="text" onfocus="REGCHECK.NAME.FOCUS();" onblur="REGCHECK.NAME.BLUR(this.value);" placeholder="请输入2-10个字"/><p id="J_errorName" class="error none"></p></dd>
+					</dl>
+					<dl class="clearfix">
+						<dt><span class="xing">*</span>身份证号码：</dt>
+						<dd class="clearfix"><input id="J_regIdCard" class="ipt form-control" type="text" onfocus="REGCHECK.IDCARD.FOCUS();" onblur="REGCHECK.IDCARD.BLUR(this.value);" placeholder="请输入身份证号码"/><p id="J_errorIdCard" class="error none"></p></dd>
+					</dl>
+					<dl class="clearfix">
+						<dt><span class="xing">*</span>手机号码：</dt>
+						<dd class="clearfix"><input id="J_regPhone" class="ipt form-control" type="text" onfocus="REGCHECK.PHONE.FOCUS();" onblur="REGCHECK.PHONE.BLUR(this.value);"/><p id="J_errorPhone" class="error none"></p></dd>
+					</dl>
+					<dl class="clearfix">
+						<dt><span class="xing">*</span>公司名称：</dt>
+						<dd class="clearfix"><input id="J_regCompany" class="ipt form-control" type="text" onfocus="REGCHECK.COMPANY.FOCUS();" onblur="REGCHECK.COMPANY.BLUR(this.value);"/><p id="J_errorCompany" class="error none"></p></dd>
+					</dl>
+					<dl class="clearfix">
+						<dt><span class="xing">*</span>登录密码：</dt>
+						<dd class="clearfix">
+							<input id="J_regPwd" class="ipt form-control" type="password" onfocus="REGCHECK.PWD.FOCUS();" onblur="REGCHECK.PWD.BLUR(this.value);" onkeyup="REGCHECK.PWD.KEYUP(this.value);" placeholder="请输入6-20个字符"/>
+							<div id="J_userPwdLen" class="user-pwd-len none">
+								<div id="J_userPwdLay" class="user-pwd-lay"></div>
+								<ul class="clearfix">
+									<li>低</li>
+									<li>中</li>
+									<li>高</li>
+								</ul>
+							</div>
+							<p id="J_errorPwd" class="error down none"></p>
+						</dd>
+					</dl>
+					<dl class="clearfix">
+						<dt><span class="xing">*</span>确认密码：</dt>
+						<dd class="clearfix"><input id="J_regPwdSure" class="ipt form-control" type="password" onfocus="REGCHECK.PWDSURE.FOCUS();" onblur="REGCHECK.PWDSURE.BLUR(this.value);"/><p id="J_errorPwdSure" class="error none"></p></dd>
+					</dl>
+					<dl class="clearfix">
+						<dt><span class="xing">*</span>验证码：</dt>
+						<dd class="clearfix">
+							<input id="J_regVerification" class="ipt vf form-control" type="text" onfocus="REGCHECK.VF.FOCUS();" onblur="REGCHECK.VF.BLUR(this.value);"/>
+							<div class="img_vf"><img id="J_vfCodeImg" src=""/></div>
+							<a id="J_vfCodeChange" class="img_vf_huan" href="javasrcipt:void(0);">换一换</a>
+							<p id="J_errorVerification" class="error down none"></p>
+						</dd>
+					</dl>
+					<dl class="clearfix">
+						<dt>&nbsp;</dt>
+						<dd class="clearfix">
+							<button type="button" class="submit btn btn-primary" onclick="submitRegInfo();return false;">同意协议并注册</button>
+							<div class="agreement"><a href="xieyi" target="_blank">《数之云服务协议》</a></div>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="user-reg-notice">
+				<h2>重要公告：</h2>
+				<h3>注册成功，即享特权：</h3>
+				<ul>
+					<li>1、领取新人大礼包</li>
+					<li>2、免费试用云服务器</li>
+				</ul>
+			</div>
+		</div>
+	    <!--主体 E-->
+	    <!--FOOT S-->
+		<footer class="user-footer">
+		    <div class="container">
+	    		<p class="text">Copyright ©2012 成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+	    	</div>
+		</footer>
+	    <!--FOOT E-->
+
+    	<script src="js/jquery-1.9.1.min.js"></script>
+	    <script src="js/bootstrap/bootstrap.min.js"></script>
+	    <script src="js/szy_common.min.js"></script>
+	    <script src="js/user_regist.min.js"></script>
+	    <script type="text/javascript">new vfCode("J_vfCodeImg","J_vfCodeChange","register");</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="DataOperateService:war exploded">
+    <output-path>$PROJECT_DIR$/target/dataoperate</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="DataOperateService/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="DataOperateService" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.jfinal:jfinal:1.9" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.14" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.6" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.35" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi:3.12" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
+          <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

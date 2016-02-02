@@ -1,0 +1,46 @@
+$(function(){
+	$("#addSinger").click(function(){
+		window.location.href="/myMusic/sys/singer/addSinger.jsp";
+	});
+	
+	$("#nextpage").click(function(){
+		
+		var nowpage = $("#nowpage").text();
+		var totalpage = $("#totalpage").text();
+		if(nowpage>=totalpage){
+			return false;
+		}
+		window.location.href="myMusic/singer/getSingerByPage?nowpage="+(nowpage-1+2); 
+					
+	});
+	
+	$("#backpage").click(function(){
+		var nowpage = $("#nowpage").text();
+		if(nowpage<=1){
+			return false;
+		}
+        window.location.href="myMusic/singer/getSingerByPage?nowpage="+(nowpage-1);
+        
+	});
+	
+	$("#firstpage").click(function(){
+		var nowpage = $("#nowpage").text();
+
+		if(nowpage<=1){
+			return false;
+		}
+        window.location.href="myMusic/singer/getSingerByPage?nowpage=1";
+
+	});
+	
+	$("#lastpage").click(function(){
+		var nowpage = $("#nowpage").text();
+		var totalpage = $("#totalpage").text();
+
+		if(nowpage>=totalpage){
+			return false;
+		}
+        window.location.href="myMusic/singer/getSingerByPage?nowpage="+totalpage;
+
+	});
+});

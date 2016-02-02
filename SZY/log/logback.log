@@ -1,0 +1,5 @@
+2014-12-15 09:04:40, INFO, TestLog, main, 213, , TestLog.java, 15, TestLog, getLogs logback + slf4j starting up ...
+2014-12-15 09:04:40, INFO, TestLog, main, 218, , TestLog.java, 17, TestLog, getLogs flyfox server daemon run.
+2014-12-15 09:04:40, INFO, TestLog, main, 219, , TestLog.java, 18, TestLog, getLogs test info
+2014-12-15 09:04:40, DEBUG, TestLog, main, 219, , TestLog.java, 19, TestLog, getLogs test debug
+2014-12-15 09:04:40, ERROR, TestLog, main, 219, , TestLog.java, 20, TestLog, getLogs test error

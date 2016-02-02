@@ -1,0 +1,52 @@
+package service;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import service.imp.UserServiceImp;
+import utils.Common;
+import utils.Support;
+import utils.UserTest;
+import dao.imp.UserDaoImp;
+import entity.Singer;
+import entity.User;
+@Service
+@Transactional
+public class UserService implements UserServiceImp {
+	@Resource
+	private UserDaoImp  userDao;
+
+    
+    //添加用户
+    public void addUser(User user){
+    	userDao.addUser(user);
+    }
+	public Support PageUser(int nowpage) {
+		return null;
+	}
+	
+	
+  //查询
+	public List<User> queryUser(int page, String name) {
+		
+		return userDao.queryUser(page, name);
+	}
+	
+	
+    //分页
+	public List<User> PageUser(String periods, int page){
+		
+		return userDao.PageUser(periods, page);
+		
+	}
+	
+	//登录
+	 public User login(String username, String password){
+		 return userDao.login(username, password);
+	 }
+  
+}

@@ -1,0 +1,9 @@
+package entity;
+
+public class Administrator {
+ private int id;
+ private String nickname;
+ private String name;
+ private String password;
+ private int access;
+}

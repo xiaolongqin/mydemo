@@ -1,0 +1,10 @@
+package entity;
+
+import java.util.Date;
+
+public class Collect {
+   private int id;
+   private User user;
+   private Mv mv;
+   private Date collect_date;
+}

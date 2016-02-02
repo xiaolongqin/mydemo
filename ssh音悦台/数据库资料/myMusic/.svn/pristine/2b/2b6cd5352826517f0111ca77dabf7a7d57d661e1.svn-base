@@ -1,0 +1,70 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/layer/layer.min.js"></script>
+<script type="text/javascript">
+function clickbyid(id,url) {
+	$("#"+id).click(function() {
+		window.location.href = url;
+	});
+}
+$(function() {
+
+	$('#userlogin').on('click', function(){
+		login();
+	});
+	$('#loginok').click(function(){
+		alert("sss");
+		layer.close(1);
+	});
+	$('#shouye').click(function(){
+		window.location.href = "/myMusic/index.jsp";
+	});
+	
+});
+function login() {
+	$.layer({
+	    type:1,   //0-4的选择,（1代表page层）
+	    area: ['450px', '300px'],
+	    //shade: [0],  //不显示遮罩
+	   // border: [0], //不显示边框
+	    title: [
+	        '用户登录',
+	        //自定义标题风格，如果不需要，直接title: '标题' 即可
+	        'border:none; background:#61BA7A; color:#fff;' 
+	    ],
+	    bgcolor: '#eee', //设置层背景色
+	    page: {
+	        html: '<div style="padding:50px;"><div id="title">个人登录后才能下载Mv，收藏和关注你喜欢的歌手</div><div style="width:360px;height:80px;margin:0px auto;"><table id="loginbox" style="float: left;" ><tr style="height:30px"><td class="bfont">用户名：</td><td><input class="txtbox" type="text" name="username" /></td></tr><tr><td class="bfont">密&nbsp;&nbsp;码：</td><td><input class="txtbox" type="password" name="password" /></td></tr></table><span id="btnlogin" style="float: right;"><input id="loginok" type="button" value="登陆" style="font-size: 30px;"> </span></div><div id="forget"><span style="float:left;"><a href="#">忘记密码</a></span><span style="float:right;"><a href="#">没有注册</a></span></div></div>'
+	    },
+	    shift: 'left' //从左动画弹出
+	});
+}
+</script>
+<html>
+<body style="width: 100%">
+	<div style="height: 50px; background: black;">
+		<span
+			style="color: green; font-size: 40px; font-style: inherit; margin-left: 20px;">音悦台</span>
+		<span class="vv" id="shouye"
+			style="color: #fefefe; font-size: 20px; font-style: inherit; margin-left: 20px; cursor: pointer;">首页</span>
+		<span
+			style="color: #fefefe; font-size: 20px; font-style: inherit; margin-left: 20px; cursor: pointer;">我的家</span>
+		<span
+			style="color: #fefefe; font-size: 20px; font-style: inherit; margin-left: 20px; cursor: pointer;">资讯</span>
+		<span
+			style="color: #fefefe; font-size: 20px; font-style: inherit; margin-left: 20px; cursor: pointer;">Mv</span>
+		<span
+			style="color: #fefefe; font-size: 20px; font-style: inherit; margin-left: 20px; cursor: pointer;">音乐人</span>
+		<span
+			style="color: #fefefe; font-size: 20px; font-style: inherit; margin-left: 20px; cursor: pointer;"><input
+			type="text" value="诸杰成"> <input value="搜索" type="button"></span>
+		<span id="userlogin"
+			style="color: #fefefe; font-size: 15px; font-style: inherit; margin-left: 350px; cursor: pointer;">登陆</span>
+		<span
+			style="color: #fefefe; font-size: 15px; font-style: inherit; margin-left: 20px; cursor: pointer;">注册</span>
+
+	</div>
+</body>
+</html>

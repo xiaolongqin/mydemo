@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #fff;
+    font-family: '微软雅黑';
+    padding-left: 50px;
+    height: 1200px;
+    overflow: auto;
+}
+.page-tab{
+    text-align: left;
+    color: #3799eb;
+    font-size: 14px;
+    font-weight: 600;
+}
+.btn-box:after{
+    content: ".";
+    clear: both;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    display: block;
+}
+#time-select{
+    margin: 20px 0 0 50px;
+    width: 100px;
+    height: 30px;
+}
+.top-words{
+    font-size: 15px;
+    font-weight: 600;
+}
+.white-words,.blue-words{
+    font-size: 12px;
+}
+.white-words{
+    color: #fff;
+}
+.blue-words{
+    color: #3799eb;
+}
+.ui-autocomplete{
+    padding: 5px 0;
+    width: 200px;
+    list-style: none;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+    max-height: 400px;
+    overflow: auto;
+}
+.ui-menu-item{
+    color: #333;
+    font-size: 15px;
+    padding: 3px 10px;
+}
+.ui-menu-item:hover{
+    cursor: pointer;
+    color: #333;
+    background: #ebebeb;
+}
+.ui-helper-hidden-accessible{
+    display: none;
+}
+.input-sm{
+    height: 30px;
+}
+.input-group-addon{
+    padding: 3px 12px;
+}
+.ui-menu-item{
+    font-size: 13px;
+}
+.load-pic{
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    margin-left: -50px;
+    margin-top: -50px;
+    display: none;
+}

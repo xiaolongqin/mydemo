@@ -1,0 +1,29 @@
+package service.imp;
+
+import java.util.List;
+
+import utils.Support;
+import entity.Singer;
+
+public interface SingerServiceImp {
+	//增加歌手
+	public void addSinger(Singer singer);
+	//分页查询歌手
+//	public Support querySingerByPage(int nowpage);
+	//查询所有歌手
+	public List<Singer> allSingers();
+	//根据地区查询歌手
+	public List<Singer> querySingerByArea(int page,String area);
+	//删除歌手 
+	public void deleteSinger(int singerId);
+	//通过歌手ID查询歌手 
+	public Singer querySingerById(int id);
+	//通过姓名查找歌手
+	public List<Singer> querySingerByName(String name);
+	//通过姓名，分页查询歌手
+	public List<Singer> querySingerByNameAndPage(int nowpage,String name);
+	//查询歌手总记录数
+	public long findTotalPage(String name);
+	//更新歌手
+	public void upDateSinger(Singer singer);
+}

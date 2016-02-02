@@ -1,0 +1,7 @@
+package service.imp;
+
+import entity.Singer;
+
+public interface SingerServiceImp {
+	public void addSinger(Singer singer);
+}

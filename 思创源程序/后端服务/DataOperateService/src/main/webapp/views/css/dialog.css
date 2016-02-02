@@ -1,0 +1,95 @@
+/*������*/
+.dialog-content{
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    border-radius: 18px;
+}
+.dialog-head{
+    height:47px;
+    color:#fff;
+    background-color: #4692da;
+    padding:6px;
+    line-height: 47px;
+    -webkit-border-radius: 18px 18px 0 0;
+    -moz-border-radius: 18px 18px 0 0;
+    border-radius: 18px 18px 0 0;
+}
+.dialog-head p{
+    font-size: 18px;
+    height:35px;
+    line-height: 35px;
+}
+.dialog-head>button>span{
+    color:#fff;
+    font-weight: bold;
+    font-size:30px;
+}
+.modal-body{
+    padding:0;
+}
+.border-bottom{
+    border-bottom: 1px solid #e5e5e5;
+}
+.dialog-body-1{
+    min-height:200px;
+    width: 100%;
+}
+.dialog-body-2{
+    min-height:100px;
+    font-size: 16px;
+}
+.dialog-body-2 img{
+    vertical-align:top;
+    margin-right: 8px;
+}
+.dialog-body-2>div{
+    margin-left:20px;
+    margin-top:15px;
+}
+.dialog-body-2>div>div{
+    margin-left:25px;
+}
+.red{
+    color:red;
+}
+.form-horizontal{
+    padding-top:20px;
+    padding-bottom: 5px;
+}
+#childID{
+    height:100px;
+}
+.input-alert-name,.input-alert-des{
+    font-size: 12px;
+    vertical-align: top;
+    padding-left: 10px;
+}
+.modal-footer>div{
+    width:285px;
+    height:40px;
+    margin:10px auto;
+}
+.select-all{
+    margin-right:30px;
+    font-size: 16px;
+}
+.select-all img{
+    margin-right:8px;
+    vertical-align:top;
+}
+.dialog-save a,.dialog-yes a{
+    margin-right:25px;
+}
+.dialog-check-item{
+    margin-bottom:5px;
+}
+.check-text{
+    visibility: hidden;
+}
+.modal-footer{
+    text-align: center;
+}
+.dialog-del-confirm{
+    font-size: 16px;
+    margin: 30px 30px;
+}

@@ -1,0 +1,5 @@
+package service.imp;
+
+public interface SingerServiceImp {
+
+}

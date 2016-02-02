@@ -1,0 +1,7 @@
+package dao;
+
+import dao.imp.CollectDaoImp;
+
+public class CollectDao implements CollectDaoImp {
+
+}

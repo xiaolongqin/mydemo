@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: ./logback-core-1.1.3.jar ./slf4j-api-1.7.12.jar ./logback-
+ classic-1.1.3.jar ./mysql-connector-java-5.1.35.jar ./druid-1.0.14.ja
+ r
+Main-Class: sl.bigdata.report.StartTask
+

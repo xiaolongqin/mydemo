@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>数据服务平台</title>
+		<link rel="stylesheet" type="text/css" href="../css/jquery.fullPage.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/advertise.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/jquery.selectlist.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/jquery-ui.css"/>
+		<script src="../js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.fullPage.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/cookie_control.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.selectlist.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		var flagRegister01 = 0;
+		var flagRegister02 = 0;
+		var flagRegister03 = 0;
+		var flagRegister04 = 0;
+		var flagRegister05 = 1;
+		$(document).ready(function(){
+			$('#content').fullpage({
+				anchors: ['anchor-page1', 'anchor-page2', 'anchor-page3', 'anchor-page4', 'anchor-page5', 'anchor-page6'],
+				menu: '#menu',
+				afterLoad: function (anchorLink, index) {
+					if (index == 2) {
+						for (var i = 1; i <= 4; i++) {
+							$("#img" + i).attr('src', '../images/node' + i + '.gif');
+						}
+					}
+					if (index == 3) {
+						$("#advertise2 img").attr('src', '../images/advertise2.gif');
+					}
+					if (index == 4) {
+						for (var i = 1; i <= 4; i++) {
+							$("#brand" + i).attr('src', '../images/brand' + i + '.gif');
+						}
+					}
+					if (index == 5) {
+						$("#advertise4 img").attr('src', '../images/compete.gif');
+					}
+				}
+			})
+		});
+		</script>
+	</head>
+	<body>
+	<ul id="menu">
+		<li data-menuanchor="anchor-page1" class="active"><a href="#anchor-page1" name="page1"></a></li>
+		<li data-menuanchor="anchor-page2"><a href="#anchor-page2"></a></li>
+		<li data-menuanchor="anchor-page3"><a href="#anchor-page3"></a></li>
+		<li data-menuanchor="anchor-page4"><a href="#anchor-page4"></a></li>
+		<li data-menuanchor="anchor-page5"><a href="#anchor-page5"></a></li>
+		<li data-menuanchor="anchor-page6"><a href="#anchor-page5"></a></li>
+	</ul>
+		<div id="content">
+			<div id="startpage01" class="section section1">
+				<div id="topbanner">
+					<img src="../images/smallbluelogo.png"/>
+					<h1>电商大数据服务分析平台</h1>
+				</div>
+				<div id="logo">
+					<div id="shadowgirl"></div>
+					<img src="../images/bluelogo.png"/>
+					<h1>电商大数据服务分析平台</h1>
+					<button id="btnuse" onclick="jumpToLogin();">立即使用</button>
+					<button id="btndemo" onclick="jumpToTry();">申请试用</button>
+				</div>
+				<div id="nextPageBtn">
+					<img src="../images/arrow_adv.png" alt="arrow" id="nextPageArrow"/>
+				</div>
+				<div id="decoration">
+					<img src="../images/decoration.png"/>
+				</div>
+				<div id = "registerbg1">
+					<img id = "try-background01" src="../images/smallbkg.png">
+					<img id = "try-goback" src="../images/back.png"/>
+					<img id = "whitelogo" src="../images/whitelogo.png" />
+					<h4 id = "rg-lblusername" class="rg-name">用&nbsp;户&nbsp;名</h4>
+					<input id = "rg-username"  class="rg-input" type="text"/>
+					<h4 id="usernameTips" class="tipClass"></h4>
+					<h4 id = "rg-lblkey" class="rg-name">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</h4>
+					<input id = "rg-inputkey" type="password" class="rg-input" type="text"/>
+					<h4 id="inputkeyTips" class="tipClass"></h4>
+					<h4 id = "rg-lblcheckkey" class="rg-name">确认密码</h4>
+					<input id = "rg-inputcheckkey" type="password" class="rg-input" type="text"/>
+					<h4 id="inputCheckKeyTips" class="tipClass"></h4>
+					<h4 id = "rg-lblemail" class="rg-name">注册邮箱</h4>
+					<input id = "rg-inputemail"  class="rg-input" type="text"/>
+					<h4 id="inputEmailTips" class="tipClass"></h4>
+					<h4 id = "rg-lblphone" class="rg-name">电话号码</h4>
+					<input id = "rg-inputphone"  class="rg-input" type="text"/>
+					<h4 id = "rg-lblunit" class="rg-name">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位</h4>
+					<input id = "rg-inputunit"  class="rg-input" type="text"/>
+					<h4 id ="testPhoneTips" class = "tipClass"></h4>
+					<hr id = "rg-myhr"/>
+					<input type="text" style="position: absolute; border: none;background:url('../images/transparent.png') repeat;outline:none;" readonly/>
+					<input type="text" style="position: absolute; border: none;background:url('../images/transparent.png') repeat;outline:none;" readonly/>
+					<input type="text" style="position: absolute; border: none;background:url('../images/transparent.png') repeat;outline:none;" readonly/>
+					<div id="rg-nextstep" onclick="giveMeNext();">下一步</div>
+					<div id="litterstar01" class="yellowstar">*</div>
+					<div id="litterstar02" class="yellowstar">*</div>
+					<div id="litterstar03" class="yellowstar">*</div>
+					<div id="litterstar04" class="yellowstar">*</div>
+				</div>
+				<div id = "paybg">
+					<img id = "background02" src="../images/smallbkg.png">
+					<img id = "closeCurrent" src="../images/close.png"/>
+					<img id = "goback01" src="../images/back.png"/>
+					<img id="whitelogo02" src="../images/whitelogo.png"/>
+					<img id="curlypoint" src="../images/curlypointer.png"/>
+					<h4 id="softname02">电商大数据服务分析平台</h4>
+					<h4 id = "lblselect01" class="rg-name">全部分类</h4>
+					<!--<div id="litterstar05" class="yellowstar1">*</div>-->
+					<div id="litterstar06" class="yellowstar1">*</div>
+					<!--<select id="select01">-->
+					  <!--<option value ="volvo">食品、酒类、生鲜、特产</option>-->
+					<!--</select>-->
+					<select id="select02">
+					  <option value ="volvo">白酒</option>
+					  <option value ="volvo">啤酒</option>
+					  <option value ="volvo">葡萄酒</option>
+					</select>
+					<h4 id="showMeTips"></h4>
+		 			<hr id="payhr" />
+		 			<h4 id="importantTip">重要提示</h4>
+		 			<h4 id="importantContent">试用期仅提供10天的系统使用权限</h4>
+		 			<div id="payButton" onclick="saveUser();">申请试用</div>
+				</div>
+				<div id = "successblock">
+					<img id = "background03" src="../images/smallbkg.png">
+					<img id="whitelogo03" src="../images/whitelogo.png"/>
+					<h4 id="softname03">电商大数据服务分析平台</h4>
+					<h4 id = "lblselect02" class="rg-name">申请已提交，请等待管理员审核</h4>
+					<h4 id = "lblselect03" class="rg-name">联系电话：028-87951915</h4>
+					<!--<div id="litterstar05" class="yellowstar1">*</div>
+					<div id="litterstar06" class="yellowstar1">*</div>
+					<select id="select01">
+					  <option value ="volvo">食品、酒类、生鲜、特产</option>
+					</select>
+					<select id="select02">
+					  <option value ="volvo">白酒</option>
+					  <option value ="volvo">啤酒</option>
+					  <option value ="volvo">葡萄酒</option>
+					</select>
+					<h4 id="showMeTips"></h4>
+		 			<hr id="payhr" />
+		 			<h4 id="importantTip">重要提示</h4>
+		 			<h4 id="importantContent">试用期仅提供10天的系统使用权限</h4>
+		 			<div id="payButton" onclick="saveUser();">申请试用</div>-->
+				</div>
+			</div>
+
+			<div id="advertise1" class="section section2">
+				<h1>市场透视</h1>
+				<img src="../images/node1.png" id="img1" />
+				<img src="../images/node2.png" id="img2" />
+				<img src="../images/node3.png" id="img3" />
+				<img src="../images/node4.png" id="img4" /><br />
+				<h3>追踪市场动态</h3>
+				<h3>掌握市场喜好</h3>
+				<h3>透视线上市场</h3>
+				<h3>占据市场先机</h3>
+			</div>
+			<div id="advertise2" class="section section3">
+				<h1>全渠道展示</h1>
+				<h3>锁定线上关注渠道，展示关注渠道实时动态，辅助渠道决策</h3>
+				<img src="../images/advertise2.png"/>
+			</div>
+			<div id="advertise3" class="section">
+				<h1>品牌全维</h1>
+				<img src="../images/brand1.png" id="brand1" alt="" />
+				<img src="../images/brand2.png" id="brand2" alt="" />
+				<img src="../images/brand3.png" id="brand3" alt="" />
+				<img src="../images/brand4.png" id="brand4" alt="" />
+				<h3>诊断全面情况</h3>
+				<h3>分析市场能力</h3>
+				<h3>获取全维画像</h3>
+				<h3>指导线上竞争</h3>
+			</div>
+			<div id="advertise4" class="section section4">
+				<h1>竞争分析</h1>
+				<h3>多维度竞品追踪，实时获取竞品市场表现，对比分析自有品牌，先发制人，赢得竞争优势</h3>
+				<img src="../images/compete.png"/>
+			</div>
+			<div class="section section5">
+				<div id="decoration2">
+					<img src="../images/decoration2.png"/>
+				</div>
+				<div id="advertise5">
+					<h1>我们只为您提供最专业的数据服务</h1>
+					<button id="btnuse2" onclick="jumpToLogin();">立即使用</button>
+					<button id="btndemo2" onclick="jumpToTry1();">申请试用</button>
+				</div>
+				<div id="bottom">
+					<ul id="bottomcontent">
+						<li class="list1"><a href="#">公司主页</a></li>
+						<li class="list1"><a href="#">新浪微博</a></li>
+						<li class="list1"><a href="#">联系我们</a></li>
+						<li class="imglist"><img src="../images/smallbluelogo.png"></li>
+						<li class="list1"><a href="#">功能文档</a></li>
+						<li class="list1"><a href="#">服务条款</a></li>
+						<li class="list1"><a href="#">隐私政策</a></li>
+					</ul>
+					<h4>备案号：蜀ICP备13021642号-4 Copyright ©2015 成都数之联科技有限公司 版权所有</h4>
+				</div>
+			</div>
+
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/advertise.js"></script>
+</html>

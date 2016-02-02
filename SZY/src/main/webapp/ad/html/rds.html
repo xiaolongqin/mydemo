@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<title>未审核服务-RDS管理</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="css/ad_common.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+	        <script src="js/bootstrap/html5shiv.min.js"></script>
+	        <script src="js/bootstrap/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<!--顶部 S-->
+		<header class="navbar ad-nav" id="top" role="banner">
+		 	<div class="container">
+			    <div class="navbar-header">
+			      <a class="navbar-brand"><img height="30" src="images/szy_logo.png"/></a>
+			    </div>
+			    <nav class="collapse navbar-collapse" role="navigation">
+			      	<ul class="nav navbar-nav navbar-right">
+			        	<li id="J_navUserRegist">
+			        		<a class="dropdown-toggle" href="javascript:;" data-toggle="dropdown" aria-expanded="true">
+			        			<span class="glyphicon glyphicon-user"></span>
+			        			&ensp;<span id="J_navUserName">...</span>
+			        		</a>
+			        		<ul class="dropdown-menu" role="menu">
+							    <li><a class="first" href="info" title="个人资料">个人资料</a></li>
+							    <li class="divider"></li>
+							    <li><a href="javascript:;" onclick="exitLogin();return false;">退出</a></li>
+							</ul>
+			        	</li>
+			      	</ul>
+			    </nav>	    
+		  	</div>
+		</header>
+		<!--顶部 E-->
+		<!--主体 S-->
+		<div class="container">
+			<div class="ad-wrap row clearfix">
+				<div class="ad-main pull-right">
+					<div class="ad-main-two">
+						<ul class="ad-nav-tab nav nav-tabs" role="tablist">
+						  	<li class="active"><a href="javascript:;">未审核服务</a></li>
+						  	<li><a href="rdsed">已审核服务</a></li>
+						</ul>
+						<!--筛选 S-->
+						<div class="ad-filter row">
+							<div class="rds-order-state col-sm-2">
+							    <span class="pull-left">支付状态：</span>
+							    <div class="pull-left">
+							    	<select id="J_rdsOrderState" class="form-control" onchange="orderStateChange(this.value);">
+									  	<option value="-1">-全部-</option>
+									  	<option value="0">未付款</option>
+									  	<option value="1">已付款</option>
+									</select>
+							    </div>
+							</div>
+							<div class="rds-order-state col-sm-2">
+								<span class="pull-left">审核状态：</span>
+							    <div class="pull-left">
+							    	<select id="J_rdsCheckState" class="form-control" onchange="orderCheckChange(this.value);">
+									  	<option value="-1">-全部-</option>
+									  	<option value="0">未审核</option>
+									  	<option value="1">已拒绝</option>
+									  	<option value="2">已通过</option>
+									</select>
+							    </div>
+							</div>
+							<div class="col-sm-4">
+								<div id="J_rdsOrderKind" class="user-state">
+									<span>订单类型：</span>
+									<label class="radio-inline">
+									  <input type="radio" name="orderKind" value="0"> 新开服务
+									</label>
+									<label class="radio-inline">
+									  <input type="radio" name="orderKind" value="1"> 续费升级
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="input-group">
+						          	<div class="sch-name input-group-btn">
+						          		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><span id="J_adSchKey" data-key="orderid">订单编号</span>  <span class="caret"></span></button>
+							            <ul id="J_adSchKeyList" class="dropdown-menu" role="menu">
+							            	<li><a href="javascript:;" data-key="orderid">订单编号</a></li>
+							              	<li><a href="javascript:;" data-key="email">用户邮箱</a></li>
+							              	<li><a href="javascript:;" data-key="realname">真实姓名</a></li>
+							            </ul>
+						          	</div>
+						          	<input id="J_adSchValue" type="text" class="form-control">
+						          	<span class="input-group-btn">
+            							<button class="btn btn-default" type="button" onclick="orderSearch();">
+            								<span class="glyphicon glyphicon-search"></span>
+            							</button>
+          							</span>
+						        </div>
+							</div>
+						</div>
+						<!--筛选 E-->
+						<div class="rds-table">
+							<!--订单头部 S -->
+							<div class="rds-tb-head">
+								<table class="tb-hd table table-bordered">
+									<tr>
+										<th width="18%">空间名称</th>
+										<th width="18%"><div class="line">用户邮箱</div></th>
+										<th width="8%"><div class="line">真实姓名</div></th>
+										<th width="18%"><div class="line">下单时间</div></th>
+										<th width="7%"><div class="line">订单类型</div></th>
+										<th width="7%"><div class="line">支付状态</div></th>
+										<th width="7%"><div class="line">价格</div></th>
+										<th width="17%"><div class="line">审核</div></th>
+									</tr>
+								</table>
+							</div>
+							<!--订单头部 E -->
+							<!--订单列表 S -->
+							<div id="J_rdsTbBody" class="rds-tb-body">
+								
+							</div>
+							<!--订单列表 E -->
+						</div>
+
+						
+					    <div id="J_comPage" class="comPage"></div>
+					</div>
+				</div>
+				<div class="ad-menu pull-left">
+					<ul id="J_adAdminMenu" class="nav nav-pills nav-stacked" role="tablist">
+						<li><a href="user">用户管理</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	    <!--主体 E-->
+	    <!--FOOT S-->
+		<footer class="ad-footer">
+		    <div class="container">
+	    		<p class="text">Copyright ©2012 成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+	    	</div>
+		</footer>
+	    <!--FOOT E-->
+
+    	<script src="js/jquery-1.9.1.min.js"></script>
+	    <script src="js/bootstrap/bootstrap.min.js"></script>
+	    <script>var pageConfig=pageConfig || {};pageConfig.menuId=1;</script>
+	    <script src="js/ZeroClipboard.min.js" ></script>
+	    <script src="js/ad_common.min.js"></script>
+	    <script src="js/ad_rds.min.js"></script>
+	</body>
+</html>

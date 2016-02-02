@@ -1,0 +1,11 @@
+package entity;
+
+import java.util.Date;
+
+public class Comment {
+     private int id;
+     private User user;
+     private Mv mv;
+     private Date comment_date;
+     private String content;
+}

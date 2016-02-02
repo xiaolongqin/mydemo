@@ -1,0 +1,85 @@
+$(function(){
+	//跳转到增加歌手页面
+	$("#addSinger").click(function(){
+		window.location.href="/myMusic/sys/singer/addSinger.jsp";
+	});
+	//下一页
+	$("#nextpage").click(function(){
+		
+		var nowpage = $("#nowpage").text();
+		var totalpage = $("#totalpage").text();
+		if(nowpage>=totalpage){
+			return false;
+		}
+		window.location.href="myMusic/singer/getSingerByPage?nowpage="+(nowpage-1+2); 
+					
+	});
+	//上一页
+	$("#backpage").click(function(){
+		var nowpage = $("#nowpage").text();
+		if(nowpage<=1){
+			return false;
+		}
+        window.location.href="myMusic/singer/getSingerByPage?nowpage="+(nowpage-1);
+        
+	});
+	//首页
+	$("#firstpage").click(function(){
+		var nowpage = $("#nowpage").text();
+
+		if(nowpage<=1){
+			return false;
+		}
+        window.location.href="myMusic/singer/getSingerByPage?nowpage=1";
+
+	});
+	//末页
+	$("#lastpage").click(function(){
+		var nowpage = $("#nowpage").text();
+		var totalpage = $("#totalpage").text();
+
+		if(nowpage>=totalpage){
+			return false;
+		}
+        window.location.href="myMusic/singer/getSingerByPage?nowpage="+totalpage;
+
+	});
+	
+	//按输入数字跳转页面
+	$("#intoPageButton").click(function(){
+		var totalpage = $("#totalpage").text();
+		var pageData = $("#intopage").val();
+		if(pageData<=1||pageData>=totalpage){
+			return false;
+		}
+		window.location.href="myMusic/singer/getSingerByPage?nowpage="+pageData;
+	});
+	//全选，反选
+	  $("#all").click( function () {
+		  //prop:通过属性取值，或者赋值
+		  if($("#all").prop("checked")){
+			  
+			  $("[name = chosebox]:checkbox").prop("checked", true);
+			  
+		  }else{
+			  $("[name = chosebox]:checkbox").prop("checked", false);
+
+		  }
+      });
+	  //批量删除
+	  var dd;
+	  var dds=new Array();
+	  $("#deleteSinger").click(function(){
+		  alert($("#data").val());
+		  dd = JSON.stringify($("#data").val()); 
+		  dds=$("#data").val();
+		  alert(dds[0]);
+		  $($("#data").val()[0]).each(function(i){
+			  alert(i);
+		  });
+		  $.each(dd, function(i,data) {
+			  alert(data);
+		  });
+	  });
+	
+});

@@ -1,0 +1,21 @@
+package dao.imp;
+
+import java.util.List;
+
+import entity.Mv;
+import entity.Singer;
+
+public interface MvDaoImp {
+	/**
+	 * Ìí¼ÓMV
+	 * @param mv
+	 */
+	public void save(Mv mv);
+	public List<Mv> queryMvByName(String name);
+	public Mv queryMvById(int id);
+	public List<Mv> queryMv();
+	public List<Mv> queryMvByAreaAndDate(int page,String area);
+	public List<Mv> queryMvByAreaAndClick(int page, String area);
+	public List<Mv> queryMvBySinger(Singer singer);
+	public List<Mv> queryMvByRandom();
+}

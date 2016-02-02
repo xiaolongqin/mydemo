@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Microsoft Yahei';
+}
+#chart1,#chart2,#chart3,#chart4{
+    height: 400px;
+}

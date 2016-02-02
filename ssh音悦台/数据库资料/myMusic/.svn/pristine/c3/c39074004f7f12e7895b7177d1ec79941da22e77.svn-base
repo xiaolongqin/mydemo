@@ -1,0 +1,7 @@
+package dao;
+
+import dao.imp.CommentDaoImp;
+
+public class CommentDao implements CommentDaoImp{
+
+}

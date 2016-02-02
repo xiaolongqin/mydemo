@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: '微软雅黑';
+    padding-left: 50px;
+    background: #fff;
+}
+.btn-box{
+    margin-top: 2px;
+}
+#add-btn{
+    display: inline-block;
+    padding: 3px 10px;
+    border: 1px solid #0261bf;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 30px;
+    color: #0261bf;
+}
+#search-btn img{
+    vertical-align: middle;
+}
+#search-btn span{
+    font-size: 12px;
+}
+.path-box{
+    margin-top: 50px;
+    /*max-height: 252px;*/
+    /*overflow: auto;*/
+}
+.table th{
+    text-align: center;
+    color: #fff;
+    background: #99c8f4;
+    font-weight: normal;
+}
+#path-table tr{
+    cursor: pointer;
+}
+.table tr td{
+    text-align: center;
+}
+.btn-word{
+    cursor: pointer;
+    color: #0261bf;
+    padding: 0 10px;
+}
+.btn-word:hover{
+    text-decoration: underline;
+}
+.node-box{
+    margin-top: 30px;
+    display: none;
+}
+.node-line{
+    position: relative;
+    border-top: 1px solid #c9c9c9;
+    border-bottom: 1px solid #e1e1e1;
+}
+.node-line>.img-box{
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    margin-left: -7px;
+    background: #fff;
+}
+.table-box{
+    margin-top: 30px;
+    max-height: 252px;
+    overflow: auto;
+}
+.tr-active{
+    background: #f7e38a;
+}
+.img-box img{
+    width: 14px;
+}
+.node-box h4{
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0261bf;
+}
+.charts-box{
+    width: 100%;
+}
+#lujingChart1,#lujingChart2{
+    height: 350px;
+}
+.input-sm{
+    height: 30px;
+}
+.input-group-addon{
+    padding: 3px 12px;
+}
+.page-change{
+    display: inline-block;
+}
+.page-change li{
+    list-style: none;
+    float: left;
+    font-size: 10px;
+    margin:1px;
+}
+.page-change a{
+    padding: 2px 8px;
+    text-decoration: none;
+    color:#2e6ab1;
+    border:1px solid #9aafe5;
+    cursor:pointer;
+}
+.page-change a:hover{
+    color:#fff;
+    background-color: #99caf6;
+}
+.page-change input.form-control{
+    height:17px;
+    width: 30px;
+    display: inline-block;
+    font-size: 10px;
+    padding:0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}

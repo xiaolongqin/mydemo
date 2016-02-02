@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <products>
+    <!--<type type="01">-->
+    <services type="存储" id="">
+        <service >
+            <serviceid>011</serviceid>
+            <name>关系型数据库服务(RDS)</name>
+            <url>www.taobao.com</url>
+            <description>替换您的mysql服务器</description>
+        </service>
+
+        <service >
+            <serviceid>012</serviceid>
+            <name>开放存储服务(OSS)</name>
+            <srv-url name="getOrder">
+                <url>www.jd.com</url>
+            </srv-url>
+            <description>您的移动数据中心</description>
+        </service>
+    </services>
+
+        <service>
+            <typeid>02</typeid>
+            <typename>传输</typename>
+            <serviceid>021</serviceid>
+            <name>数据传输服务(DTS)</name>
+            <url>www.qq.com</url>
+            <description>您的移动网络</description>
+        </service>
+
+        <service>
+            <typeid>03</typeid>
+            <typename>计算</typename>
+            <serviceid>031</serviceid>
+            <name>开放计算服务(OCS)</name>
+            <url>www.alibaba.com</url>
+            <description>您的移动处理中心</description>
+        </service>
+
+        <service>
+            <typeid>04</typeid>
+            <typename>应用</typename>
+            <serviceid>041</serviceid>
+            <name>开放应用服务(OAS)</name>
+            <url>www.baidu.com</url>
+            <description>您的移动应用平台</description>
+        </service>
+
+</products>

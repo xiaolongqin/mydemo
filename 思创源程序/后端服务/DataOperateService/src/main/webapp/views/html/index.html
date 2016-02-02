@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/common.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--header-->
+<nav class="header-box">
+    <div class="nav-list">
+        <div class="header-list"><img src="../images/logo-head.png" width="60" height="54" alt="" onclick="window.location.reload();"/></div>
+        <div class="header-list">猛犸大数据运营分析平台</div>
+        <div class="user-info pull-right">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    <img src="../images/login_user.png" alt=""/>
+                    <span id="user"></span>
+                </li>
+                <li onclick="changePwd();">
+                    <img src="../images/password.png" alt=""/>
+                    <span>更改密码</span>
+                    <span id="prev-url">../images/index.png</span>
+                </li>
+                <li onclick="logout();">
+                    <img src="../images/logout.png" alt=""/>
+                    <span>退出</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--content-->
+<div class="main-box">
+    <div class="row">
+        <!--左边导航-->
+        <div class="col-md-2 left-list">
+            <ul id="left-nav" class="list-unstyled tree-list">
+
+            </ul>
+        </div>
+        <!--中间内容-->
+        <div class="col-md-8 middle-box" style="padding: 20px;position: relative;z-index: 9999;">
+            <iframe width="100%" id="iframepage" frameborder="0" name="iframepage" src="../images/index.png" scrolling="no"></iframe>
+            <!--onload="this.height=this.contentWindow.document.documentElement.scrollHeight"-->
+            <!--../images/index.png-->
+        </div>
+        <!--右边公告-->
+        <div class="col-md-2 right-list">
+            <h4>公告栏</h4>
+            <div>
+                <ul class="tip-all"></ul>
+            </div>
+            <h4>模块点击量排行榜(截止最近一个月)</h4>
+            <table class="table table-condensed report-table">
+                <thead>
+                    <tr>
+                        <td>名次</td>
+                        <td>模块名称</td>
+                        <td>点击量</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--弹窗-->
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" style="overflow: hidden;">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: #fff;">&times;</span></button>
+                <h5 id="tip-title" class="modal-title"></h5>
+            </div>
+            <div id="tip-content" class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<footer>
+    <div class="footer-box">
+        <p>Version 1.1.12</p>
+    </div>
+</footer>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/echarts-all.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/index.js"></script>
+<script>
+    //iframe自适应
+    function reinitIframe(){
+
+        var iframe = document.getElementById("iframepage");
+        var bHeight = iframe.contentWindow.document.body.scrollHeight;
+
+        var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+
+        var height = Math.min(bHeight, dHeight);
+
+        iframe.height =  height;
+    }
+    window.setInterval("reinitIframe()", 200);
+//    检测esc
+    $(window).on('keydown',function(e){
+        var event=e || window.event;
+        if(event.keyCode==27){
+            $('body').find('.shade').remove();
+        }
+//        if (event.keyCode == 116) {
+//            return false;
+//        }
+    });
+</script>
+</html>

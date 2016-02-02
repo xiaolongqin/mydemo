@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/usual.css"/>
+    <link rel="stylesheet" href="../css/dialog.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .find{
+            margin-top:50px;
+            margin-bottom: 40px;
+        }
+        .table-responsive{
+            height:260px;overflow: auto;
+        }
+        body{
+            min-height: 650px;
+        }
+    </style>
+</head>
+<body>
+<!--content-->
+<div class="main-box">
+    <div class="row find">
+        <div class="find-bar edit-page-find pull-left" style="padding:0 15px;">
+            <div class="input-group">
+                <input id="characterName" type="text" class="pull-left form-control" style="display: inline" placeholder="例如：公告内容"/>
+                <div class="input-group-addon find-btn" onclick="findNotice();">
+                    <img src="../images/find.png" alt="find"/>
+                </div>
+            </div>
+        </div>
+        <!--<div class="pull-left find-bar" style="width:400px;padding:0 15px;">-->
+        <!--<input id="characterName" type="text" class="pull-left col-md-10" placeholder="角色名：运营人员"/>-->
+        <!--<a href="javascript:;" onclick="findCharacter();">-->
+        <!--<div class="find-btn pull-left col-md-2 text-center"><img src="../images/find.png" alt="find"/></div>-->
+        <!--</a>-->
+        <!--</div>-->
+        <div class="pull-right" style="width: 230px;padding: 0 15px;">
+            <a onclick="Add_Character();" data-toggle="modal" data-target="#myModal">
+                <div class="add-btn text-center" style="width: 200px;">
+                    <img src="../images/add.png" alt="add"/>
+                    <span>添加公告</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="common-table table none" id="characterTable">
+            <thead>
+            <tr>
+                <th class="col-md-3">公告主题</th>
+                <th class="col-md-6">公告内容</th>
+                <th class="col-md-3">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="page" style="margin-top: 50px;">
+        <nav class="text-center">
+            <ul class="page-change">
+                <li><a>上一页</a></li>
+                <li>&nbsp; 当前页码：<span>1</span>&nbsp; </li>
+                <li><a>下一页</a></li>
+                <li id="totalPage" style="margin-left: 20px;"></li>
+                <li style="margin-left: 20px;"><a>跳转</a>到第 <input type="text" class="form-control"/> 页</li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!--dialog-->
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog dialog-content" role="document">
+        <div class="modal-content dialog-content">
+            <div class="modal-header dialog-head text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeShade();"><span aria-hidden="true">&times;</span></button>
+                <p class="modal-title dialog-title" id="myModalLabel">添加公告</p>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal border-bottom">
+                    <div class="form-group">
+                        <label for="parentID" class="col-md-2 col-md-offset-2 control-label">公告主题：</label>
+                        <div class="col-md-5" style="padding: 0">
+                            <input type="text" class="form-control input-sm" id="parentID" placeholder="示例：系统公告" onkeydown="hidered();">
+                        </div>
+                        <div class="col-md-3" style="padding: 5px"><span class="red">*</span><span class="red input-alert-name hidden">请输入公告主题</span></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="childID" class="col-md-2 col-md-offset-2 control-label">公告内容：</label>
+                        <div class="col-md-5" style="padding: 0">
+                            <textarea class="form-control input-sm" id="childID" placeholder="示例：数联思创大数据运营分析平台 Version 1.0.7版本发布!" onkeydown="hidered();"></textarea>
+                        </div>
+                        <div class="col-md-3" style="padding: 5px"><span class="red">*</span><span class="red input-alert-des hidden">请输入公告内容</span></div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <div>
+                    <div class="btn-small dialog-save" onclick="Save_Info();"><a href="javascript:;">保存</a></div>
+                    <div class="btn-small" onclick="Reset_Info();"><a href="javascript:;">重置</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="myModal-del" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-del" data-backdrop="static">
+    <div class="modal-dialog dialog-content" role="document">
+        <div class="modal-content dialog-content">
+            <div class="modal-header dialog-head text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeShade();"><span aria-hidden="true">&times;</span></button>
+                <p class="modal-title dialog-title" id="myModalLabel-del">角色赋权管理</p>
+            </div>
+            <div class="modal-body">
+                <div class="dialog-del-confirm">
+                    确认删除吗？
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div>
+                    <div class="btn-small dialog-yes"><a href="javascript:;">确认</a></div>
+                    <div class="btn-small" onclick="modalNo();"><a href="javascript:;">取消</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/notice_manage.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/href.js"></script>
+</html>

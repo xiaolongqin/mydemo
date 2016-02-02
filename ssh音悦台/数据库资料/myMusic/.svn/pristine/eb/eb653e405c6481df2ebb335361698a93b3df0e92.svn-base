@@ -1,0 +1,127 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/style.css" />
+    <script type="text/javascript" src="../Js/jquery.js"></script>
+    <script type="text/javascript" src="../Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="../Js/bootstrap.js"></script>
+    <script type="text/javascript" src="../Js/ckform.js"></script>
+    <script type="text/javascript" src="../Js/common.js"></script>
+    <style type="text/css">
+        body {
+            padding-bottom: 40px;
+        }
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+
+    </style>
+    
+    <script type="text/javascript">
+    $(function () {       
+		$('#backid').click(function(){
+				window.location.href="index.jsp";
+		 });
+		
+		$("#picid").keyup(function(){
+			photoid = $("#picid").val();
+			
+			$.get("sysphoto.do",{v:"querryPhotoByID","id":photoid},function(data){
+				  
+				$("#phototest").css("color","red");
+				if(data.length==0&&photoid.length>0){
+					$("#phototest").css("color","green");
+					$("#phototest").html(photoid+"该图片ID可以使用!");
+				}else if(photoid.length==0){
+					$("#phototest").html("该图片ID不能为空!");
+				}else{
+					$("#phototest").html(photoid+"该图片ID存在不可以使用!");
+				}
+				
+			},"json");
+	    	
+		});
+
+    });
+    
+</script>
+    
+</head>
+<form action="sysphoto.do?v=addPhoto" method="post" enctype="multipart/form-data">
+<table class="table table-bordered table-hover definewidth m10">
+    <tr>
+        <td width="15%" class="tableleft">图片ID</td>
+        <td><input type="text" name="picid" id="picid" /> &nbsp;&nbsp; <span id="phototest" style="color:red;"></span></td>
+    </tr>
+     <tr>
+        <td class="tableleft">上传用户ID</td>
+        <td><input type="text" name="userid"/></td>
+    </tr>
+    
+    
+    <tr>
+        <td class="tableleft">图片名称</td>
+        <td><input type="text" name="pictitle"/></td>
+    </tr>   
+	    <tr>
+        <td class="tableleft">图片类型</td>
+        <td>
+            <input type="radio" name="pictype" value="风光" checked/> 风光
+            <input type="radio" name="pictype" value="动物"/> 动物
+			<input type="radio" name="pictype" value="星空"/> 星空
+			<input type="radio" name="pictype" value="人文"/>人文
+			<input type="radio" name="pictype" value="田园"/>田园
+			<input type="radio" name="pictype" value="大海"/> 大海
+			<input type="radio" name="pictype" value="其它"/> 其它
+        </td>
+    </tr>
+    
+    
+	<tr>
+        <td class="tableleft">图片加载导入时间</td>
+        <td><input type="text" value="2015-7-1"   name="picloadtime"/></td>
+    </tr>
+	
+    <tr>
+        <td width="10%" class="tableleft">图片路径</td>
+        <td><input type="file" name="picimgurl"/></td>
+    </tr>
+    
+	<tr>
+        <td class="tableleft">图片标签</td>
+        <td><input type="text" name="pictag"/></td>
+    </tr>
+	<tr>
+        <td class="tableleft">图片解读</td>
+        <td><input type="text" name="picscramble"/></td>
+    </tr>
+	<tr>
+        <td class="tableleft">图片描述</td>
+        <td><input type="text" name="picexplain"/></td>
+    </tr>
+   
+    <tr>
+        <td class="tableleft"></td>
+        <td>
+            <button type="submit" class="btn btn-primary" type="button">保存</button>&nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+        </td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

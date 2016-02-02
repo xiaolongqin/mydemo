@@ -1,0 +1,104 @@
+p{padding:0;margin:0;}
+.yuzhi-title{
+    color:#fff;
+    font-size:20px;
+    background-color: #99caf6;
+    height:40px;
+    line-height: 40px;
+    width:100%;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+.main{
+    margin: 20px auto;
+    max-width: 1650px;
+    border:1px solid #cecece;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.yuzhi-content{
+    min-height:900px;
+}
+.period{
+    width: 450px;
+    height:210px;
+    margin:50px 20px 0 20px;
+    float:left;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow:2px 2px 10px #aaa;
+    -webkit-box-shadow:2px 2px 10px #aaa;
+    box-shadow:2px 2px 10px #aaa;
+    position: relative;
+    color:#5e5e5e;
+}
+.period-title{
+    height:40px;
+    line-height:40px;
+    background-color: #eeeeee;
+    -moz-box-shadow:0px 5px 10px #dedede;
+    -webkit-box-shadow:0px 5px 10px #dedede;
+    box-shadow:0px 5px 10px #dedede;
+    font-size: 18px;
+}
+.period-num{
+    height:42px;
+    width: 42px;
+    -webkit-border-radius: 21px;
+    -moz-border-radius: 21px;
+    border-radius: 21px;
+    border:4px solid #cce0f1;
+    background-color: #99caf6;
+    position: absolute;
+    color:#fff;
+    text-align: center;
+    line-height: 35px;
+    font-size: 22px;
+    left:14px;
+    top:12px;
+}
+.yuzhi-value{
+    height:20px;
+    width:35px;
+    line-height: 20px;
+    border:1px solid #a0a0a0;
+    margin:4px;
+    display: inline;
+    padding:0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+.period-title>img{
+    margin-left:68px;
+}
+.period-title input{
+    vertical-align: middle;
+}
+.period-content{
+    padding:25px 0 0 55px;
+}
+.period-item{
+    height:40px;
+    line-height: 40px;
+}
+.yuzhi-foot{
+    width:400px;
+    height:30px;
+    margin:30px auto;
+}
+.select-all img{
+    margin: 0 10px;
+}
+.select-all span{
+    cursor:pointer;
+}
+.yuzhi-foot>div>a{
+    margin-left:40px;
+}
+
+
+

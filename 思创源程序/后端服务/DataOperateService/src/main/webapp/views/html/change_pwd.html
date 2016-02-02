@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/usual.css"/>
+    <link rel="stylesheet" href="../css/add-user.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="row">
+    <div class="left-line pull-left"></div>
+    <div class="col-md-10 right-cont pull-left">
+        <div class="user-reg-step num4 clearfix">
+            <dl class="doing">
+                <dt class="st-num">
+                <div class="st-bg"><img src="../images/set-user-info.png" alt=""/></div>
+                </dt>
+                <dd class="st-text">修改密码</dd>
+            </dl>
+            <dl>
+                <dt class="st-num">
+                <div class="st-bg"><img src="../images/success.png" alt=""/></div>
+                </dt>
+                <dd class="st-text">修改成功</dd>
+            </dl>
+        </div>
+        <div class="input-items clearfix" id="content">
+            <div class="text-right text-items pull-left">
+                <div class="items">
+                    <p class=""><span>*</span>请输入原密码</p>
+                </div>
+                <div class="items">
+                    <p class=""><span>*</span>输入新密码</p>
+                </div>
+                <div class="items">
+                    <p class=""><span>*</span>确认新密码</p>
+                </div>
+            </div>
+            <div class="box-items pull-left">
+                <div class="items">
+                    <input id="UserName" class="input-sm form-control" type="text" placeholder="请输入6-20个字符" onchange="redAlert(this);" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')"/>
+                    <span class="red-text-small hidden">*原密码由6到20个字符组成</span><span id="pwdError" class="red-text-small hidden">*原密码错误</span>
+                </div>
+                <div class="items">
+                    <input class="input-sm form-control" id="PassWord" type="password"  placeholder="请输入6-20个字符" onchange="redAlert(this);"/>
+                    <span class="red-text-small hidden">*新密码由6到20个字符组成</span>
+                </div>
+                <div class="items" style="margin-bottom: 7px;">
+                    <input class="input-sm form-control" id="PassWordConfirm" type="password"  placeholder="请输入6-20个字符" onchange="redAlert(this);"/>
+                    <span class="red-text-small hidden">*两次输入密码不一致</span>
+                </div>
+                <div class="btn-box">
+                    <div class="btn-small"><a href="javascript:;" onclick="SavePwd();">保存</a></div>
+                    <div class="btn-small"><a href="javascript:;" onclick="goBack();">取消</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/change_pwd.js"></script>
+<script src="../js/href.js"></script>
+</html>

@@ -1,0 +1,114 @@
+package action;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+
+import net.sf.json.JSONArray;
+
+import org.apache.struts2.ServletActionContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import entity.Mv;
+import entity.Recommend;
+import entity.User;
+import service.imp.UserServiceImp;
+@Controller
+public class UserAction {
+	@Resource
+	private UserServiceImp userService;
+	private String name;
+	private int page;
+	private User user;
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getPage() {
+		return page;
+	}
+	public void setPage(int page) {
+		this.page = page;
+	}
+
+	private List<User> users; 
+	
+	public List<User> getUsers() {
+		return users;
+	}
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+	
+	//查询
+	/*public String query(){//静态数据
+		//userService.queryUser();
+		 users =userService.queryUser(1, "");
+		System.out.println(users);
+		return "success";
+		
+	}*/
+public String queryUserBynickname() throws IOException{
+		
+		HttpServletResponse response = ServletActionContext.getResponse();
+		List<User> list=userService.queryUser(page, name);
+		JSONArray jsonArray = JSONArray.fromObject(list);
+		response.setCharacterEncoding("utf-8");
+		PrintWriter out = response.getWriter();	
+		out.println(jsonArray);
+		out.flush();
+		out.close();
+		return null;
+		
+	}
+	
+	//添加用户
+	public String addUser(){
+		userService.addUser(user);
+		return "save_success";
+	}
+	
+	//分页
+   public String pageuserBynickname() throws IOException{	
+	HttpServletResponse response = ServletActionContext.getResponse();
+	List<User> list=userService.queryUser(page, name);
+		JSONArray jsonArray = JSONArray.fromObject(list);
+		response.setCharacterEncoding("utf-8");
+		PrintWriter out = response.getWriter();	
+		out.println(jsonArray);
+		out.flush();
+		out.close();
+		return null;
+		
+	}
+   
+   private String username;
+   private String password;
+public String getUsername() {
+	return username;
+}
+public void setUsername(String username) {
+	this.username = username;
+}
+public String getPassword() {
+	return password;
+}
+public void setPassword(String password) {
+	this.password = password;
+}
+   
+	
+}

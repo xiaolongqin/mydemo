@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Microsoft Yahei';
+}
+#chart1,#chart3,#chart4{
+    height: 400px;
+}
+#chart3{
+    border-right: 1px solid #e6ebee;
+}
+#channelList{
+    color: #f3b026;
+    border: none;
+    height: 27px;
+    *height: 27px;
+}

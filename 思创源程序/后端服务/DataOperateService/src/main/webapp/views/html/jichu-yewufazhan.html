@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" href="../css/jichu-yewufazhan.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="title">
+    <img src="../images/yewupic.png" alt=""/>
+    <h3>渠道运营监控</h3>
+</div>
+<div class="time-box">
+    <div class="row">
+        <div class="col-md-5">
+            <h5>快速选择时间</h5>
+            <ul class="time-list">
+                <li class="time-active" onclick="quickTime(this);">昨天</li>
+                <li onclick="quickTime(this);">最近7天</li>
+                <li onclick="quickTime(this);">最近14天</li>
+                <li onclick="quickTime(this);">最近30天</li>
+                <li style="border: none;" onclick="quickTime(this);">最近90天</li>
+            </ul>
+        </div>
+        <div class="col-md-5">
+            <h5>自定义时间</h5>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="input-group date form_date" data-link-format="yyyy-mm-dd">
+                        <input id="time-start" class="form-control input-sm" type="text" readonly/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+                <span style="float: left;margin-top: 5px;">至</span>
+                <div class="col-md-5">
+                    <div class="input-group date form_date" data-link-format="yyyy-mm-dd">
+                        <input id="time-end" class="form-control input-sm" type="text" readonly/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+                <div class="time-btn" onclick="myTime();">确定</div>
+            </div>
+        </div>
+        <div class="col-md-2" style="position: relative;">
+            <div class="details" flag="1" onclick="seeDetail(this);">详情</div>
+            <div class="details-content">
+                <p>渠道运营监控指标口径：</p>
+                <div class="details-active details-list">
+                    1.页面默认展现：【app推广分渠道统计日报】和【app页面转换率分析】昨天数据。
+                </div>
+                <div class="details-list">
+                    2.保存率：分别展现：如短信营销、邮件营销、微信渠道、电子广告 等运营渠道的保存率。<br/>
+                    保存率：下载用户数/到达用户<br/>
+                    保存用户：下载用户数<br/>
+                    各个渠道的保存率= 各个渠道的下载用户数/各渠道到达用户数。
+                </div>
+                <div class="details-list">
+                    3. 转化率：分别展现：如短信营销、邮件营销、微信渠道、电子广告 等运营渠道的转化率。<br/>
+                    转换率：到达用户/总的目标用户。<br/>
+                    各个渠道的转换率=  各个渠道的到达用户/各渠道目标用户。<br/>
+                </div>
+                <div class="details-list">
+                    4.日均PV：总PV/7 (单位：次)(7天是默认用户选择的，也可以自定义时间选择)。<br/>
+                    日均UV：总UV/7 (单位：次)(7天是默认用户选择的，也可以自定义时间选择)。<br/>
+                    日均访问用户数(日均活跃用户数)：总UV/7 (单位：户)(7天是默认用户选择的，也可以自定义时间选择)。
+                </div>
+                <div class="details-list">
+                    5.总目标用户数: app推广的总目标用户数。<br/>
+                    到达用户数：app推广后实际给用户接触后的用户数，如短信营销，收到短信的用户数即为到达用户。<br/>
+                    下载用户数：营销推广达到用户，与用户接触后用户下载app的数量。<br/>
+                    注册用户数：app下载后，用户点击注册页面注册成功的用户数。<br/>
+                    点击用户数PV：用户点击app的数。<br/>
+                    独立访问点击用户数UV：由独立ip地址或者独立手机终端IMEI唯一身份标示点击的app次数。
+                </div>
+                <div class="details-list">
+                    6.日环比变化= （当日-昨日）/昨日 * 100%<br/>
+                    日增长质量= 当日-昨日<br/>
+                    日环比增幅= 当日（日环比变化）-昨日（日环比变化）<br/>
+                    上周同期= 当前时间（当日）- 上周同期（当日）（减7天数据）如：今天是2015-9-25 则，上周同期为2015-9-18<br/>
+                    周同比变化= （当日-上周同期）/当日 * 100%
+                </div>
+                <div class="details-btn">
+                    <span class="glyphicon glyphicon-chevron-left" onclick="prevPages();"></span>
+                    <span class="glyphicon glyphicon-chevron-right" onclick="nextPages();"></span>
+                </div>
+                <div class="triangle"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="red-word">
+    <div>用户总数 : <span></span>户</div>
+    <div>订单总数 : <span></span>笔</div>
+    <div>店铺总数 : <span></span>户</div>
+</div>
+<h4 id="time-title"></h4>
+<div style="width: 100%;height: 30px;">
+    <div id="client-tab">
+        <ul class="list-unstyled list-inline">
+            <li class="list-active" onclick="fourTab(this);">全部</li>
+            <li onclick="fourTab(this);">用户端</li>
+            <li onclick="fourTab(this);">商户端</li>
+            <li style="border: none;" onclick="fourTab(this);">管家端</li>
+        </ul>
+    </div>
+</div>
+<div class="main-box">
+    <div id="yewuChart1"></div>
+    <div id="yewuChart2"></div>
+    <div id="yewuChart3"></div>
+    <div id="yewu-tab">
+        <ul class="list-unstyled list-inline">
+            <li class="list-active" onclick="oneTab(this);">PV</li>
+            <li onclick="oneTab(this);">UV</li>
+            <li onclick="oneTab(this);">到达用户</li>
+            <li onclick="oneTab(this);">下载用户</li>
+            <li style="border: none;" onclick="oneTab(this);">注册用户</li>
+        </ul>
+    </div>
+    <div id="yewuChart4"></div>
+    <div id="yewuTable">
+        <table>
+            <thead>
+            <tr>
+                <td rowspan=2>日期</td>
+                <td rowspan=2>当日</td>
+                <td colspan="4">与昨日对比</td>
+                <td colspan="2">与上周对比</td>
+            </tr>
+            <tr>
+                <td>昨日</td>
+                <td>日环比变化</td>
+                <td>日增长质量</td>
+                <td>日环比增幅</td>
+                <td>上周同期</td>
+                <td>周同比变化</td>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/echarts-all.js"></script>
+<script src="../js/bootstrap-datetimepicker.min.js"></script>
+<script src="../js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/jichu-yewufazhan.js"></script>
+<script src="../js/href.js"></script>
+</html>

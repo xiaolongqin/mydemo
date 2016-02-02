@@ -1,0 +1,14 @@
+package service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import service.imp.UserServiceImp;
+import dao.UserDao;
+@Service
+public class UserService implements UserServiceImp {
+	@Autowired
+	private UserDao  userDao;
+	
+	
+}

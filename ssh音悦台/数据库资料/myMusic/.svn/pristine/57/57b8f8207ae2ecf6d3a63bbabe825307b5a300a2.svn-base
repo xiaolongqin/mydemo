@@ -1,0 +1,10 @@
+package entity;
+
+import java.util.Date;
+
+public class Attention {
+  private int id;
+  private User user;
+  private Singer singer;
+  private Date attention_date;
+}

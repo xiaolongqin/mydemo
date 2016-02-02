@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Microsoft Yahei';
+}
+#chart1{
+    width: 100%;
+    overflow: hidden;
+}
+#goodList{
+    border: none;
+    color: #f3b026;
+    height: 27px;
+}
+.table-name:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.good-id,.channel-name,.brand-name{
+    display: none;
+}

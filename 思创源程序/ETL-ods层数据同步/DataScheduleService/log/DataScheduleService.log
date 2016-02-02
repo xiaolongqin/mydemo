@@ -1,0 +1,1266 @@
+2015-07-23 09:57:51.033 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-23 09:57:51.043 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-23 09:57:51.057 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-23 09:57:51.058 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-23 09:57:51.059 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-23 09:57:51.060 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-23 09:57:51.060 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-23 09:57:51.060 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-23 09:57:51.062 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-23 09:57:51.072 [DefaultQuartzScheduler_Worker-1] ERROR org.quartz.core.JobRunShell - Job group_job.job_channel_record threw an unhandled Exception: 
+java.lang.ExceptionInInitializerError: null
+	at com.szl.strongunion.bigdata.dss.model.TableMode.<clinit>(TableMode.java:27) ~[classes/:na]
+	at com.szl.strongunion.bigdata.dss.job.JobChannelRecord.execute(JobChannelRecord.java:19) ~[classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: java.lang.NullPointerException: null
+	at java.util.Properties$LineReader.readLine(Properties.java:434) ~[na:1.8.0_05]
+	at java.util.Properties.load0(Properties.java:353) ~[na:1.8.0_05]
+	at java.util.Properties.load(Properties.java:341) ~[na:1.8.0_05]
+	at com.szl.strongunion.bigdata.dss.config.db.PoolInitiator.<clinit>(PoolInitiator.java:28) ~[classes/:na]
+	... 4 common frames omitted
+2015-07-23 09:57:51.073 [DefaultQuartzScheduler_Worker-1] ERROR org.quartz.core.ErrorLogger - Job (group_job.job_channel_record threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception.
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213) ~[quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: java.lang.ExceptionInInitializerError: null
+	at com.szl.strongunion.bigdata.dss.model.TableMode.<clinit>(TableMode.java:27) ~[classes/:na]
+	at com.szl.strongunion.bigdata.dss.job.JobChannelRecord.execute(JobChannelRecord.java:19) ~[classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.2.1.jar:na]
+	... 1 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at java.util.Properties$LineReader.readLine(Properties.java:434) ~[na:1.8.0_05]
+	at java.util.Properties.load0(Properties.java:353) ~[na:1.8.0_05]
+	at java.util.Properties.load(Properties.java:341) ~[na:1.8.0_05]
+	at com.szl.strongunion.bigdata.dss.config.db.PoolInitiator.<clinit>(PoolInitiator.java:28) ~[classes/:na]
+	... 4 common frames omitted
+2015-07-23 10:03:24.422 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-23 10:03:24.428 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-23 10:03:24.445 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-23 10:03:24.447 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-23 10:03:24.448 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-23 10:03:24.449 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-23 10:03:24.450 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-23 10:03:24.450 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-23 10:03:24.451 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-23 10:03:40.163 [DefaultQuartzScheduler_Worker-1] ERROR org.quartz.core.JobRunShell - Job group_job.job_channel_record threw an unhandled Exception: 
+java.lang.ExceptionInInitializerError: null
+	at com.szl.strongunion.bigdata.dss.model.TableMode.<clinit>(TableMode.java:27) ~[classes/:na]
+	at com.szl.strongunion.bigdata.dss.job.JobChannelRecord.execute(JobChannelRecord.java:19) ~[classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: java.lang.NullPointerException: null
+	at java.util.Properties$LineReader.readLine(Properties.java:434) ~[na:1.8.0_05]
+	at java.util.Properties.load0(Properties.java:353) ~[na:1.8.0_05]
+	at java.util.Properties.load(Properties.java:341) ~[na:1.8.0_05]
+	at com.szl.strongunion.bigdata.dss.config.db.PoolInitiator.<clinit>(PoolInitiator.java:28) ~[classes/:na]
+	... 4 common frames omitted
+2015-07-23 10:03:40.164 [DefaultQuartzScheduler_Worker-1] ERROR org.quartz.core.ErrorLogger - Job (group_job.job_channel_record threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception.
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213) ~[quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: java.lang.ExceptionInInitializerError: null
+	at com.szl.strongunion.bigdata.dss.model.TableMode.<clinit>(TableMode.java:27) ~[classes/:na]
+	at com.szl.strongunion.bigdata.dss.job.JobChannelRecord.execute(JobChannelRecord.java:19) ~[classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.2.1.jar:na]
+	... 1 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at java.util.Properties$LineReader.readLine(Properties.java:434) ~[na:1.8.0_05]
+	at java.util.Properties.load0(Properties.java:353) ~[na:1.8.0_05]
+	at java.util.Properties.load(Properties.java:341) ~[na:1.8.0_05]
+	at com.szl.strongunion.bigdata.dss.config.db.PoolInitiator.<clinit>(PoolInitiator.java:28) ~[classes/:na]
+	... 4 common frames omitted
+2015-07-23 10:10:42.466 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-23 10:10:42.477 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-23 10:10:42.498 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-23 10:10:42.500 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-23 10:10:42.505 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-23 10:10:42.506 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-23 10:10:42.506 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-23 10:10:42.506 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-23 10:10:42.507 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-23 10:11:45.229 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-23 10:12:05.069 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-23 10:14:39.207 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-23 10:14:39.215 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-23 10:14:39.236 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-23 10:14:39.237 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-23 10:14:39.238 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-23 10:14:39.239 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-23 10:14:39.240 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-23 10:14:39.240 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-23 10:14:39.241 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-23 10:14:50.110 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-23 10:15:08.715 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-23 10:19:26.925 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-23 10:19:26.940 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-23 10:19:26.957 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-23 10:19:26.958 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-23 10:19:26.959 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-23 10:19:26.960 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-23 10:19:26.961 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-23 10:19:26.961 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-23 10:19:26.963 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-23 10:19:27.911 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-23 10:19:47.894 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-23 10:20:15.872 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-23 10:20:15.884 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-23 10:20:15.908 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-23 10:20:15.911 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-23 10:20:15.913 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-23 10:20:15.914 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-23 10:20:15.914 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-23 10:20:15.915 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-23 10:20:15.917 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-29 10:44:43.873 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-29 10:44:43.897 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-29 10:44:43.917 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-29 10:44:43.920 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-29 10:44:43.922 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-29 10:44:43.923 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-29 10:44:43.923 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-29 10:44:43.923 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-29 10:44:43.924 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-29 10:49:56.086 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-29 10:49:56.094 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-29 10:49:56.114 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-29 10:49:56.115 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-29 10:49:56.116 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-29 10:49:56.117 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-29 10:49:56.117 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-29 10:49:56.117 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-29 10:49:56.118 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-29 10:59:03.510 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-29 10:59:03.520 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-29 10:59:03.537 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-29 10:59:03.538 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-29 10:59:03.539 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-29 10:59:03.540 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-29 10:59:03.540 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-29 10:59:03.540 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-29 10:59:03.542 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-29 11:04:09.742 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-29 11:13:08.629 [DefaultQuartzScheduler_Worker-1] ERROR c.alibaba.druid.pool.DruidDataSource - init datasource error, url: jdbc:mysql://115.28.109.25:3306/strongunion_online_test?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&&autoReconnect=true
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:958) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:937) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:926) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:872) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2149) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2074) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at sun.reflect.GeneratedConstructorAccessor4.newInstance(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375) ~[druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431) ~[druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:632) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:934) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:930) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:102) [druid-1.0.13.jar:1.0.13]
+	at com.jfinal.plugin.activerecord.Config.getConnection(Config.java:185) [jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.query(DbPro.java:95) [jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.query(DbPro.java:109) [jfinal-1.9.jar:na]
+	at com.szl.strongunion.bigdata.dss.model.TableMode.source_count(TableMode.java:43) [classes/:na]
+	at com.szl.strongunion.bigdata.dss.model.TableMode.saveAll(TableMode.java:78) [classes/:na]
+	at com.szl.strongunion.bigdata.dss.model.TableMode.source_to_targert(TableMode.java:141) [classes/:na]
+	at com.szl.strongunion.bigdata.dss.job.JobChannelType.execute(JobChannelType.java:20) [classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor8.newInstance(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1038) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2237) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2090) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	... 24 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_05]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_05]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_05]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_05]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_05]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_05]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_05]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_05]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	... 26 common frames omitted
+2015-07-29 11:13:08.632 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-29 11:59:03.542 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+2015-07-29 11:59:03.542 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+2015-07-29 11:59:04.030 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+2015-07-29 14:48:04.732 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-29 14:48:04.743 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-29 14:48:04.762 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-29 14:48:04.763 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-29 14:48:04.764 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-29 14:48:04.764 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-29 14:48:04.764 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-29 14:48:04.765 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-29 14:48:04.766 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-29 14:49:06.521 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-29 14:49:06.534 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-29 14:49:06.554 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-29 14:49:06.555 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-29 14:49:06.556 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-29 14:49:06.557 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-29 14:49:06.557 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-29 14:49:06.557 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-29 14:49:06.558 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-29 14:54:15.933 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-29 14:57:19.790 [DefaultQuartzScheduler_Worker-1] ERROR c.alibaba.druid.pool.DruidDataSource - init datasource error, url: jdbc:mysql://115.28.109.25:3306/strongunion_online_test?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&&autoReconnect=true
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:958) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:937) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:926) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:872) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2149) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2074) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at sun.reflect.GeneratedConstructorAccessor4.newInstance(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375) ~[druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431) ~[druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:632) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:934) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:930) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:102) [druid-1.0.13.jar:1.0.13]
+	at com.jfinal.plugin.activerecord.Config.getConnection(Config.java:185) [jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.query(DbPro.java:95) [jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.query(DbPro.java:109) [jfinal-1.9.jar:na]
+	at com.szl.strongunion.bigdata.dss.model.TableMode.source_count(TableMode.java:43) [classes/:na]
+	at com.szl.strongunion.bigdata.dss.model.TableMode.saveAll(TableMode.java:78) [classes/:na]
+	at com.szl.strongunion.bigdata.dss.model.TableMode.source_to_targert(TableMode.java:141) [classes/:na]
+	at com.szl.strongunion.bigdata.dss.job.JobChannelType.execute(JobChannelType.java:20) [classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1038) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2237) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2090) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	... 24 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_05]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_05]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_05]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_05]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_05]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_05]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_05]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_05]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	... 26 common frames omitted
+2015-07-29 14:57:19.794 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-29 15:49:06.558 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+2015-07-29 15:49:06.559 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+2015-07-29 15:49:06.992 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+2015-07-30 09:24:45.324 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-30 09:24:45.351 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-30 09:24:45.365 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-30 09:24:45.366 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-30 09:24:45.379 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-30 09:24:45.380 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-30 09:24:45.380 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-30 09:24:45.380 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-30 09:24:45.381 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-30 09:25:00.813 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-30 09:26:09.424 [DefaultQuartzScheduler_Worker-1] ERROR c.alibaba.druid.pool.DruidDataSource - init datasource error, url: jdbc:mysql://115.28.109.25:3306/strongunion_online_test?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&&autoReconnect=true
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:958) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:937) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:926) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:872) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2149) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2074) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at sun.reflect.GeneratedConstructorAccessor4.newInstance(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375) ~[druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431) ~[druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:632) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:934) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:930) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:102) [druid-1.0.13.jar:1.0.13]
+	at com.jfinal.plugin.activerecord.Config.getConnection(Config.java:185) [jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.query(DbPro.java:95) [jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.query(DbPro.java:109) [jfinal-1.9.jar:na]
+	at com.szl.strongunion.bigdata.dss.model.TableMode.source_count(TableMode.java:43) [classes/:na]
+	at com.szl.strongunion.bigdata.dss.model.TableMode.saveAll(TableMode.java:78) [classes/:na]
+	at com.szl.strongunion.bigdata.dss.model.TableMode.source_to_targert(TableMode.java:141) [classes/:na]
+	at com.szl.strongunion.bigdata.dss.job.JobComshop.execute(JobComshop.java:20) [classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1038) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2237) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2090) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	... 24 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_05]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_05]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_05]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_05]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_05]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_05]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_05]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_05]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	... 26 common frames omitted
+2015-07-30 09:26:09.426 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-30 09:54:56.065 [Druid-ConnectionPool-Create-1718747875] ERROR c.alibaba.druid.pool.DruidDataSource - create connection error, url: jdbc:mysql://115.28.109.25:3306/strongunion_online_test?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&&autoReconnect=true
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:958) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:937) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:926) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:872) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2149) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2074) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at sun.reflect.GeneratedConstructorAccessor4.newInstance(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375) ~[druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431) ~[druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1861) ~[druid-1.0.13.jar:1.0.13]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1038) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2237) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2090) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	... 12 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_05]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_05]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_05]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_05]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_05]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_05]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_05]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_05]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	... 14 common frames omitted
+2015-07-30 10:05:55.418 [DefaultQuartzScheduler_Worker-1] ERROR c.s.s.bigdata.dss.model.TableMode - 全量同步表comshop遇到问题:java.sql.BatchUpdateException: Duplicate entry '6972605' for key 'shopsid'
+2015-07-30 10:24:45.381 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+2015-07-30 10:24:45.382 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+2015-07-30 10:24:45.538 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+2015-07-30 14:42:03.401 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-30 14:42:03.411 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-30 14:42:03.424 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-30 14:42:03.426 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-30 14:42:03.427 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-30 14:42:03.427 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-30 14:42:03.428 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-30 14:42:03.428 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-30 14:42:03.429 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-30 14:42:04.241 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-30 14:42:24.532 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-30 14:43:52.183 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-30 14:43:52.196 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-30 14:43:52.210 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-30 14:43:52.211 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-30 14:43:52.212 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-30 14:43:52.212 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-30 14:43:52.212 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-30 14:43:52.212 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-30 14:43:52.213 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-30 14:44:03.034 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-30 14:44:23.131 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-30 15:14:17.434 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-30 15:14:17.442 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-30 15:14:17.469 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-30 15:14:17.470 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-30 15:14:17.471 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-30 15:14:17.472 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-30 15:14:17.472 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-30 15:14:17.473 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-30 15:14:17.474 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-30 15:15:21.999 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-30 15:15:44.209 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-30 15:16:22.007 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-30 15:16:22.016 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-30 15:16:22.029 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-30 15:16:22.030 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-30 15:16:22.031 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-30 15:16:22.032 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-30 15:16:22.032 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-30 15:16:22.032 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-30 15:16:22.033 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-30 15:16:37.963 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-30 15:16:58.458 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-31 15:15:15.025 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-31 15:15:15.060 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-31 15:15:15.085 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-31 15:15:15.087 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-31 15:15:15.088 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-31 15:15:15.089 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-31 15:15:15.089 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-31 15:15:15.089 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-31 15:15:15.090 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-31 15:15:16.146 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-31 15:15:35.298 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-31 15:16:20.789 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-31 15:16:20.798 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-31 15:16:20.812 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-31 15:16:20.813 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-31 15:16:20.813 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-31 15:16:20.814 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-31 15:16:20.814 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-31 15:16:20.815 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-31 15:16:20.816 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-31 15:16:31.756 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-31 15:16:52.889 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-31 15:21:26.116 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-31 15:21:26.122 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-31 15:21:26.139 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-31 15:21:26.140 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-31 15:21:26.141 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-31 15:21:26.142 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-31 15:21:26.142 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-31 15:21:26.143 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-31 15:21:26.168 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-31 15:25:10.950 [DefaultQuartzScheduler_Worker-4] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-31 15:25:29.857 [DefaultQuartzScheduler_Worker-10] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-31 15:25:30.662 [DefaultQuartzScheduler_Worker-1] ERROR c.s.s.bigdata.dss.model.TableMode - 增量同步表mobile_device遇到问题:java.sql.BatchUpdateException: Duplicate entry '28028' for key 'PRIMARY'
+2015-07-31 15:26:16.391 [DefaultQuartzScheduler_Worker-7] ERROR c.s.s.bigdata.dss.model.TableMode - 全量同步表comshop遇到问题:java.sql.BatchUpdateException: Duplicate entry '6972605' for key 'shopsid'
+2015-07-31 15:36:05.280 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-31 15:36:05.286 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-31 15:36:05.300 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-31 15:36:05.300 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-31 15:36:05.301 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-31 15:36:05.302 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-31 15:36:05.302 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-31 15:36:05.302 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-31 15:36:05.303 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-31 15:36:06.249 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-31 15:36:28.532 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-31 15:37:09.074 [DefaultQuartzScheduler_Worker-1] ERROR c.s.s.bigdata.dss.model.TableMode - 全量同步表comshop遇到问题:java.sql.BatchUpdateException: Duplicate entry '6972605' for key 'shopsid'
+2015-07-31 15:48:28.686 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-31 15:48:28.696 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-31 15:48:28.717 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-31 15:48:28.718 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-31 15:48:28.719 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-31 15:48:28.719 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-31 15:48:28.719 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-31 15:48:28.719 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-31 15:48:28.721 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-31 15:48:29.625 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-31 15:48:53.181 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-31 15:49:33.833 [DefaultQuartzScheduler_Worker-1] ERROR c.s.s.bigdata.dss.model.TableMode - 全量同步表comshop遇到问题:java.sql.BatchUpdateException: Duplicate entry '6972605' for key 'shopsid'
+2015-07-31 15:55:16.067 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-31 15:55:16.077 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-31 15:55:16.094 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-31 15:55:16.095 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-31 15:55:16.096 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-31 15:55:16.097 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-31 15:55:16.097 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-31 15:55:16.097 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-31 15:55:16.098 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-31 15:55:16.987 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-31 15:55:40.754 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-31 16:16:00.793 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-31 16:16:00.800 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-31 16:16:00.820 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-31 16:16:00.821 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-31 16:16:00.823 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-31 16:16:00.824 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-31 16:16:00.824 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-31 16:16:00.824 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-31 16:16:00.826 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-07-31 16:16:01.768 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-07-31 16:16:31.205 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-07-31 17:31:57.211 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-07-31 17:31:57.218 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-07-31 17:31:57.235 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-07-31 17:31:57.236 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-07-31 17:31:57.237 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-07-31 17:31:57.238 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-07-31 17:31:57.238 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-07-31 17:31:57.238 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-07-31 17:31:57.259 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-08-01 00:10:00.926 [DefaultQuartzScheduler_Worker-6] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-08-01 00:10:20.090 [DefaultQuartzScheduler_Worker-6] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-08-03 14:06:45.880 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-08-03 14:06:45.889 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-08-03 14:06:45.898 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-08-03 14:06:45.898 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-08-03 14:06:45.899 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-08-03 14:06:45.900 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-08-03 14:06:45.900 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-08-03 14:06:45.900 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-08-03 14:06:45.902 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-08-03 14:10:05.775 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-08-03 14:10:05.776 [DefaultQuartzScheduler_Worker-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-08-03 14:10:06.102 [DefaultQuartzScheduler_Worker-2] ERROR org.quartz.core.JobRunShell - Job group_job.job_page_visit threw an unhandled Exception: 
+com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sl_ods_page_visit_record_201508' already exists
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:279) ~[jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:290) ~[jfinal-1.9.jar:na]
+	at com.szl.strongunion.bigdata.dss.job.JobCretePageRecord.execute(JobCretePageRecord.java:32) ~[classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sl_ods_page_visit_record_201508' already exists
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3835) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3771) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2535) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1911) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2145) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2081) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2066) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeUpdate(DruidPooledPreparedStatement.java:253) ~[druid-1.0.13.jar:1.0.13]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:260) ~[jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:277) ~[jfinal-1.9.jar:na]
+	... 4 common frames omitted
+2015-08-03 14:10:06.104 [DefaultQuartzScheduler_Worker-2] ERROR org.quartz.core.ErrorLogger - Job (group_job.job_page_visit threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception.
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213) ~[quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sl_ods_page_visit_record_201508' already exists
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:279) ~[jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:290) ~[jfinal-1.9.jar:na]
+	at com.szl.strongunion.bigdata.dss.job.JobCretePageRecord.execute(JobCretePageRecord.java:32) ~[classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.2.1.jar:na]
+	... 1 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sl_ods_page_visit_record_201508' already exists
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3835) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3771) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2535) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1911) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2145) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2081) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2066) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeUpdate(DruidPooledPreparedStatement.java:253) ~[druid-1.0.13.jar:1.0.13]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:260) ~[jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:277) ~[jfinal-1.9.jar:na]
+	... 4 common frames omitted
+2015-08-03 14:15:51.667 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-08-03 14:15:51.675 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-08-03 14:15:51.684 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-08-03 14:15:51.684 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-08-03 14:15:51.685 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-08-03 14:15:51.685 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-08-03 14:15:51.686 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-08-03 14:15:51.686 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-08-03 14:15:51.688 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-08-03 14:20:00.799 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-08-03 14:20:00.800 [DefaultQuartzScheduler_Worker-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-08-03 14:20:00.841 [DefaultQuartzScheduler_Worker-1] ERROR org.quartz.core.JobRunShell - Job group_job.job_errorlog_month threw an unhandled Exception: 
+com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sl_ods_interface_errorlog_201508' already exists
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:279) ~[jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:290) ~[jfinal-1.9.jar:na]
+	at com.szl.strongunion.bigdata.dss.job.JobCreteErrorLog.execute(JobCreteErrorLog.java:32) ~[classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sl_ods_interface_errorlog_201508' already exists
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3835) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3771) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2535) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1911) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2145) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2081) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2066) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeUpdate(DruidPooledPreparedStatement.java:253) ~[druid-1.0.13.jar:1.0.13]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:260) ~[jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:277) ~[jfinal-1.9.jar:na]
+	... 4 common frames omitted
+2015-08-03 14:20:00.842 [DefaultQuartzScheduler_Worker-1] ERROR org.quartz.core.ErrorLogger - Job (group_job.job_errorlog_month threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception.
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213) ~[quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sl_ods_interface_errorlog_201508' already exists
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:279) ~[jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:290) ~[jfinal-1.9.jar:na]
+	at com.szl.strongunion.bigdata.dss.job.JobCreteErrorLog.execute(JobCreteErrorLog.java:32) ~[classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.2.1.jar:na]
+	... 1 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sl_ods_interface_errorlog_201508' already exists
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3835) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3771) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2535) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1911) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2145) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2081) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2066) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeUpdate(DruidPooledPreparedStatement.java:253) ~[druid-1.0.13.jar:1.0.13]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:260) ~[jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:277) ~[jfinal-1.9.jar:na]
+	... 4 common frames omitted
+2015-08-03 14:20:00.843 [DefaultQuartzScheduler_Worker-2] ERROR org.quartz.core.JobRunShell - Job group_job.job_page_visit threw an unhandled Exception: 
+com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sl_ods_page_visit_record_201508' already exists
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:279) ~[jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:290) ~[jfinal-1.9.jar:na]
+	at com.szl.strongunion.bigdata.dss.job.JobCretePageRecord.execute(JobCretePageRecord.java:32) ~[classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sl_ods_page_visit_record_201508' already exists
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3835) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3771) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2535) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1911) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2145) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2081) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2066) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeUpdate(DruidPooledPreparedStatement.java:253) ~[druid-1.0.13.jar:1.0.13]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:260) ~[jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:277) ~[jfinal-1.9.jar:na]
+	... 4 common frames omitted
+2015-08-03 14:20:00.844 [DefaultQuartzScheduler_Worker-2] ERROR org.quartz.core.ErrorLogger - Job (group_job.job_page_visit threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception.
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213) ~[quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sl_ods_page_visit_record_201508' already exists
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:279) ~[jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:290) ~[jfinal-1.9.jar:na]
+	at com.szl.strongunion.bigdata.dss.job.JobCretePageRecord.execute(JobCretePageRecord.java:32) ~[classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.2.1.jar:na]
+	... 1 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sl_ods_page_visit_record_201508' already exists
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3835) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3771) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2535) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1911) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2145) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2081) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2066) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeUpdate(DruidPooledPreparedStatement.java:253) ~[druid-1.0.13.jar:1.0.13]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:260) ~[jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.update(DbPro.java:277) ~[jfinal-1.9.jar:na]
+	... 4 common frames omitted
+2015-08-03 14:20:42.152 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-08-03 14:20:42.158 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-08-03 14:20:42.174 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-08-03 14:20:42.175 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-08-03 14:20:42.176 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-08-03 14:20:42.176 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-08-03 14:20:42.176 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-08-03 14:20:42.176 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-08-03 14:20:42.179 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-08-03 14:21:49.648 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-08-03 14:21:49.653 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-08-03 14:21:49.669 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-08-03 14:21:49.670 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-08-03 14:21:49.671 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-08-03 14:21:49.672 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-08-03 14:21:49.672 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-08-03 14:21:49.672 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-08-03 14:21:49.675 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-08-03 14:23:50.278 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-08-03 14:28:16.965 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-08-03 14:28:16.970 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-08-03 14:28:16.986 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-08-03 14:28:16.987 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-08-03 14:28:16.988 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-08-03 14:28:16.989 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-08-03 14:28:16.989 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-08-03 14:28:16.989 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-08-03 14:28:16.991 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-08-03 14:29:44.056 [DefaultQuartzScheduler_Worker-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-08-03 14:29:44.341 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-08-03 14:33:07.250 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-08-03 14:33:07.258 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-08-03 14:33:07.267 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-08-03 14:33:07.268 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-08-03 14:33:07.268 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-08-03 14:33:07.269 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-08-03 14:33:07.269 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-08-03 14:33:07.269 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-08-03 14:33:07.271 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-08-03 14:33:55.571 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-08-03 14:33:55.579 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-08-03 14:33:55.588 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-08-03 14:33:55.588 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-08-03 14:33:55.589 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-08-03 14:33:55.590 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-08-03 14:33:55.590 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-08-03 14:33:55.590 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-08-03 14:33:55.592 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-08-03 14:34:18.062 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-08-03 14:34:18.070 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-08-03 14:34:18.079 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-08-03 14:34:18.080 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-08-03 14:34:18.081 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-08-03 14:34:18.081 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-08-03 14:34:18.081 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-08-03 14:34:18.081 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-08-03 14:34:18.083 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-08-03 14:35:36.239 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-08-03 14:35:36.252 [DefaultQuartzScheduler_Worker-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-08-03 14:35:40.278 [DefaultQuartzScheduler_Worker-1] ERROR c.alibaba.druid.pool.DruidDataSource - init datasource error, url: jdbc:mysql://192.168.0.168:3306/strongunion_online_TD?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&&autoReconnect=true
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:958) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:937) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:926) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:872) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2149) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2074) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at sun.reflect.GeneratedConstructorAccessor7.newInstance(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375) ~[druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431) ~[druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:632) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:934) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:930) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:102) [druid-1.0.13.jar:1.0.13]
+	at com.jfinal.plugin.activerecord.Config.getConnection(Config.java:185) [jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.query(DbPro.java:95) [jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.query(DbPro.java:109) [jfinal-1.9.jar:na]
+	at com.szl.strongunion.bigdata.dss.job.JobCreteErrorLog.execute(JobCreteErrorLog.java:29) [classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:958) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:937) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:926) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1037) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2239) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2090) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	... 21 common frames omitted
+2015-08-03 14:35:40.303 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-08-03 14:35:46.259 [DefaultQuartzScheduler_Worker-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-08-03 14:38:06.885 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-08-03 14:38:06.893 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-08-03 14:38:06.902 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-08-03 14:38:06.903 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-08-03 14:38:06.904 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-08-03 14:38:06.905 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-08-03 14:38:06.905 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-08-03 14:38:06.905 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-08-03 14:38:06.907 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-08-03 14:39:05.837 [DefaultQuartzScheduler_Worker-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-08-03 14:39:15.358 [DefaultQuartzScheduler_Worker-1] ERROR c.alibaba.druid.pool.DruidDataSource - init datasource error, url: jdbc:mysql://192.168.0.168:3306/strongunion_online_TD?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&&autoReconnect=true
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:958) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:937) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:926) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:872) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2149) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2074) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at sun.reflect.GeneratedConstructorAccessor7.newInstance(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1375) ~[druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1431) ~[druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:632) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:934) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:930) [druid-1.0.13.jar:1.0.13]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:102) [druid-1.0.13.jar:1.0.13]
+	at com.jfinal.plugin.activerecord.Config.getConnection(Config.java:185) [jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.query(DbPro.java:95) [jfinal-1.9.jar:na]
+	at com.jfinal.plugin.activerecord.DbPro.query(DbPro.java:109) [jfinal-1.9.jar:na]
+	at com.szl.strongunion.bigdata.dss.job.JobCreteErrorLog.execute(JobCreteErrorLog.java:29) [classes/:na]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.2.1.jar:na]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.2.1.jar:na]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_05]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_05]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_05]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_05]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.Util.getInstance(Util.java:372) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:958) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:937) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:926) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1037) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2239) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2090) ~[mysql-connector-java-5.1.35.jar:5.1.35]
+	... 21 common frames omitted
+2015-08-03 14:39:15.362 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-09-01 14:42:42.077 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-09-01 14:42:42.093 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-09-01 14:42:42.112 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-09-01 14:42:42.113 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-09-01 14:42:42.115 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-09-01 14:42:42.116 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-09-01 14:42:42.116 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-09-01 14:42:42.116 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-09-01 14:42:42.133 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-09-01 14:50:02.574 [DefaultQuartzScheduler_Worker-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-09-22 12:45:45.082 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-09-22 12:45:45.089 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-09-22 12:45:45.108 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-09-22 12:45:45.109 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-09-22 12:45:45.111 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-09-22 12:45:45.112 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-09-22 12:45:45.112 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-09-22 12:45:45.112 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-09-22 12:45:45.114 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-09-22 12:45:46.299 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-09-22 12:47:26.827 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-09-22 12:59:51.599 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-09-22 12:59:51.607 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-09-22 12:59:51.628 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-09-22 12:59:51.629 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-09-22 12:59:51.630 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-09-22 12:59:51.631 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-09-22 12:59:51.631 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-09-22 12:59:51.631 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-09-22 12:59:51.632 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-09-22 12:59:52.653 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-09-22 13:00:23.117 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-09-22 14:04:42.959 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+2015-09-22 14:04:44.409 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+2015-09-22 14:07:40.731 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+2015-09-22 14:08:29.794 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-09-22 14:08:29.804 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-09-22 14:08:29.821 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-09-22 14:08:29.822 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-09-22 14:08:29.823 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-09-22 14:08:29.824 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-09-22 14:08:29.824 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-09-22 14:08:29.824 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-09-22 14:08:29.825 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-09-22 14:08:30.746 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-09-22 14:08:51.169 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-09-22 14:10:00.813 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-09-22 14:10:00.822 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-09-22 14:10:00.843 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-09-22 14:10:00.844 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-09-22 14:10:00.845 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-09-22 14:10:00.846 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-09-22 14:10:00.846 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-09-22 14:10:00.846 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-09-22 14:10:00.847 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-09-22 14:10:01.886 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-09-22 14:10:53.578 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-09-22 14:52:02.282 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-09-22 14:52:02.291 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-09-22 14:52:02.312 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-09-22 14:52:02.313 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2015-09-22 14:52:02.314 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-09-22 14:52:02.315 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-09-22 14:52:02.315 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-09-22 14:52:02.315 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2015-09-22 14:52:02.316 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-09-22 14:52:03.444 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2015-09-22 14:53:08.038 [DefaultQuartzScheduler_Worker-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2015-09-22 15:10:00.848 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+2015-09-22 15:10:00.849 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+2015-09-22 15:10:01.110 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.

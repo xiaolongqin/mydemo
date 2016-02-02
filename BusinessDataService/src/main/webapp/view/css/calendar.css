@@ -1,0 +1,5 @@
+.input[readonly]{color:#f3b026;}  /*#888*/
+.input[size='12'],.input[cols='12']{width:112px;*width:90px;height: 27px;font-size: 12px;border: none;background:url(../images/cxcalendar.png) #edf2f5 ;background-repeat: no-repeat;background-position: right center;cursor:pointer;}
+.input{height:30px;line-height:28px;}
+.input{box-sizing:border-box;padding:0 9px;border:1px solid #888;border-radius:3px;font:12px/1.6 Tahoma,Arial,sans-serif;}
+.input{font-family:Tahoma,Arial,'\5fae\8f6f\96c5\9ed1',sans-serif;font-size:100%;vertical-align:baseline;*vertical-align:middle;}

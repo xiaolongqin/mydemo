@@ -1,0 +1,7 @@
+package dao;
+
+import dao.imp.MvDaoImp;
+
+public class MvDao implements MvDaoImp {
+
+}

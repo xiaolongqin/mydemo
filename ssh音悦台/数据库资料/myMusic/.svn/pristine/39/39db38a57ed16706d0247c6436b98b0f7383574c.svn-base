@@ -1,0 +1,177 @@
+
+$(function() {
+	$("#logo").load("logo.jsp");
+	$("#floot").load("floot.jsp");
+
+	$(".fristplaymv").each(function(i) {
+		$("#fristplaydiv" + i).mouseover(function() {
+			$("#fristplayts" + i).css("display", "block");
+			$("#fristplay" + i).css("display", "block");
+			$("#fristplayimgurl" + i).css("opacity", 0.8);
+		});
+		$("#fristplaydiv" + i).mouseout(function() {
+			$("#fristplayts" + i).css("display", "none");
+			$("#fristplay" + i).css("display", "none");
+			$("#fristplayimgurl" + i).css("opacity", 1);
+		});
+	});
+	$(".heatmv").each(function(i) {
+		$("#heatdiv" + i).mouseover(function() {
+			$("#heatts" + i).css("display", "block");
+			$("#heat" + i).css("display", "block");
+			$("#heatimgurl" + i).css("opacity", 0.8);
+		});
+		$("#heatdiv" + i).mouseout(function() {
+			$("#heatts" + i).css("display", "none");
+			$("#heat" + i).css("display", "none");
+			$("#heatimgurl" + i).css("opacity", 1);
+		});
+	});
+	$(".lovemv").each(function(i) {
+		$("#lovediv" + i).mouseover(function() {
+			$("#lovets" + i).css("display", "block");
+			$("#love" + i).css("display", "block");
+			$("#lovediv" + i).css("opacity", 0.8);
+		});
+		$("#lovediv" + i).mouseout(function() {
+			$("#lovedts" + i).css("display", "none");
+			$("#love" + i).css("display", "none");
+			$("#lovediv" + i).css("opacity", 1);
+		});
+	});
+	$(".singer").each(function(i) {
+		$("#singer" + i).mouseover(function() {
+			$("#singerdescribe" + i).css("display", "block");
+		});
+		$("#singer" + i).mouseout(function() {
+			$("#singerdescribe" + i).css("display", "none");
+		});
+	});
+	$("#commentmvnext").click(function(i) {
+		if(Recommendindex<4){
+			Recommendindex++;
+		}
+		else{
+			Recommendindex=0;
+		}
+		changerecommend();
+	});
+	$("#commentmvback").click(function(i) {
+		if(Recommendindex>0){
+			Recommendindex--;
+		}
+		else{
+			Recommendindex=4;
+		}
+		changerecommend();
+	});
+	$("#randomOnce").click(function(i) {
+		queryMvByRandom();
+	});
+	querySingerByArea(1,"");
+	queryMvByAreaAndDate(1,"");
+	queryMvByAreaAndClick(1,"");
+	queryMvByRandom();
+	queryRecommend();
+});
+
+function querySingerByArea(page,area) {
+	$.get("/myMusic/singer/querySingerByArea",{nowpage:page,area:area},function(singers){
+		var content="";
+		if(singers.length<1){
+			return false;
+		}
+		$.each(singers, function(i,singer) {
+			
+			$("#singername"+i).html(singer.name);
+			$("#singerdescribe"+i).html(singer.intro.substring(0,110)+"...");
+			$("#singerimgurl"+i).prop("src","/myMusic/"+singer.pic_url);
+			clickbyid("singername"+i,"/myMusic/singer.jsp?id="+singer.id);			
+			clickbyid("singerdescribe"+i,"/myMusic/singer.jsp?id="+singer.id);			
+		});
+	},"json");
+}
+function queryMvByAreaAndDate(page,area) {
+	$.get("/myMusic/mv/mv_queryMvByAreaAndDate",{page:page,area:area},function(mvs){
+		if(mvs.length<1){
+			return false;
+		}
+		$.each(mvs, function(i,mv) {			
+				$("#fristplaysinger"+i).html(mv.singer.name);
+				$("#fristplaymvname"+i).html(mv.name);				
+				$("#fristplayimgurl"+i).prop("src","/myMusic/"+mv.pic_url);
+				clickbyid("fristplaydiv"+i,"/myMusic/mvplay.jsp?id="+mv.id);
+			if(i>0){
+				$("#fristplaydescribe"+i).html(mv.describe.substring(0,70)+"...");
+			}
+		});
+	},"json");
+}
+function queryMvByRandom() {
+	
+	$.get("/myMusic/mv/mv_queryMvByRandom",{},function(mvs){
+		if(mvs.length<1){
+			return false;
+		}
+		$.each(mvs, function(i,mv) {			
+			$("#lovesinger"+i).html(mv.singer.name);
+			$("#lovemvname"+i).html(mv.name);				
+			$("#loveimgurl"+i).prop("src","/myMusic/"+mv.pic_url);
+			clickbyid("lovediv"+i,"/myMusic/mvplay.jsp?id="+mv.id);
+	});
+		
+	},"json");
+}
+function queryMvByAreaAndClick(page,area) {
+	$.get("/myMusic/mv/mv_queryMvByAreaAndClick",{page:page,area:area},function(mvs){
+		if(mvs.length<1){
+			return false;
+		}
+		$.each(mvs, function(i,mv) {			
+				$("#heatsinger"+i).html(mv.singer.name);
+				$("#heatmvname"+i).html(mv.name);				
+				$("#heatimgurl"+i).prop("src","/myMusic/"+mv.pic_url);
+				clickbyid("heatdiv"+i,"/myMusic/mvplay.jsp?id="+mv.id);
+			if(i==0){
+				$("#heatdescribe"+i).html(mv.describe);
+				$("#heatmvtitle").html("【"+mv.singer.name+"】 "+mv.name);
+				clickbyid("heatmvtitle","/myMusic/mvplay.jsp?id="+mv.id);
+			}
+			else{
+				$("#heatdescribe"+i).html(mv.describe.substring(0,70)+"...");
+			}
+			
+		});
+	},"json");
+}
+var Recommends=new Array();
+var Recommendindex=0;
+function queryRecommend() {
+	
+		$.get("/myMusic/recommend/queryRecommendByDate",{},function(recommends){
+			var content="";
+			if(recommends.length<1){
+				return false;
+			}
+			$.each(recommends, function(i,recommend) {
+				if(i==0){
+					$("#commentmvtitle").html(recommend.mv.singer.name+"&nbsp;&nbsp;"+recommend.mv.name);
+					$("#commentmvdescribe").html(recommend.mv.describe);
+					$("#commentmvimg").prop("src","/myMusic/"+recommend.mv.pic_url);
+					clickbyid("commentmvtitle","/myMusic/mvplay.jsp?id="+recommend.mv.id);
+					clickbyid("commentmvdescribe","/myMusic/mvplay.jsp?id="+recommend.mv.id);
+				}
+				Recommends[i]=recommend;
+			});
+		},"json");
+}
+
+
+function changerecommend() {
+	var recommend= Recommends[Recommendindex];
+	$("#commentmvtitle").html(recommend.mv.singer.name+"&nbsp;&nbsp;"+recommend.mv.name);
+	$("#commentmvdescribe").html(recommend.mv.describe);
+	$("#commentmvimg").prop("src","/myMusic/"+recommend.mv.pic_url);
+	clickbyid("commentmvtitle","/myMusic/mvplay.jsp?id="+recommend.mv.id);
+	clickbyid("commentmvdescribe","/myMusic/mvplay.jsp?id="+recommend.mv.id);
+}

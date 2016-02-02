@@ -1,0 +1,12 @@
+package action;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import service.imp.UserServiceImp;
+@Controller
+public class UserAction {
+	@Autowired
+	private UserServiceImp userService;
+	
+}

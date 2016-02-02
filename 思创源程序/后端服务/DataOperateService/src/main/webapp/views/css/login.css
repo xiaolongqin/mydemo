@@ -1,0 +1,26 @@
+/*login*/
+.login-body{width:100%;background-color: #fff;position: absolute;z-index: 1;}
+.login-page{height:700px;margin:0 auto;margin-top:95px;}
+.login-image img{overflow: hidden;}
+.login-box{border: 1px solid #1f74c4;-moz-border-radius:13px;-webkit-border-radius:13px;border-radius:13px;margin-top:20%;margin-left: 144px;font-family: headFont;}
+.login-top{font-size:1.8em;height:110px;line-height:110px;color:#0064bc;}
+.login-logo,.login-right{height:224px;float:left;}
+.login-logo img{width: 120px;margin: -20px 0 0 -10px;overflow: hidden;}
+.login-user{color:#020000;font-size:14px;}
+.login-user img,.login-user input,.login-user p{float:left;}
+.login-user p{margin-left:11px;margin-right:26px;}
+.login-user input{height:23px;width: 90%; outline: none;border:1px solid #3080c7;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;border-bottom:1px solid #78aadb;}
+.login-user:after{content:"";display:block;clear:both;}
+.login-forget-wrap{height:18px;margin-top:7px;}
+.login-forget{height:18px;line-height:18px;font-size:12px;border-bottom:1px solid #3d8dd4;float:right;margin-right:37px;}
+.login-forget a{color:#0064bc;}
+.login-forget:after{content:"";display:block;clear:both;}
+.login-btn{margin-top:18px;height:34px;}
+.login-login,.login-reset{height:34px;font-size:16px;-moz-border-radius:17px;-webkit-border-radius:17px;border-radius:17px;}
+.login-login{background-color:#0262b9;border:none;color:#fff;}
+.login-reset{background-color:#fff;border:1px solid #0063b8;color:#0064bc;}
+.login-footer{font-size:14px;color:#868383;}
+#table-list td{padding-left: 20px;}
+#table-list .td-left{padding-left: 140px;}
+@media only screen and (max-width: 1300px) { .login-top{ font-size: 1.5em; }.login-login,.login-reset{font-size: 12px;}}
+@media only screen and (max-width: 1100px) { .login-top{ font-size: 1.2em; }.login-login,.login-reset{font-size: 8px;}}

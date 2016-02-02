@@ -1,0 +1,10 @@
+package action;
+
+import javax.annotation.Resource;
+
+import service.imp.AdministratorServiceImp;
+
+public class AdministratorAction {
+    @Resource
+	private AdministratorServiceImp administratorService;
+}

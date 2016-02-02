@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<title>管理员基本信息-数之云</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="css/ad_common.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+	        <script src="js/bootstrap/html5shiv.min.js"></script>
+	        <script src="js/bootstrap/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+	    <!--顶部 S-->
+		<header class="navbar ad-nav" id="top" role="banner">
+		 	<div class="container">
+			    <div class="navbar-header">
+			      <a class="navbar-brand"><img height="30" src="images/szy_logo.png"/></a>
+			    </div>
+			    <nav class="collapse navbar-collapse" role="navigation">
+			      	<ul class="nav navbar-nav navbar-right">
+			        	<li id="J_navUserRegist">
+			        		<a class="dropdown-toggle" href="javascript:;" data-toggle="dropdown" aria-expanded="true">
+			        			<span class="glyphicon glyphicon-user"></span>
+			        			&ensp;<span id="J_navUserName">...</span>
+			        		</a>
+			        		<ul class="dropdown-menu" role="menu">
+							    <li><a class="first" href="info" title="个人资料">个人资料</a></li>
+							    <li class="divider"></li>
+							    <li><a href="javascript:;" onclick="exitLogin();return false;">退出</a></li>
+							</ul>
+			        	</li>
+			      	</ul>
+			    </nav>	    
+		  	</div>
+		</header>
+	    <!--顶部 E-->
+		<!--主体 S-->
+		<div class="container">
+			<h2 class="ad-head">基本信息</h2>
+			<div class="info-wrap" style="min-height: 738px;">
+				<dl id="J_infoUserId" class="clearfix">
+					<dt>注册邮箱：</dt>
+					<dd><span id="J_infoEmail" class="text">---</span> <a class="info-up-pwd" href="updatepwd" title="修改登录密码" target="_blank"><span class="glyphicon glyphicon-edit"></span> 修改登录密码</a></dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>真实姓名：</dt>
+					<dd id="J_infoName" class="text">---</dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>授权时间：</dt>
+					<dd id="J_infoTime" class="text">0000-00-00 00:00:00</dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>用户名：</dt>
+					<dd class="clearfix">
+						<input id="J_infoUserName" class="ipt form-control" type="text" value="" onfocus="INFO.NAME.FOCUS(this.value)" onblur="INFO.NAME.BLUR(this.value)"/>
+						<p id="J_infoNoticeName" class="notice none"></p>
+					</dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>手机号码：</dt>
+					<dd class="clearfix">
+						<input id="J_infoPhone" class="ipt form-control" type="text" placeholder="请输入11位手机号码" onfocus="INFO.PHONE.FOCUS(this.value)" onblur="INFO.PHONE.BLUR(this.value)" />
+						<p id="J_infoNoticePhone" class="notice none"></p>
+					</dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>固定电话：</dt>
+					<dd class="clearfix">
+						<input id="J_infoFixedPh" class="ipt form-control" type="text" placeholder="例如：028-87951915" onfocus="INFO.FIXEDPH.FOCUS(this.value)" onblur="INFO.FIXEDPH.BLUR(this.value)"/>
+						<p id="J_infoNoticeFixedPh" class="notice none"></p>
+					</dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>&nbsp;</dt>
+					<dd><button type="button" class="btn btn-primary" onclick="saveInfo();return false;">保  存</button></dd>
+				</dl>
+			</div>
+		</div>
+	    <!--主体 E-->
+	    <!--FOOT S-->
+		<footer class="ad-footer">
+		    <div class="container">
+	    		<p class="text">Copyright ©2012 成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+	    	</div>
+		</footer>
+	    <!--FOOT E-->
+	    <script src="js/jquery-1.9.1.min.js"></script>
+	    <script src="js/bootstrap/bootstrap.min.js"></script>
+	    <script src="js/ad_common.min.js"></script>
+	    <script src="js/ad_info.min.js"></script>
+	</body>
+</html>

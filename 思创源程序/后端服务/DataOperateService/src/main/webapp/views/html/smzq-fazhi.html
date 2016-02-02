@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>猛犸大数据运营分析平台</title>
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/usual.css"/>
+    <link rel="stylesheet" href="../css/smzq-yuzhi.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/bootstrap/html5shiv.min.js"></script>
+    <script src="../js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="main">
+    <div class="yuzhi-title">
+        <p>客户生命周期阈值设置</p>
+    </div>
+    <div class="yuzhi-content clearfix">
+        <div class="period">
+            <div class="period-title">
+                <img src="../images/checked-true.png" /><span>【开拓期】&nbsp;&nbsp;<span>1</span>天&nbsp;&nbsp;≤注册时间<&nbsp;&nbsp;</span><input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" /><span>天</span>
+            </div>
+            <div class="period-num">1</div>
+            <div class="period-content">
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>登录次数</span><input class="yuzhi-value yuzhi-child form-control" style="display: inline" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>次~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>次
+                </div>
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>订单笔数</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>笔~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>笔
+                </div>
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>订单金额</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>元~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>元
+                </div>
+            </div>
+        </div>
+        <div class="period">
+            <div class="period-title">
+                <img src="../images/checked-true.png" /><span>【巩固期】&nbsp;&nbsp;<span>1</span>天&nbsp;&nbsp;≤注册时间<&nbsp;&nbsp;</span><input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/><span>天</span>
+            </div>
+            <div class="period-num">2</div>
+            <div class="period-content">
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>登录次数</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>次~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>次
+                </div>
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>订单笔数</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>笔~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>笔
+                </div>
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>订单金额</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>元~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>元
+                </div>
+            </div>
+        </div>
+        <div class="period">
+            <div class="period-title">
+                <img src="../images/checked-true.png" /><span>【成长期】&nbsp;&nbsp;<span>1</span>天&nbsp;&nbsp;≤注册时间<&nbsp;&nbsp;</span><input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/><span>天</span>
+            </div>
+            <div class="period-num">3</div>
+            <div class="period-content">
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>登录次数</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>次~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>次
+                </div>
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>订单笔数</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>笔~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>笔
+                </div>
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>订单金额</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>元~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>元
+                </div>
+            </div>
+        </div>
+        <div class="period">
+            <div class="period-title">
+                <img src="../images/checked-true.png" /><span>【成熟期】&nbsp;&nbsp;<span>1</span>天&nbsp;&nbsp;≤注册时间<&nbsp;&nbsp;</span><input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/><span>天</span>
+            </div>
+            <div class="period-num">4</div>
+            <div class="period-content">
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>登录次数</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>次~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>次
+                </div>
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>订单笔数</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>笔~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>笔
+                </div>
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>订单金额</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>元~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>元
+                </div>
+            </div>
+        </div>
+        <div class="period">
+            <div class="period-title">
+                <img src="../images/checked-true.png" /><span>【衰退期】&nbsp;&nbsp;<span>1</span>天&nbsp;&nbsp;≤注册时间<&nbsp;&nbsp;</span><input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/><span>天</span>
+            </div>
+            <div class="period-num">5</div>
+            <div class="period-content">
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>登录次数</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>次~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>次
+                </div>
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>订单笔数</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>笔~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>笔
+                </div>
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>订单金额</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>元~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>元
+                </div>
+            </div>
+        </div>
+        <div class="period">
+            <div class="period-title">
+                <img src="../images/checked-true.png" /><span>【恢复期】&nbsp;&nbsp;<span>1</span>天&nbsp;&nbsp;≤注册时间</span>
+            </div>
+            <div class="period-num">6</div>
+            <div class="period-content">
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>登录次数</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>次~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>次
+                </div>
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>订单笔数</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>笔~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>笔
+                </div>
+                <div class="period-item">
+                    <img src="../images/checked-false.png" alt=""/><span>订单金额</span><input class="yuzhi-value yuzhi-child form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>元~<input class="yuzhi-value form-control" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>元
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="yuzhi-foot">
+    <div class="pull-left select-all">
+        <img src="../images/checked-false.png" alt="" /><span>全选</span>
+    </div>
+    <div class="btn-small" onclick="saveYuzhi();"><a>保存</a></div>
+    <div class="btn-small" onclick="resetYuzhi();"><a>重置</a></div>
+</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/smzq-yuzhi.js"></script>
+<script src="../js/ajaxurl.js"></script>
+<script src="../js/href.js"></script>
+<script language="javascript" type="text/javascript">
+    $(window).resize(function() {
+        if(parseInt($(window).width())<1050){
+            $(".yuzhi-content").css("zoom","90%");
+            $('.yuzhi-title').find('p').css("margin-left","80px");
+        }
+        else if(parseInt($(window).width())>=1050){
+            $(".yuzhi-content").css("zoom","100%");
+            $('.yuzhi-title').find('p').css("margin-left","100px");
+        }
+    });
+</script>
+</html>

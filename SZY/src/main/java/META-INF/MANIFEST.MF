@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Class-Path: lib\servlet-api-6.0.41.jar lib\logback-classic-1.1.2.jar l
+ ib\jfinal-1.8.jar lib\logback-core-1.1.2.jar lib\gson-2.3.1.jar lib\c
+ ommons-io-2.4.jar lib\mysql-connector-java-5.1.9.jar lib\httpcore-4.1
+ .jar lib\mail-1.5.0-b01.jar lib\slf4j-api-1.7.7.jar lib\commons-beanu
+ tils-1.9.2.jar lib\shiro-web-1.2.2.jar lib\commons-collections-3.2.1.
+ jar lib\commons-codec-1.8.jar lib\fastjson-1.2.3.jar lib\servlet-api-
+ 3.0-alpha-1.jar lib\commons-httpclient-3.1.jar lib\activation-1.1.jar
+  lib\shiro-core-1.2.2.jar lib\commons-logging-1.2.jar lib\dom4j-core-
+ 1.4-dev-8.jar lib\druid-1.0.9.jar
+

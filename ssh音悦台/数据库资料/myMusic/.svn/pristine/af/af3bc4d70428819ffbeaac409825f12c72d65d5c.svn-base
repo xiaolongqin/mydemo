@@ -1,0 +1,19 @@
+package action;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+
+import service.imp.MvServiceImp;
+
+@Controller
+public class MvAction {
+	@Resource
+	private MvServiceImp mvService;
+	
+	public String saveMv(){
+		
+		//mvService.save(null);
+		return "success";
+	}
+}

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/assets/js/common
+END
+main.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/assets/js/common/main.js
+END
+main-min.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/assets/js/common/main-min.js
+END
+search.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/assets/js/common/search.js
+END
+search-min.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/assets/js/common/search-min.js
+END
+page.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/assets/js/common/page.js
+END
+page-min.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/assets/js/common/page-min.js
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/mymusic/!svn/ver/29/src/main/webapp/sys/assets/js/common/build.xml
+END

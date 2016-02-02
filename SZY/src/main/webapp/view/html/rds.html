@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<title>关系型数据库RDS-数之云</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="css/szy_common.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+	        <script src="js/bootstrap/html5shiv.min.js"></script>
+	        <script src="js/bootstrap/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body style="position: relative;" data-spy="scroll" data-target="#J_szyInNavUl">
+	    <!--顶部 S-->
+		<header class="navbar user-nav" role="banner">
+		 	<div class="container">
+			    <div class="navbar-header">
+			      <a href="index" class="navbar-brand"><img height="30" src="images/szy_logo.png"/></a>
+			    </div>
+			    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+			      	<ul class="nav navbar-nav navbar-right">
+			      		<li id="J_navUserLogin"></li>
+			      		<li id="J_navUserline" class="line none">|</li>
+			        	<li id="J_navUserRegist">
+			        		<a id="J_navUserName" class="dropdown-toggle" href="javascript:;" data-toggle="dropdown" aria-expanded="true">...</a>
+			        		<ul class="dropdown-menu" role="menu">
+							    <li><a class="first" href="rdsorder" title="订单管理">订单管理</a></li>
+							    <li><a href="info" title="个人资料">个人资料</a></li>
+							    <li class="divider"></li>
+							    <li><a href="javascript:;" onclick="exitLogin();return false;">退出</a></li>
+							</ul>
+			        	</li>
+			        	<li class="line">|</li>
+			        	<li><a href="#" title="管理控制台">管理控制台</a></li>
+			      	</ul>
+			    </nav>
+		  	</div>
+		</header>
+	    <!--顶部 E-->
+		<!--主体 S-->
+		<div class="container">
+			<div class="szy-wrap row clearfix">
+				<div id="J_szyMain" class="szy-main pull-right" style="margin-bottom: 0;padding-bottom: 0;">
+					<div class="szy-main-two">
+						<div class="szy-in-main">
+							<h2 class="title">关系型数据库服务 RDS</h2>
+							<div class="des">关系型数据库服务 (Relational Database Service) RDS旨在为您提供廉价、安全、可靠的关系型数据库服务，您可以将您的数据库系统搭建在此。</div>
+							<div id="J_szyInNavUl" class="in-nav row">
+								<div class="col-sm-11">
+									<ul class="nav nav-tabs nav-justified">
+								      	<li class="active"><a href="#J_szyInCompare">新旧方法对比</a></li>
+								      	<li><a href="#J_szyInFunction">功能</a></li>
+								      	<li><a href="#J_szyInSuper">优势</a></li>
+								      	<li><a href="#J_szyInHelp">产品帮助</a></li>
+								      	<li><a href="#J_szyInCase">客户案例</a></li>
+								    </ul>
+								</div>
+								<div class="in-used-box col-sm-1"><button onclick="goUseRds();" type="button" class="in-used btn btn-primary">立即使用</button></div>
+							</div>
+							<!--新旧方法对比S-->
+							<div id="J_szyInCompare" class="szy-in-cpr szy-in-box">
+								<div class="kind"><h3>新旧方法对比</h3></div>
+								<p class="text-one">如果您在业务中需要使用数据库，那么。有新旧两种方法可以选择：</p>
+								<div class="row">
+									<div class="col-sm-5">
+										<h6>旧方法</h6>
+										<ul class="step">
+											<li>第1步：买或者租一台服务器 </li>
+											<li>第2步：买一个外网IP（可省略） </li>
+											<li>第3步：搭建数据库（或者数据库集群） </li>
+											<li>第4步：做负载均衡 </li>
+											<li>第5步：搭建安全、备份环境 </li>
+											<li>第6步：分配/管理数据库账号以及权限</li>
+											<li>第7步：使用JDBC/客户端等连接使用</li>
+										</ul>
+										<dl class="tatol">
+											<dd>总时间投入：约 <span class="red">xxx 天 </span></dd>
+											<dd>总 体 金 额：约 <span class="red">xxx 元</span></dd>
+										</dl>
+									</div>
+									<div class="border col-sm-7">
+										<h6>新方法</h6>
+										<ul class="step">
+											<li>第1步：注册数之云账号</li>
+											<li>第2步：1秒开通RDS服务</li>
+											<li>第3步：可视化快速新建项目空间和数据库</li>
+											<li>第4步：可视化快速分配账号</li>
+											<li>第5步：使用JDBC/客户端等连接使用，</li>
+											<li> 其中，权限管理和数据安全都是自动完成。</li>
+										</ul>
+										<dl class="new tatol">
+											<dd>总时间投入：约 <span class="green">5 分钟</span></dd>
+											<dd>总 体 金 额：约 <span class="green">动态调整，按需收费</span></dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+							<!--新旧方法对比E-->
+							<!--功能S-->
+							<div id="J_szyInFunction" class="szy-in-fun szy-in-box">
+								<div class="kind"><h3>功能</h3></div>
+								<div class="row">
+									<div class="col-sm-3">
+										<dl>
+											<dt>专业的数据库集群</dt>
+											<dd>RDS使用Mysql Cluster
+											来搭建数据库集群，更
+											容易扩展，且保证了高
+											可靠性</dd>
+										</dl>
+									</div>
+									<div class="col-sm-3">
+										<dl>
+											<dt>强大的数据迁移工具</dt>
+											<dd>RDS自带数据迁移工具，
+											不管您原来的数据库在
+											哪里，都能轻松迁移到
+											数之云RDS上</dd>
+										</dl>
+									</div>
+									<div class="col-sm-3">
+										<dl>
+											<dt>完善的大数据平台工具</dt>
+											<dd>RDS背后有一整套我们
+											的大数据平台支撑工具。
+											更大可能的为您的数据
+											存储和分析着想</dd>
+										</dl>
+									</div>
+									<div class="col-sm-3">
+										<dl>
+											<dt>专业的负载均衡</dt>
+											<dd>我们的集群实现多机负
+											载与同时查询，更大可
+											能地为您优化操作速度</dd>
+										</dl>
+									</div>
+								</div>
+								<div class="more"><a href="#" target="_blank">查看更多文档＞＞</a></div>
+							</div>
+							<!--功能E-->
+							<!--优势S-->
+							<div id="J_szyInSuper" class="szy-in-box">
+								<div class="kind"><h3>优势</h3></div>
+								<div class="row">
+									<div class="col-sm-3">
+										<dl>
+											<dt>数据安全</dt>
+											<dd>RDS提供给您更安全的
+											数据支持，我们给您默
+											认提供双机热备功能，
+											如果机房出现什么问
+											题，我们都将最大努力
+											地保证您的正常使用，
+											可用性达99.999%</dd>
+										</dl>
+									</div>
+									<div class="col-sm-3">
+										<dl>
+											<dt>无线宽带 </dt>
+											<dd>RDS不对您使用的带宽
+											进行限制，您可以随心
+											所欲的使用我们的服务</dd>
+										</dl>
+									</div>
+									<div class="col-sm-3">
+										<dl>
+											<dt>更加灵活</dt>
+											<dd>RDS的付费基本单位是
+											项目空间，您可以在您
+											的项目空间内自由建立
+											数据库和用户，更加灵
+											活地调节您的项目</dd>
+										</dl>
+									</div>
+									<div class="col-sm-3">
+										<dl>
+											<dt>简单易用</dt>
+											<dd>兼容Mysql，使用JDBC
+											驱动，数据迁移更加人
+											性化</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+							<!--优势E-->
+							<!--产品帮助S-->
+							<div id="J_szyInHelp" class="szy-in-box">
+								<div class="kind"><h3>产品帮助</h3></div>
+								<div class="row">
+									<div class="col-sm-3">
+										<dl>
+											<dt>新手指南</dt>
+											<dd>
+												<ul>
+													<li><a href="#" target="_blank">新手快速入门指南</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</div>
+									<div class="col-sm-3">
+										<dl>
+											<dt>操作指南 </dt>
+											<dd>
+												<ul>
+													<li><a href="#" target="_blank">如何连接数据库</a></li>
+													<li><a href="#" target="_blank">RDS管理控制台使用指南</a></li>
+													<li><a href="#" target="_blank">RDS续费升级管理</a></li>
+													<li><a href="#" target="_blank">RDS迁移方案</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</div>
+									<div class="col-sm-3">
+										<dl>
+											<dt>资料下载</dt>
+											<dd>
+												<ul>
+													<li><a href="#" target="_blank">RDS注意事项</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</div>
+									<div class="col-sm-3">
+										<dl>
+											<dt>常见问题</dt>
+											<dd>
+												<ul>
+													<li><a href="#" target="_blank">问题反馈</a></li>
+													<li><a href="#" target="_blank">常见问题</a></li>
+													<li><a href="#" target="_blank">您想对我说</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+							<!--产品帮助E-->
+							<!--客户案例S-->
+							<div id="J_szyInCase" class="szy-in-case szy-in-box">
+								<div class="kind"><h3>客户案例</h3></div>
+								<div class="row">
+									<div class="col-sm-3">
+										<dl>
+											<dt><img src="images/szy_hire.jpg"/></dt>
+											<dd>
+												数之云RDS为数联寻英提供
+												高可靠大容量的数据存储，
+												保证了大量实时人才搜索与
+												招聘需求
+											</dd>
+										</dl>
+									</div>
+									<div class="col-sm-3">
+										
+									</div>
+									<div class="col-sm-3">
+										
+									</div>
+									<div class="col-sm-3">
+										
+									</div>
+								</div>
+							</div>
+							<!--客户案例E-->
+						</div>	
+					</div>
+				</div>
+				<div id="J_szyMenuBox" class="szy-menu pull-left" style="margin-bottom: 0;padding-bottom: 0;">
+					<div id="J_szyMenu" class="szy-pro-border">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	    <!--主体 E-->
+	    <!--FOOT S-->
+		<footer class="user-footer">
+		    <div class="container">
+	    		<p class="text">Copyright ©2012 成都数之联科技有限公司 版权所有 | 蜀ICP备13021642号</p>
+	    	</div>
+		</footer>
+	    <!--FOOT E-->
+
+    	<script src="js/jquery-1.9.1.min.js"></script>
+	    <script src="js/bootstrap/bootstrap.min.js"></script>
+	    <script>var SZYMENUID={typeid:1,serviceid:1}</script>
+	    <script src="js/szy_common.min.js"></script>
+	    <script src="js/szy_rds.min.js"></script>
+	</body>
+</html>

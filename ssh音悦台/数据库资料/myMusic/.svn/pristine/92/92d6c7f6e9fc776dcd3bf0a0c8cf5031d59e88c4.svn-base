@@ -1,0 +1,23 @@
+package dao.imp;
+
+import java.util.List;
+
+import entity.User;
+
+
+public interface UserDaoImp {
+	//²éÑ¯
+	public List<User> queryUser(int page, String name);
+	
+	//Ìí¼Ó
+	public void addUser(User user);
+	
+	//·ÖÒ³
+	public List<User> PageUser(String periods,int pageSize);
+	
+	//µÇÂ¼
+	public User login(String username,String password);
+	
+	//É¾³ý
+	public String deleteuser(String nickname);
+}
